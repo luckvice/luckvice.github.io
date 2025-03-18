@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -150,28 +150,81 @@
         .glow {
             text-shadow: 0 0 10px rgba(124, 58, 237, 0.6), 0 0 20px rgba(124, 58, 237, 0.4);
         }
+
+        /* Ajustes para mobile */
+        @media (max-width: 640px) {
+            header {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+
+            .card {
+                padding: 10px;
+            }
+
+            .text-lg {
+                font-size: 1rem;
+            }
+
+            .text-xl {
+                font-size: 1.25rem;
+            }
+
+            .text-3xl {
+                font-size: 1.5rem;
+            }
+
+            .text-5xl {
+                font-size: 2rem;
+            }
+
+            .grid-cols-1 {
+                grid-template-columns: 1fr;
+            }
+
+            .space-y-6 > * + * {
+                margin-top: 1.5rem;
+            }
+
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <header class="text-center py-20 animated-gradient text-white">
-        <h1 class="text-5xl font-bold mb-4">
+    <header class="text-center py-10 animated-gradient text-white">
+        <h1 class="text-4xl font-bold mb-4">
             <span class="typing-effect">Lucas Soares</span>
         </h1>
-        <p class="text-xl">Desenvolvedor Web & Especialista em Estratégias Digitais</p>
-        <div class="mt-8 flex justify-center space-x-4">
+        <p class="text-lg">Desenvolvedor Web & Especialista em Estratégias Digitais</p>
+        <div class="mt-6 flex justify-center space-x-4">
             <a href="mailto:lucasmarcelo93@gmail.com" class="btn">E-mail</a>
             <a href="https://www.linkedin.com/in/lucassoares93" class="btn">LinkedIn</a>
             <a href="https://www.instagram.com/lucasmsoares_luck/" class="btn">Instagram</a>
         </div>
     </header>
 
-    <section class="container mx-auto px-4 py-12">
+    <section class="container mx-auto px-4 py-8">
         <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-semibold mb-6">Resumo</h2>
-            <p class="text-lg leading-relaxed">
+            <h2 class="text-2xl font-semibold mb-4">Resumo</h2>
+            <p class="text-base leading-relaxed">
                 Graduado em Análise e Desenvolvimento de Sistemas e Técnico em Publicidade e Propaganda, com experiência em desenvolvimento web, infraestrutura de redes e administração de servidores. Atuação sólida em back-end, front-end e DevOps, com especialização em PHP, JavaScript e HTML5.
             </p>
-            <ul class="list-disc list-inside mt-4 text-lg">
+            <ul class="list-disc list-inside mt-4 text-base">
                 <li>✅ Desenvolvimento de APIs e sistemas personalizados</li>
                 <li>✅ Gestão de servidores Windows, Linux e Cloud</li>
                 <li>✅ DevOps e automação de processos</li>
@@ -179,70 +232,70 @@
                 <li>✅ Integração de APIs e soluções escaláveis</li>
                 <li>✅ Criação de interfaces web modernas</li>
             </ul>
-            <p class="mt-4 text-lg leading-relaxed">
+            <p class="mt-4 text-base leading-relaxed">
                 Apaixonado por tecnologia desde os tempos da internet discada, iniciei minha trajetória explorando códigos, criando servidores e desenvolvendo soluções digitais. Autodidata, analítico e sempre em busca de novos desafios, valorizo o trabalho em equipe e estou comprometido com a evolução contínua, agregando valor por meio de soluções criativas e eficientes.
             </p>
         </div>
     </section>
 
-    <section class="py-12">
+    <section class="py-8">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-semibold text-center mb-8">Principais Competências</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-                <div class="card p-6">
-                    <h3 class="text-xl font-semibold">Redes LAN-WAN</h3>
-                    <p class="mt-2">Configuração e administração de redes locais e de longa distância.</p>
+            <h2 class="text-2xl font-semibold text-center mb-6">Principais Competências</h2>
+            <div class="grid grid-cols-1 gap-4 max-w-6xl mx-auto">
+                <div class="card p-4">
+                    <h3 class="text-lg font-semibold">Redes LAN-WAN</h3>
+                    <p class="mt-2 text-sm">Configuração e administração de redes locais e de longa distância.</p>
                 </div>
-                <div class="card p-6">
-                    <h3 class="text-xl font-semibold">Next.js</h3>
-                    <p class="mt-2">Desenvolvimento de interfaces modernas com Next.js.</p>
+                <div class="card p-4">
+                    <h3 class="text-lg font-semibold">Next.js</h3>
+                    <p class="mt-2 text-sm">Desenvolvimento de interfaces modernas com Next.js.</p>
                 </div>
-                <div class="card p-6">
-                    <h3 class="text-xl font-semibold">Node.js</h3>
-                    <p class="mt-2">Desenvolvimento de APIs escaláveis com Node.js.</p>
+                <div class="card p-4">
+                    <h3 class="text-lg font-semibold">Node.js</h3>
+                    <p class="mt-2 text-sm">Desenvolvimento de APIs escaláveis com Node.js.</p>
                 </div>
-                <div class="card p-6">
-                    <h3 class="text-xl font-semibold">PHP</h3>
-                    <p class="mt-2">Desenvolvimento de sistemas personalizados em PHP.</p>
+                <div class="card p-4">
+                    <h3 class="text-lg font-semibold">PHP</h3>
+                    <p class="mt-2 text-sm">Desenvolvimento de sistemas personalizados em PHP.</p>
                 </div>
-                <div class="card p-6">
-                    <h3 class="text-xl font-semibold">JavaScript</h3>
-                    <p class="mt-2">Criação de interfaces interativas com JavaScript.</p>
+                <div class="card p-4">
+                    <h3 class="text-lg font-semibold">JavaScript</h3>
+                    <p class="mt-2 text-sm">Criação de interfaces interativas com JavaScript.</p>
                 </div>
-                <div class="card p-6">
-                    <h3 class="text-xl font-semibold">HTML5</h3>
-                    <p class="mt-2">Desenvolvimento de estruturas web modernas com HTML5.</p>
+                <div class="card p-4">
+                    <h3 class="text-lg font-semibold">HTML5</h3>
+                    <p class="mt-2 text-sm">Desenvolvimento de estruturas web modernas com HTML5.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="container mx-auto px-4 py-12">
+    <section class="container mx-auto px-4 py-8">
         <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-semibold mb-6">Experiência Profissional</h2>
-            <div class="space-y-6">
-                <div class="card p-6">
-                    <h3 class="text-xl font-bold">Wisão - Marketing Digital</h3>
-                    <p class="text-md">Web Developer Full Stack | Dezembro de 2024 - Presente</p>
-                    <ul class="list-disc list-inside mt-2">
+            <h2 class="text-2xl font-semibold mb-4">Experiência Profissional</h2>
+            <div class="space-y-4">
+                <div class="card p-4">
+                    <h3 class="text-lg font-bold">Wisão - Marketing Digital</h3>
+                    <p class="text-sm">Web Developer Full Stack | Dezembro de 2024 - Presente</p>
+                    <ul class="list-disc list-inside mt-2 text-sm">
                         <li>Desenvolvimento de APIs e integrações em APIs em geral (PHP, Node.js, JS).</li>
                         <li>Criação de interfaces modernas com JavaScript, CSS e Next.js.</li>
                         <li>Desenvolvimento de aplicativos híbridos utilizando React Native.</li>
                     </ul>
                 </div>
-                <div class="card p-6">
-                    <h3 class="text-xl font-bold">Supermercados Guarapari</h3>
-                    <p class="text-md">Analista de Sistemas de TI | Janeiro de 2021 - Novembro de 2024</p>
-                    <ul class="list-disc list-inside mt-2">
+                <div class="card p-4">
+                    <h3 class="text-lg font-bold">Supermercados Guarapari</h3>
+                    <p class="text-sm">Analista de Sistemas de TI | Janeiro de 2021 - Novembro de 2024</p>
+                    <ul class="list-disc list-inside mt-2 text-sm">
                         <li>Desenvolvimento de soluções personalizadas em PHP, Python e C#.</li>
                         <li>Administração de servidores Windows e Linux.</li>
                         <li>Gestão de redes e infraestrutura de TI.</li>
                     </ul>
                 </div>
-                <div class="card p-6">
-                    <h3 class="text-xl font-bold">Join-TI</h3>
-                    <p class="text-md">PHP Developer Junior | Abril de 2013 - Janeiro de 2014</p>
-                    <ul class="list-disc list-inside mt-2">
+                <div class="card p-4">
+                    <h3 class="text-lg font-bold">Join-TI</h3>
+                    <p class="text-sm">PHP Developer Junior | Abril de 2013 - Janeiro de 2014</p>
+                    <ul class="list-disc list-inside mt-2 text-sm">
                         <li>Desenvolvimento e manutenção de sistemas PHP.</li>
                         <li>Implementação de metodologias ágeis.</li>
                     </ul>
@@ -251,63 +304,63 @@
         </div>
     </section>
 
-    <section class="py-12">
+    <section class="py-8">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-semibold text-center mb-8">Formação Acadêmica</h2>
-            <div class="max-w-4xl mx-auto space-y-6">
-                <div class="card p-6">
-                    <h3 class="text-xl font-semibold">Senac RS</h3>
-                    <p class="text-gray-600 dark:text-gray-300">Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas | Março de 2016 - Dezembro de 2021</p>
+            <h2 class="text-2xl font-semibold text-center mb-6">Formação Acadêmica</h2>
+            <div class="max-w-4xl mx-auto space-y-4">
+                <div class="card p-4">
+                    <h3 class="text-lg font-semibold">Senac RS</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas | Março de 2016 - Dezembro de 2021</p>
                 </div>
-                <div class="card p-6">
-                    <h3 class="text-xl font-semibold">Escola Técnica Estadual Irmão Pedro</h3>
-                    <p class="text-gray-600 dark:text-gray-300">Técnico em Publicidade e Propaganda | 2016 - 2017</p>
+                <div class="card p-4">
+                    <h3 class="text-lg font-semibold">Escola Técnica Estadual Irmão Pedro</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">Técnico em Publicidade e Propaganda | 2016 - 2017</p>
                 </div>
-                <div class="card p-6">
-                    <h3 class="text-xl font-semibold">Objetus</h3>
-                    <p class="text-gray-600 dark:text-gray-300">Técnico em Informática | 2010 - 2011</p>
+                <div class="card p-4">
+                    <h3 class="text-lg font-semibold">Objetus</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">Técnico em Informática | 2010 - 2011</p>
                 </div>
-                <div class="card p-6">
-                    <h3 class="text-xl font-semibold">AGAS</h3>
-                    <p class="text-gray-600 dark:text-gray-300">Gestão em Supermercados | Abril de 2023 - Dezembro de 2023</p>
+                <div class="card p-4">
+                    <h3 class="text-lg font-semibold">AGAS</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">Gestão em Supermercados | Abril de 2023 - Dezembro de 2023</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="container mx-auto px-4 py-12">
+    <section class="container mx-auto px-4 py-8">
         <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-semibold mb-6">Certificações</h2>
-            <div class="space-y-6">
-                <div class="card p-6">
-                    <h3 class="text-xl font-semibold">JavaScript: Orientação a Objetos</h3>
+            <h2 class="text-2xl font-semibold mb-4">Certificações</h2>
+            <div class="space-y-4">
+                <div class="card p-4">
+                    <h3 class="text-lg font-semibold">JavaScript: Orientação a Objetos</h3>
                     <a href="https://cursos.alura.com.br/user/lucasmarcelo93/course/javascritpt-orientacao-objetos/certificate" target="_blank" class="link">Ver Certificado</a>
                 </div>
-                <div class="card p-6">
-                    <h3 class="text-xl font-semibold">Git e GitHub: Branching, Conflitos e Pull Requests</h3>
+                <div class="card p-4">
+                    <h3 class="text-lg font-semibold">Git e GitHub: Branching, Conflitos e Pull Requests</h3>
                     <a href="https://cursos.alura.com.br/user/lucasmarcelo93/course/git-github-branching-conflitos-pull-requests/certificate" target="_blank" class="link">Ver Certificado</a>
                 </div>
-                <div class="card p-6">
-                    <h3 class="text-xl font-semibold">Python: Introdução à Linguagem</h3>
+                <div class="card p-4">
+                    <h3 class="text-lg font-semibold">Python: Introdução à Linguagem</h3>
                     <a href="https://cursos.alura.com.br/user/lucasmarcelo93/course/python-introducao-a-linguagem/certificate" target="_blank" class="link">Ver Certificado</a>
                 </div>
-                <div class="card p-6">
-                    <h3 class="text-xl font-semibold">Segurança de Redes: Conheça as Vulnerabilidades de Servidores e Clientes</h3>
+                <div class="card p-4">
+                    <h3 class="text-lg font-semibold">Segurança de Redes: Conheça as Vulnerabilidades de Servidores e Clientes</h3>
                     <a href="https://cursos.alura.com.br/user/lucasmarcelo93/course/seguranca-redes/certificate" target="_blank" class="link">Ver Certificado</a>
                 </div>
-                <div class="card p-6">
-                    <h3 class="text-xl font-semibold">Flexbox: Posicione Elementos na Tela</h3>
+                <div class="card p-4">
+                    <h3 class="text-lg font-semibold">Flexbox: Posicione Elementos na Tela</h3>
                     <a href="https://cursos.alura.com.br/user/lucasmarcelo93/course/posicione-elementos-com-flexbox/certificate" target="_blank" class="link">Ver Certificado</a>
                 </div>
-                <div class="card p-6">
-                    <h3 class="text-xl font-semibold">Laravel: Produtividade no Desenvolvimento Web</h3>
+                <div class="card p-4">
+                    <h3 class="text-lg font-semibold">Laravel: Produtividade no Desenvolvimento Web</h3>
                     <a href="https://cursos.alura.com.br/user/lucasmarcelo93/course/laravel-produtividade-desenvolvimento-web/certificate" target="_blank" class="link">Ver Certificado</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="text-center py-6 mt-10 shadow-sm">
+    <footer class="text-center py-4 mt-8 shadow-sm">
         <p>&copy; 2025 Lucas Soares. Todos os direitos reservados.</p>
     </footer>
 </body>
