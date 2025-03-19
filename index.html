@@ -210,6 +210,30 @@
             font-weight: 600; /* Texto em negrito */
             color: #7c3aed; /* Cor do texto roxo */
         }
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-left: 8px;
+        }
+        
+        .badge.beginner {
+            background-color: rgba(59, 130, 246, 0.2); /* Azul claro */
+            color: #3b82f6; /* Azul */
+        }
+        
+        .badge.intermediate {
+            background-color: rgba(234, 179, 8, 0.2); /* Amarelo claro */
+            color: #ca8a04; /* Amarelo */
+        }
+        
+        .badge.advanced {
+            background-color: rgba(34, 197, 94, 0.2); /* Verde claro */
+            color: #16a34a; /* Verde */
+        }
     </style>
 </head>
 <body>
@@ -249,46 +273,83 @@
         </div>
     </section>
 
-      <section class="py-8">
-        <div class="container mx-auto px-4">
-            <h2 class="text-2xl font-semibold text-center mb-6">Principais Competências</h2>
-            <div class="grid grid-cols-1 gap-4 max-w-6xl mx-auto">
-                <div class="card p-4">
-                    <h3 class="text-lg font-semibold">Redes LAN-WAN</h3>
-                    <p class="mt-2 text-sm">Configuração e administração de redes locais e de longa distância.</p>
-                </div>
-                <div class="card p-4">
-                    <h3 class="text-lg font-semibold">Next.js</h3>
-                    <p class="mt-2 text-sm">Desenvolvimento de interfaces modernas com Next.js.</p>
-                </div>
-                <div class="card p-4">
-                    <h3 class="text-lg font-semibold">Node.js</h3>
-                    <p class="mt-2 text-sm">Desenvolvimento de APIs escaláveis com Node.js.</p>
-                </div>
-                <div class="card p-4">
-                    <h3 class="text-lg font-semibold">PHP</h3>
-                    <p class="mt-2 text-sm">Desenvolvimento de sistemas personalizados em PHP.</p>
-                </div>
-                <div class="card p-4">
-                    <h3 class="text-lg font-semibold">JavaScript</h3>
-                    <p class="mt-2 text-sm">Criação de interfaces interativas com JavaScript.</p>
-                </div>
-                <div class="card p-4">
-                    <h3 class="text-lg font-semibold">HTML5</h3>
-                    <p class="mt-2 text-sm">Desenvolvimento de landing pages modernas com HTML5.</p>
-                </div>
-                <!-- Novas competências adicionadas -->
-                <div class="card p-4">
-                    <h3 class="text-lg font-semibold">Gestão em Vendas</h3>
-                    <p class="mt-2 text-sm">Desenvolvimento de estratégias de vendas, funis de conversão e automação de processos comerciais.</p>
-                </div>
-                <div class="card p-4">
-                    <h3 class="text-lg font-semibold">Negociação</h3>
-                    <p class="mt-2 text-sm">Habilidades avançadas em negociação, fidelização de clientes e resolução de conflitos.</p>
-                </div>
+    <section class="py-8">
+    <div class="container mx-auto px-4">
+        <h2 class="text-2xl font-semibold text-center mb-6">Principais Competências</h2>
+        <div class="grid grid-cols-1 gap-4 max-w-6xl mx-auto">
+            <!-- Competências Técnicas -->
+            <div class="card p-4">
+                <h3 class="text-lg font-semibold">Node.js</h3>
+                <span class="badge beginner">Beginner</span>
+                <p class="mt-2 text-sm">Desenvolvimento de APIs escaláveis com Node.js.</p>
+            </div>
+            <div class="card p-4">
+                <h3 class="text-lg font-semibold">Next.js</h3>
+                <span class="badge beginner">Beginner</span>
+                <p class="mt-2 text-sm">Desenvolvimento de interfaces modernas com Next.js.</p>
+            </div>
+            <div class="card p-4">
+                <h3 class="text-lg font-semibold">PHP</h3>
+                <span class="badge advanced">Advanced</span>
+                <p class="mt-2 text-sm">Desenvolvimento de sistemas personalizados em PHP.</p>
+            </div>
+            <div class="card p-4">
+                <h3 class="text-lg font-semibold">JavaScript</h3>
+                <span class="badge advanced">Advanced</span>
+                <p class="mt-2 text-sm">Criação de interfaces interativas com JavaScript.</p>
+            </div>
+            <div class="card p-4">
+                <h3 class="text-lg font-semibold">HTML5</h3>
+                <span class="badge advanced">Advanced</span>
+                <p class="mt-2 text-sm">Desenvolvimento de landing pages modernas com HTML5.</p>
+            </div>
+            <div class="card p-4">
+                <h3 class="text-lg font-semibold">CSS3</h3>
+                <span class="badge advanced">Advanced</span>
+                <p class="mt-2 text-sm">Estilização avançada de interfaces com CSS3.</p>
+            </div>
+            <div class="card p-4">
+                <h3 class="text-lg font-semibold">WordPress</h3>
+                <span class="badge intermediate">Intermediate</span>
+                <p class="mt-2 text-sm">Desenvolvimento e customização de temas e plugins.</p>
+            </div>
+
+            <!-- Competências de Vendas e Negociação -->
+            <div class="card p-4 bg-purple-50 dark:bg-purple-900">
+                <h3 class="text-lg font-semibold">Gestão em Vendas</h3>
+                <span class="badge advanced">Advanced</span>
+                <p class="mt-2 text-sm">Desenvolvimento de estratégias de vendas, funis de conversão e automação de processos comerciais.</p>
+                <ul class="list-disc list-inside mt-2 text-sm">
+                    <li>Análise de mercado e prospecção de clientes.</li>
+                    <li>Gestão de equipes comerciais.</li>
+                    <li>Automação de processos de vendas.</li>
+                </ul>
+            </div>
+            <div class="card p-4 bg-purple-50 dark:bg-purple-900">
+                <h3 class="text-lg font-semibold">Negociação</h3>
+                <span class="badge intermediate">Intermediate</span>
+                <p class="mt-2 text-sm">Habilidades avançadas em negociação, fidelização de clientes e resolução de conflitos.</p>
+                <ul class="list-disc list-inside mt-2 text-sm">
+                    <li>Fechamento de contratos e acordos comerciais.</li>
+                    <li>Mediação de conflitos e resolução de objeções.</li>
+                    <li>Fidelização de clientes e pós-venda.</li>
+                </ul>
+            </div>
+
+            <!-- Atendimento ao Cliente -->
+            <div class="card p-4">
+                <h3 class="text-lg font-semibold">Atendimento ao Cliente</h3>
+                <span class="badge advanced">Advanced</span>
+                <p class="mt-2 text-sm">Experiência em atendimento ao cliente e suporte técnico.</p>
+                <ul class="list-disc list-inside mt-2 text-sm">
+                    <li>Resolução de problemas e suporte técnico.</li>
+                    <li>Atendimento humanizado e focado na experiência do cliente.</li>
+                    <li>Utilização de sistemas de CRM para gestão de clientes.</li>
+                </ul>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <section class="container mx-auto px-4 py-8">
         <div class="max-w-4xl mx-auto">
