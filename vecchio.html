@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vecchio Bolsas - Elegância em Couro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <style>
+        @keyframes slideIn {
+            from { transform: translateX(100%); }
+            to { transform: translateX(0); }
+        }
+        .menu-open {
+            animation: slideIn 0.3s ease-out;
+        }
+        .font-inter {
+            font-family: 'Inter', sans-serif;
+        }
+        .bg-gold {
+            background-color: #ccbe66;
+        }
+        .hover\:bg-gold-dark:hover {
+            background-color: #b8a95c;
+        }
+        .text-gold {
+            color: #ccbe66;
+        }
+        .border-gold {
+            border-color: #ccbe66;
+        }
+        .btn-luxury {
+            background-color: transparent;
+            border: 2px solid #ccbe66;
+            color: #ccbe66;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+        .btn-luxury:hover {
+            background-color: #ccbe66;
+            color: white;
+        }
+        .btn-luxury-dark {
+            background-color: #ccbe66;
+            border: 2px solid #ccbe66;
+            color: white;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+        .btn-luxury-dark:hover {
+            background-color: transparent;
+            color: #ccbe66;
+        }
+        /* Efeito Blur no Overlay */
+        #menuOverlay {
+            backdrop-filter: blur(8px); /* Aplica o efeito de blur */
+            -webkit-backdrop-filter: blur(8px); /* Suporte para Safari */
+        }
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+            /* Ajustes para mobile */
+    @media (max-width: 768px) {
+      .btn-luxury-dark {
+            padding: 6px 12px; /* Reduz o padding para mobile */
+            font-size: 0.55rem; /* Reduz o tamanho da fonte para mobile */
+        }
+        .absolute {
+            padding: 8px; /* Reduz o padding do contêiner do botão */
+        }
+        .swiper-button-next, .swiper-button-prev {
+            width: 30px; /* Reduz o tamanho dos botões de navegação */
+            height: 30px;
+        }
+        .swiper-button-next::after, .swiper-button-prev::after {
+            font-size: 1rem; /* Reduz o tamanho do ícone */
+        }
+    }
+    .font-eb-garamond {
+      font-family: 'EB Garamond', serif;
+    }
+    .group:hover .transform {
+        transform: scale(1.05);
+    }
+    .rounded-lg {
+        border-radius: 0.5rem;
+    }
+    .shadow-lg {
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+    .transition {
+        transition: all 0.3s ease;
+    }
+
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 10px;
+        justify-content: center;
+    }
+
+    .gallery-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .gallery-item:hover img {
+        transform: scale(1.08);
+    }
+
+    .gallery-text {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 10px 14px;
+        font-size: 1rem;
+        font-weight: 600;
+        text-align: center;
+        border-radius: 6px;
+        width: 85%;
+        transition: background 0.3s ease;
+    }
+
+    .gallery-item:hover .gallery-text {
+        background: rgba(0, 0, 0, 0.9);
+    }
+
+    @media (max-width: 768px) {
+        .gallery {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 480px) {
+        .gallery {
+            grid-template-columns: 1fr;
+        }
+    }
+    </style>
+</head>
+<body class="font-inter bg-gray-50 text-gray-800">
+    <!-- Navbar -->
+    <nav class="fixed w-full bg-black bg-opacity-90 backdrop-blur-md z-50">
+      <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+          <!-- Logo e texto -->
+          <div class="flex-1 flex justify-center items-center space-x-4">
+              <!-- Texto da marca -->
+              <a href="#" class="text-2xl font-bold text-gold font-eb-garamond">VECCHIO</a>
+          </div>
+  
+          <!-- Menu Hamburger -->
+          <button id="menuButton" class="text-white focus:outline-none">
+              <i class="fas fa-bars text-2xl"></i>
+          </button>
+      </div>
+  </nav>
+
+    <!-- Menu Lateral -->
+    <div id="menuOverlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-40"></div>
+    <div id="menuSidebar" class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform translate-x-full transition-transform duration-300 z-50">
+      <div class="p-6">
+          <!-- Espaço para o logo -->
+          <div class="flex justify-center mb-6">
+              <img src="logo.png" alt="Vecchio Bolsas" class="w-32 h-auto">
+          </div>
+  
+          <!-- Botão de fechar -->
+          <button id="closeMenu" class="text-gray-800 focus:outline-none absolute top-4 right-4">
+              <i class="fas fa-times text-2xl"></i>
+          </button>
+  
+          <!-- Links do menu -->
+          <ul class="mt-8 space-y-4">
+              <li><a href="#sobre" class="text-gray-800 hover:text-gold transition duration-300">Sobre Nós</a></li>
+              <li><a href="#colecao" class="text-gray-800 hover:text-gold transition duration-300">Coleção</a></li>
+              <li><a href="#revendedor" class="text-gray-800 hover:text-gold transition duration-300">Seja Revendedor(a)</a></li>
+              <li><a href="#contato" class="text-gray-800 hover:text-gold transition duration-300">Contato</a></li>
+          </ul>
+      </div>
+  </div>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center bg-cover bg-center" style="background-image: url('vecchio-banner.png');">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div class="relative text-center text-white">
+            <h1 class="text-5xl md:text-7xl font-bold mb-4">Elegância e Sofisticação em Couro</h1>
+            <p class="text-xl mb-8">Descubra o requinte das bolsas Vecchio</p>
+            <a href="#colecao" class="btn-luxury">Comprar Agora</a>
+        </div>
+    </section>
+    <!-- Sessão: Modelos com as Bolsas -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-6">
+          <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Nossa Coleção em Destaque</h2>
+          <div class="gallery">
+              <div class="gallery-item">
+                  <img src="bolsas/mulherbolsa.jpg" alt="Modelo com Bolsa Vecchio">
+                  <div class="gallery-text">Nova Coleção • Couro Premium</div>
+              </div>
+              <div class="gallery-item">
+                  <img src="bolsas/mulherbolsa2.jpeg" alt="Modelo com Bolsa Vecchio">
+                  <div class="gallery-text">Lançamento • Tendências 2023</div>
+              </div>
+              <div class="gallery-item">
+                  <img src="bolsas/mulherbolsa3.jpeg" alt="Modelo com Bolsa Vecchio">
+                  <div class="gallery-text">Elegância • Sofisticação</div>
+              </div>
+              <div class="gallery-item">
+                  <img src="bolsas/mulherbolsa4.jpeg" alt="Modelo com Bolsa Vecchio">
+                  <div class="gallery-text">Exclusivo • Edição Limitada</div>
+              </div>
+              <div class="gallery-item">
+                  <img src="bolsas/mulherbolsa5.jpeg" alt="Modelo com Bolsa Vecchio">
+                  <div class="gallery-text">Moderno • Design Contemporâneo</div>
+              </div>
+          </div>
+      </div>
+  </section>
+<!-- Galeria de Slides -->
+<section id="colecao" class="py-20 bg-gray-100">
+  <div class="container mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center mb-12">Nossa Coleção</h2>
+      <div class="swiper">
+          <div class="swiper-wrapper">
+              <!-- Slide 1 -->
+              <div class="swiper-slide">
+                  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="relative">
+                      <!-- Imagem da bolsa -->
+                      <img src="bolsas/bolsa1.jpg" alt="Bolsas Vecchio" class="w-full h-auto object-cover">
+                      
+                      <div class="absolute inset-x-0 bottom-0 bg-black bg-opacity-70 flex items-center justify-center py-4">
+                          <a href="#" class="btn-luxury-dark">Comprar Agora</a>
+                      </div>
+                  </div>
+                      <div class="relative">
+                          <img src="bolsas/bolsa2.jpg" alt="Bolsas Vecchio" class="w-full h-auto object-cover">
+                          <div class="absolute inset-x-0 bottom-0 bg-black bg-opacity-70 flex items-center justify-center py-4">
+                            <a href="#" class="btn-luxury-dark">Comprar Agora</a>
+                        </div>
+                      </div>
+                      <div class="relative">
+                          <img src="bolsas/bolsa3.jpg" alt="Bolsas Vecchio" class="w-full h-auto object-cover">
+                          <div class="absolute inset-x-0 bottom-0 bg-black bg-opacity-70 flex items-center justify-center py-4">
+                            <a href="#" class="btn-luxury-dark">Comprar Agora</a>
+                        </div>
+                      </div>
+                      <div class="relative">
+                          <img src="bolsas/bolsa4.jpg" alt="Bolsas Vecchio" class="w-full h-auto object-cover">
+                          <div class="absolute inset-x-0 bottom-0 bg-black bg-opacity-70 flex items-center justify-center py-4">
+                            <a href="#" class="btn-luxury-dark">Comprar Agora</a>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- Botões de navegação -->
+          <div class="swiper-button-next text-gold"></div>
+          <div class="swiper-button-prev text-gold"></div>
+          <!-- Paginação -->
+          <div class="swiper-pagination"></div>
+      </div>
+  </div>
+</section>
+
+    <!-- Sobre Nós -->
+    <section id="sobre" class="container mx-auto px-6 py-20">
+        <div class="text-center max-w-2xl mx-auto">
+            <h2 class="text-4xl font-bold mb-6">Sobre Nós</h2>
+            <p class="text-lg mb-6">VECCHIO BOLSAS é uma marca jovem, inovadora, focada em um só conceito: Você, mulher de bom gosto e requinte! Projetada e produzida por profissionais extremamente competentes, com vários anos de atuação em empresas de alta moda no âmbito nacional e internacional.</p>
+            <p class="text-lg">VECCHIO BOLSAS se consolida rapidamente no mercado por oferecer produtos de extremo bom gosto, sofisticação, qualidade e com preço justo em uma linha totalmente de couro e materiais de primeira qualidade.</p>
+        </div>
+    </section>
+
+    <!-- Seja Revendedor -->
+    <section id="revendedor" class="bg-black text-white py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-6">Seja um Revendedor</h2>
+            <p class="text-lg mb-8 max-w-2xl mx-auto">Para ser nossa consultora revendedora VECCHIO BOLSAS, clique aqui e preencha o cadastro. Não esqueça de marcar o campo REVENDEDORA e baixe nosso catálogo virtual, onde constará a foto da bolsa e sua descrição com referência. Entraremos em contato o mais rápido possível.</p>
+            <a href="#" class="btn-luxury">Seja Consultora Revendedora</a>
+        </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12">Depoimentos</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-lg text-center transform hover:scale-105 transition duration-300">
+                    <img src="https://placehold.co/80x80" alt="Cliente 1" class="w-20 h-20 rounded-full mx-auto mb-4">
+                    <p class="text-gray-600 italic">"As bolsas da Vecchio são incríveis! Qualidade impecável e design sofisticado."</p>
+                    <h5 class="text-xl font-bold mt-4">Maria Silva</h5>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg text-center transform hover:scale-105 transition duration-300">
+                    <img src="https://placehold.co/80x80" alt="Cliente 2" class="w-20 h-20 rounded-full mx-auto mb-4">
+                    <p class="text-gray-600 italic">"Adorei o atendimento e a rapidez na entrega. Recomendo a todos!"</p>
+                    <h5 class="text-xl font-bold mt-4">Ana Souza</h5>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg text-center transform hover:scale-105 transition duration-300">
+                    <img src="https://placehold.co/80x80" alt="Cliente 3" class="w-20 h-20 rounded-full mx-auto mb-4">
+                    <p class="text-gray-600 italic">"Produtos de alta qualidade e preço justo. Vale cada centavo!"</p>
+                    <h5 class="text-xl font-bold mt-4">Carlos Mendes</h5>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12">Contate-nos</h2>
+            <form class="max-w-2xl mx-auto">
+                <div class="mb-6">
+                    <label class="block text-lg font-semibold mb-2">Nome</label>
+                    <input type="text" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:border-gold">
+                </div>
+                <div class="mb-6">
+                    <label class="block text-lg font-semibold mb-2">Email</label>
+                    <input type="email" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:border-gold">
+                </div>
+                <div class="mb-6">
+                    <label class="block text-lg font-semibold mb-2">Mensagem</label>
+                    <textarea class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:border-gold" rows="4"></textarea>
+                </div>
+                <button type="submit" class="btn-luxury">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+<!-- Footer -->
+<footer class="bg-black text-white py-12">
+  <div class="container mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Informações de Contato -->
+          <div class="text-center md:text-left">
+              <p class="text-lg mb-4"><i class="fas fa-phone"></i> Telefone: 051 99573-4055</p>
+              <p class="text-lg mb-4"><i class="fas fa-envelope"></i> E-mail: contato@vecchiobolsas.com.br</p>
+              <p class="text-lg mb-8"><i class="fas fa-map-marker-alt"></i> Endereço: Av. Gen. Flores da Cunha 903, Loja 122, Vila Eunice Velha, Cachoeirinha - RS</p>
+              <div class="flex justify-center md:justify-start space-x-6">
+                  <a href="#" class="text-gold hover:text-gold-dark"><i class="fab fa-whatsapp text-2xl"></i></a>
+                  <a href="#" class="text-gold hover:text-gold-dark"><i class="fab fa-facebook text-2xl"></i></a>
+                  <a href="#" class="text-gold hover:text-gold-dark"><i class="fab fa-instagram text-2xl"></i></a>
+              </div>
+          </div>
+
+          <!-- Mapa do Google Maps -->
+          <div class="flex items-center justify-center">
+              <div style="max-width:100%;overflow:hidden;color:red;width:100%;height:300px;">
+                  <div id="embedded-map-display" style="height:100%; width:100%;max-width:100%;">
+                      <iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=Av.+Gen.+Flores+da+Cunha,+903+-+loja+122+-+Vila+Eunice+Nova,+Cachoeirinha+-+RS,+Brasil&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
+                  </div>
+                  <a class="googlemaps-made" rel="nofollow" href="https://www.bootstrapskins.com/themes" id="make-map-data">premium bootstrap themes</a>
+                  <style>#embedded-map-display .text-marker{}.map-generator{max-width: 100%; max-height: 100%; background: none;}</style>
+              </div>
+          </div>
+      </div>
+  </div>
+</footer>
+
+    <!-- Botão do WhatsApp -->
+    <a href="https://wa.me/5551995734055" class="fixed bottom-8 right-8 bg-gold text-white p-4 rounded-full shadow-lg hover:bg-gold-dark transition duration-300">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    
+    <script>
+        // Inicializa o Swiper
+        const swiper = new Swiper('.swiper', {
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+
+        // Menu Hamburger
+        const menuButton = document.getElementById('menuButton');
+        const menuSidebar = document.getElementById('menuSidebar');
+        const menuOverlay = document.getElementById('menuOverlay');
+        const closeMenu = document.getElementById('closeMenu');
+
+        menuButton.addEventListener('click', () => {
+            menuSidebar.classList.remove('translate-x-full');
+            menuOverlay.classList.remove('hidden');
+        });
+
+        closeMenu.addEventListener('click', () => {
+            menuSidebar.classList.add('translate-x-full');
+            menuOverlay.classList.add('hidden');
+        });
+
+        menuOverlay.addEventListener('click', () => {
+            menuSidebar.classList.add('translate-x-full');
+            menuOverlay.classList.add('hidden');
+        });
+
+                // Scroll Suave
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lucas Soares - Desenvolvedor Web & Especialista em Estratégias Digitais</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <!-- Importando a fonte Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -16,9 +16,17 @@
 
         /* Gradiente animado */
         @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         .animated-gradient {
@@ -56,7 +64,8 @@
                 color: #6d28d9;
             }
 
-            header, footer {
+            header,
+            footer {
                 background-color: #111827;
                 color: #f3f4f6;
             }
@@ -91,7 +100,8 @@
                 color: #6d28d9;
             }
 
-            header, footer {
+            header,
+            footer {
                 background-color: white;
                 color: #374151;
             }
@@ -99,13 +109,25 @@
 
         /* Efeito de digitação */
         @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
         }
 
         @keyframes blink-cursor {
-            from, to { border-color: transparent; }
-            50% { border-color: #7c3aed; }
+
+            from,
+            to {
+                border-color: transparent;
+            }
+
+            50% {
+                border-color: #7c3aed;
+            }
         }
 
         .typing-effect {
@@ -194,7 +216,7 @@
                 grid-template-columns: 1fr;
             }
 
-            .space-y-6 > * + * {
+            .space-y-6>*+* {
                 margin-top: 1.5rem;
             }
 
@@ -203,13 +225,18 @@
                 padding-right: 1rem;
             }
         }
+
         .highlight {
-            background-color: rgba(124, 58, 237, 0.2); /* Fundo roxo claro */
+            background-color: rgba(124, 58, 237, 0.2);
+            /* Fundo roxo claro */
             padding: 2px 4px;
             border-radius: 4px;
-            font-weight: 600; /* Texto em negrito */
-            color: #7c3aed; /* Cor do texto roxo */
+            font-weight: 600;
+            /* Texto em negrito */
+            color: #7c3aed;
+            /* Cor do texto roxo */
         }
+
         .badge {
             display: inline-block;
             padding: 4px 8px;
@@ -218,247 +245,515 @@
             font-weight: 600;
             text-transform: uppercase;
         }
-        
+
         .badge.beginner {
-            background-color: rgba(59, 130, 246, 0.2); /* Azul claro */
-            color: #3b82f6; /* Azul */
+            background-color: rgba(59, 130, 246, 0.2);
+            /* Azul claro */
+            color: #3b82f6;
+            /* Azul */
         }
-        
+
         .badge.intermediate {
-            background-color: rgba(234, 179, 8, 0.2); /* Amarelo claro */
-            color: #ca8a04; /* Amarelo */
+            background-color: rgba(234, 179, 8, 0.2);
+            /* Amarelo claro */
+            color: #ca8a04;
+            /* Amarelo */
         }
-        
+
         .badge.advanced {
-            background-color: rgba(34, 197, 94, 0.2); /* Verde claro */
-            color: #16a34a; /* Verde */
+            background-color: rgba(34, 197, 94, 0.2);
+            /* Verde claro */
+            color: #16a34a;
+            /* Verde */
         }
     </style>
 </head>
+
 <body>
-    <header class="text-center py-10 animated-gradient text-white">
-        <h1 class="text-4xl font-bold mb-4">
-            <span class="typing-effect">Lucas Soares</span>
-        </h1>
-        <p class="text-lg">Desenvolvedor Web & Especialista em Estratégias Digitais</p>
-        <div class="mt-6 flex justify-center space-x-4">
-            <a href="mailto:lucasmarcelo93@gmail.com" class="btn">E-mail</a>
-            <a href="https://www.linkedin.com/in/lucas-soares93/" class="btn">LinkedIn</a>
-            <a href="https://www.instagram.com/lucasmsoares_luck/" class="btn">Instagram</a>
-            <a href="https://wa.me/+5551999930495" class="btn">WhatsApp</a>
+    <!-- Menu Flutuante -->
+    <nav class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 shadow-md z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="text-lg font-semibold">Luck Developer | <small>Programação e Marketing</small></div>
+
+            <!-- Menu de Hambúrguer para Mobile -->
+            <button id="menu-toggle" class="block md:hidden focus:outline-none">
+                <svg class="w-6 h-6 text-gray-800 dark:text-white" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
+            </button>
+
+            <!-- Menu Principal -->
+            <ul id="menu" class="hidden md:flex space-x-6">
+                <li><a href="#resumo" class="hover:text-purple-500">Resumo</a></li>
+                <li><a href="#competencias" class="hover:text-purple-500">Competências</a></li>
+                <li><a href="#experiencia" class="hover:text-purple-500">Experiência</a></li>
+                <li><a href="#freelancer" class="hover:text-purple-500">Freelancer</a></li>
+            </ul>
+        </div>
+
+        <!-- Menu Mobile (Expandido) -->
+        <div id="mobile-menu" class="md:hidden hidden">
+            <ul class="bg-white dark:bg-gray-800 px-4 py-2">
+                <li><a href="#resumo" class="block py-2 hover:text-purple-500">Resumo</a></li>
+                <li><a href="#competencias" class="block py-2 hover:text-purple-500">Competências</a></li>
+                <li><a href="#experiencia" class="block py-2 hover:text-purple-500">Experiência</a></li>
+                <li><a href="#freelancer" class="block py-2 hover:text-purple-500">Freelancer</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Script para Alternar o Menu Mobile -->
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+    <!-- Cabeçalho -->
+    <header id="resumo" class="text-center py-20 animated-gradient text-white">
+        <div class="container mx-auto px-4">
+            <!-- Foto de Perfil -->
+            <div class="flex justify-center mb-6">
+                <img src="profile.png" alt="Lucas Soares"
+                    class="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-white shadow-lg">
+            </div>
+
+            <!-- Título e Descrição -->
+            <h1 class="text-4xl font-bold mb-4">
+                <span class="typing-effect">Lucas Soares</span>
+            </h1>
+            <p class="text-lg">Desenvolvedor Web & Especialista em Estratégias Digitais</p>
+
+            <!-- Links de Contato -->
+            <div class="mt-6 flex justify-center space-x-4">
+                <a href="mailto:lucasmarcelo93@gmail.com" class="btn">E-mail</a>
+                <a href="https://www.linkedin.com/in/lucas-soares93/" class="btn">LinkedIn</a>
+                <a href="https://www.instagram.com/lucasmsoares_luck/" class="btn">Instagram</a>
+            </div>
         </div>
     </header>
+    <!-- Tabs de Navegação -->
+    <div class="container mx-auto px-4 mt-8">
+        <div class="flex justify-center space-x-4 border-b border-gray-200 dark:border-gray-700">
+            <button id="tab-perfil"
+                class="tab-button active py-2 px-4 text-lg font-semibold text-purple-500 border-b-2 border-purple-500 cursor-pointer">
+                Meu Perfil
+            </button>
+            <button id="tab-servicos"
+                class="tab-button py-2 px-4 text-lg font-semibold text-gray-500 dark:text-gray-400 hover:text-purple-500 cursor-pointer">
+                Meus Serviços
+            </button>
+        </div>
+    </div>
+    <!-- Conteúdo do Perfil -->
+    <div id="conteudo-perfil" class="tab-content">
+        <!-- Seção Resumo -->
+        <section class="container mx-auto px-4 py-8">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-2xl font-semibold mb-4">Resumo</h2>
+                <p class="text-base leading-relaxed">
+                    Graduado em Análise e Desenvolvimento de Sistemas e Técnico em Publicidade e Propaganda, com
+                    experiência
+                    em <span class="highlight">desenvolvimento web</span>, infraestrutura de redes, administração de
+                    servidores e estratégias de <span class="highlight">vendas</span>. Atuação sólida em back-end,
+                    front-end, DevOps e marketing digital, com foco em soluções personalizadas para aumentar conversões
+                    e
+                    engajamento.
+                </p>
+                <ul class="list-disc list-inside mt-4 text-base">
+                    <li>✅ Desenvolvimento de APIs e sistemas personalizados</li>
+                    <li>✅ Gestão de servidores Windows, Linux e Cloud</li>
+                    <li>✅ DevOps e automação de processos</li>
+                    <li>✅ SEO, marketing digital e branding, criação de landing pages de alta conversão</li>
+                    <li>✅ Integração de APIs e soluções escaláveis</li>
+                    <li>✅ Criação de interfaces web modernas</li>
+                    <li>✅ Estratégias de vendas e atendimento ao cliente</li>
+                    <li>✅ Desenvolvimento de funis de conversão e automação de vendas</li>
+                </ul>
+                <p class="mt-4 text-base leading-relaxed">
+                    Apaixonado por <span class="highlight">tecnologia</span> e marketing, iniciei minha trajetória
+                    explorando códigos, criando servidores e desenvolvendo soluções digitais que impactam negócios.
+                    Autodidata, analítico e focado em resultados, tenho habilidades em negociação, fidelização de
+                    clientes e
+                    otimização de processos comerciais para potencializar vendas e ampliar a presença digital das
+                    marcas.
+                    Além da <span class="highlight">tecnologia</span>, sou apaixonado por <span
+                        class="highlight">carros</span> desde criança, quando passava horas jogando Gran Turismo 2,
+                    desenvolvendo um olhar atento para detalhes, desempenho e inovação no setor automotivo.
+                </p>
+            </div>
+        </section>
 
-    <section class="container mx-auto px-4 py-8">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-2xl font-semibold mb-4">Resumo</h2>
-            <p class="text-base leading-relaxed">
-                Graduado em Análise e Desenvolvimento de Sistemas e Técnico em Publicidade e Propaganda, com experiência em <span class="highlight">desenvolvimento web</span>, infraestrutura de redes, administração de servidores e estratégias de <span class="highlight">vendas</span>. Atuação sólida em back-end, front-end, DevOps e marketing digital, com foco em soluções personalizadas para aumentar conversões e engajamento.
+        <!-- Seção Competências -->
+        <section id="competencias" class="py-8">
+            <div class="container mx-auto px-4">
+                <h2 class="text-2xl font-semibold text-center mb-6">Principais Competências</h2>
+                <div class="grid grid-cols-1 gap-4 max-w-6xl mx-auto">
+                    <!-- Competências de Vendas e Negociação -->
+                    <div class="card p-4 bg-purple-50 dark:bg-purple-900">
+                        <div class="flex items-center">
+                            <h3 class="text-lg font-semibold">Gestão em Vendas</h3>
+                            <span class="badge advanced ml-2">Advanced</span>
+                        </div>
+                        <p class="mt-2 text-sm">Desenvolvimento de estratégias de vendas, funis de conversão e automação
+                            de
+                            processos comerciais.</p>
+                        <ul class="list-disc list-inside mt-2 text-sm">
+                            <li>Análise de mercado e prospecção de clientes.</li>
+                            <li>Gestão de equipes comerciais.</li>
+                            <li>Automação de processos de vendas.</li>
+                        </ul>
+                    </div>
+                    <div class="card p-4 bg-purple-50 dark:bg-purple-900">
+                        <div class="flex items-center">
+                            <h3 class="text-lg font-semibold">Negociação</h3>
+                            <span class="badge intermediate ml-2">Intermediate</span>
+                        </div>
+                        <p class="mt-2 text-sm">Habilidades em negociação, fidelização de clientes e resolução de
+                            conflitos.
+                        </p>
+                        <ul class="list-disc list-inside mt-2 text-sm">
+                            <li>Fidelização de clientes e pós-venda.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Atendimento ao Cliente -->
+                    <div class="card p-4">
+                        <div class="flex items-center">
+                            <h3 class="text-lg font-semibold">Atendimento ao Cliente</h3>
+                            <span class="badge advanced ml-2">Advanced</span>
+                        </div>
+                        <p class="mt-2 text-sm">Experiência em atendimento ao cliente e suporte técnico.</p>
+                        <ul class="list-disc list-inside mt-2 text-sm">
+                            <li>Resolução de problemas e suporte técnico.</li>
+                            <li>Atendimento humanizado e focado na experiência do cliente.</li>
+                            <li>Utilização de sistemas de CRM para gestão de clientes.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Competências Técnicas -->
+                    <div class="card p-4">
+                        <div class="flex items-center">
+                            <h3 class="text-lg font-semibold">Node.js</h3>
+                            <span class="badge beginner ml-2">Beginner</span>
+                        </div>
+                        <p class="mt-2 text-sm">Desenvolvimento de APIs escaláveis com Node.js.</p>
+                    </div>
+                    <div class="card p-4">
+                        <div class="flex items-center">
+                            <h3 class="text-lg font-semibold">Next.js</h3>
+                            <span class="badge beginner ml-2">Beginner</span>
+                        </div>
+                        <p class="mt-2 text-sm">Desenvolvimento de interfaces modernas com Next.js.</p>
+                    </div>
+                    <div class="card p-4">
+                        <div class="flex items-center">
+                            <h3 class="text-lg font-semibold">PHP</h3>
+                            <span class="badge advanced ml-2">Advanced</span>
+                        </div>
+                        <p class="mt-2 text-sm">Desenvolvimento de sistemas personalizados em PHP.</p>
+                    </div>
+                    <div class="card p-4">
+                        <div class="flex items-center">
+                            <h3 class="text-lg font-semibold">JavaScript</h3>
+                            <span class="badge advanced ml-2">Advanced</span>
+                        </div>
+                        <p class="mt-2 text-sm">Criação de interfaces interativas com JavaScript.</p>
+                    </div>
+                    <div class="card p-4">
+                        <div class="flex items-center">
+                            <h3 class="text-lg font-semibold">HTML5</h3>
+                            <span class="badge advanced ml-2">Advanced</span>
+                        </div>
+                        <p class="mt-2 text-sm">Desenvolvimento de landing pages modernas com HTML5.</p>
+                    </div>
+                    <div class="card p-4">
+                        <div class="flex items-center">
+                            <h3 class="text-lg font-semibold">CSS3</h3>
+                            <span class="badge advanced ml-2">Advanced</span>
+                        </div>
+                        <p class="mt-2 text-sm">Estilização avançada de interfaces com CSS3.</p>
+                    </div>
+                    <div class="card p-4">
+                        <div class="flex items-center">
+                            <h3 class="text-lg font-semibold">WordPress</h3>
+                            <span class="badge intermediate ml-2">Intermediate</span>
+                        </div>
+                        <p class="mt-2 text-sm">Desenvolvimento e customização de temas e plugins.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Experiência Profissional -->
+        <section id="experiencia" class="container mx-auto px-4 py-8">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-2xl font-semibold mb-4">Experiência Profissional</h2>
+                <div class="space-y-4">
+                    <div class="card p-4">
+                        <h3 class="text-lg font-bold">Wisão - Marketing Digital</h3>
+                        <p class="text-sm">Web Developer Full Stack | Dezembro de 2024 - Presente</p>
+                        <ul class="list-disc list-inside mt-2 text-sm">
+                            <li>Desenvolvimento de APIs e integrações em APIs em geral (PHP, Node.js, JS).</li>
+                            <li>Criação de interfaces modernas com JavaScript, CSS e Next.js.</li>
+                            <li>Desenvolvimento de aplicativos híbridos utilizando React Native.</li>
+                        </ul>
+                    </div>
+                    <div class="card p-4">
+                        <h3 class="text-lg font-bold">Supermercados Guarapari</h3>
+                        <p class="text-sm">Analista de Sistemas de TI | Janeiro de 2021 - Novembro de 2024</p>
+                        <ul class="list-disc list-inside mt-2 text-sm">
+                            <li>Desenvolvimento de soluções personalizadas em PHP, Python e C#.</li>
+                            <li>Administração de servidores Windows e Linux.</li>
+                            <li>Gestão de redes e infraestrutura de TI.</li>
+                        </ul>
+                    </div>
+                    <div class="card p-4">
+                        <h3 class="text-lg font-bold">Join-TI</h3>
+                        <p class="text-sm">PHP Developer Junior | Abril de 2013 - Janeiro de 2014</p>
+                        <ul class="list-disc list-inside mt-2 text-sm">
+                            <li>Desenvolvimento e manutenção de sistemas PHP.</li>
+                            <li>Implementação de metodologias ágeis.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Formação Acadêmica -->
+        <section class="py-8">
+            <div class="container mx-auto px-4">
+                <h2 class="text-2xl font-semibold text-center mb-6">Formação Acadêmica</h2>
+                <div class="max-w-4xl mx-auto space-y-4">
+                    <div class="card p-4">
+                        <h3 class="text-lg font-semibold">Senac RS</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-300">Curso Superior de Tecnologia em Análise e
+                            Desenvolvimento de Sistemas | Março de 2016 - Dezembro de 2021</p>
+                    </div>
+                    <div class="card p-4">
+                        <h3 class="text-lg font-semibold">Escola Técnica Estadual Irmão Pedro</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-300">Técnico em Publicidade e Propaganda | 2016 -
+                            2017</p>
+                    </div>
+                    <div class="card p-4">
+                        <h3 class="text-lg font-semibold">Objetus</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-300">Técnico em Informática | 2010 - 2011</p>
+                    </div>
+                    <div class="card p-4">
+                        <h3 class="text-lg font-semibold">AGAS</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-300">Gestão em Supermercados | Abril de 2023 -
+                            Dezembro de 2023</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Certificações -->
+        <section class="container mx-auto px-4 py-8">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-2xl font-semibold mb-4">Certificações</h2>
+                <div class="space-y-4">
+                    <div class="card p-4">
+                        <h3 class="text-lg font-semibold">JavaScript: Orientação a Objetos</h3>
+                        <a href="https://cursos.alura.com.br/user/lucasmarcelo93/course/javascritpt-orientacao-objetos/certificate"
+                            target="_blank" class="link">Ver Certificado</a>
+                    </div>
+                    <div class="card p-4">
+                        <h3 class="text-lg font-semibold">Git e GitHub: Branching, Conflitos e Pull Requests</h3>
+                        <a href="https://cursos.alura.com.br/user/lucasmarcelo93/course/git-github-branching-conflitos-pull-requests/certificate"
+                            target="_blank" class="link">Ver Certificado</a>
+                    </div>
+                    <div class="card p-4">
+                        <h3 class="text-lg font-semibold">Python: Introdução à Linguagem</h3>
+                        <a href="https://cursos.alura.com.br/user/lucasmarcelo93/course/python-introducao-a-linguagem/certificate"
+                            target="_blank" class="link">Ver Certificado</a>
+                    </div>
+                    <div class="card p-4">
+                        <h3 class="text-lg font-semibold">Segurança de Redes: Conheça as Vulnerabilidades de Servidores
+                            e
+                            Clientes</h3>
+                        <a href="https://cursos.alura.com.br/user/lucasmarcelo93/course/seguranca-redes/certificate"
+                            target="_blank" class="link">Ver Certificado</a>
+                    </div>
+                    <div class="card p-4">
+                        <h3 class="text-lg font-semibold">Flexbox: Posicione Elementos na Tela</h3>
+                        <a href="https://cursos.alura.com.br/user/lucasmarcelo93/course/posicione-elementos-com-flexbox/certificate"
+                            target="_blank" class="link">Ver Certificado</a>
+                    </div>
+                    <div class="card p-4">
+                        <h3 class="text-lg font-semibold">Laravel: Produtividade no Desenvolvimento Web</h3>
+                        <a href="https://cursos.alura.com.br/user/lucasmarcelo93/course/laravel-produtividade-desenvolvimento-web/certificate"
+                            target="_blank" class="link">Ver Certificado</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- Conteúdo dos Serviços -->
+    <div id="conteudo-servicos" class="tab-content hidden opacity-0 transition-opacity duration-500">
+        <section class="max-w-6xl mx-auto mt-12">
+            <h2 class="text-2xl  text-center font-semibold mb-4">Meus Serviços</h2>
+            <p class="text-lg text-center text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                Ofereço serviços de desenvolvimento web e estratégias digitais para impulsionar o seu negócio. Com
+                soluções personalizadas e foco em resultados, ajudo empresas a alcançarem seus objetivos de forma
+                eficiente e criativa.
             </p>
-            <ul class="list-disc list-inside mt-4 text-base">
-                <li>✅ Desenvolvimento de APIs e sistemas personalizados</li>
-                <li>✅ Gestão de servidores Windows, Linux e Cloud</li>
-                <li>✅ DevOps e automação de processos</li>
-                <li>✅ SEO, marketing digital e branding, criação de landing pages de alta conversão</li>
-                <li>✅ Integração de APIs e soluções escaláveis</li>
-                <li>✅ Criação de interfaces web modernas</li>
-                <li>✅ Estratégias de vendas e atendimento ao cliente</li>
-                <li>✅ Desenvolvimento de funis de conversão e automação de vendas</li>
-            </ul>
-            <p class="mt-4 text-base leading-relaxed">
-                Apaixonado por <span class="highlight">tecnologia</span> e marketing, iniciei minha trajetória explorando códigos, criando servidores e desenvolvendo soluções digitais que impactam negócios. Autodidata, analítico e focado em resultados, tenho habilidades em negociação, fidelização de clientes e otimização de processos comerciais para potencializar vendas e ampliar a presença digital das marcas. Além da <span class="highlight">tecnologia</span>, sou apaixonado por <span class="highlight">carros</span> desde criança, quando passava horas jogando Gran Turismo 2, desenvolvendo um olhar atento para detalhes, desempenho e inovação no setor automotivo.
-            </p>
-        </div>
-    </section>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+                <!-- Landing Pages Personalizadas -->
+                <div
+                    class="card p-6 bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="text-purple-500 dark:text-purple-400 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Landing Pages Personalizadas</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Páginas otimizadas para conversão, ideais para campanhas
+                        de marketing e captura de leads.</p>
+                </div>
 
-    <section class="py-8">
-        <div class="container mx-auto px-4">
-            <h2 class="text-2xl font-semibold text-center mb-6">Principais Competências</h2>
-            <div class="grid grid-cols-1 gap-4 max-w-6xl mx-auto">
-                <!-- Competências de Vendas e Negociação -->
-                <div class="card p-4 bg-purple-50 dark:bg-purple-900">
-                    <div class="flex items-center">
-                        <h3 class="text-lg font-semibold">Gestão em Vendas</h3>
-                        <span class="badge advanced ml-2">Advanced</span>
+                <!-- Hotsites -->
+                <div
+                    class="card p-6 bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="text-purple-500 dark:text-purple-400 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
                     </div>
-                    <p class="mt-2 text-sm">Desenvolvimento de estratégias de vendas, funis de conversão e automação de processos comerciais.</p>
-                    <ul class="list-disc list-inside mt-2 text-sm">
-                        <li>Análise de mercado e prospecção de clientes.</li>
-                        <li>Gestão de equipes comerciais.</li>
-                        <li>Automação de processos de vendas.</li>
-                    </ul>
+                    <h3 class="text-xl font-semibold mb-2">Hotsites</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Sites temporários para promoções, lançamentos e eventos
+                        especiais.</p>
                 </div>
-                <div class="card p-4 bg-purple-50 dark:bg-purple-900">
-                    <div class="flex items-center">
-                        <h3 class="text-lg font-semibold">Negociação</h3>
-                        <span class="badge intermediate ml-2">Intermediate</span>
-                    </div>
-                    <p class="mt-2 text-sm">Habilidades em negociação, fidelização de clientes e resolução de conflitos.</p>
-                    <ul class="list-disc list-inside mt-2 text-sm">
-                        <li>Fidelização de clientes e pós-venda.</li>
-                    </ul>
-                </div>
-    
-                <!-- Atendimento ao Cliente -->
-                <div class="card p-4">
-                    <div class="flex items-center">
-                        <h3 class="text-lg font-semibold">Atendimento ao Cliente</h3>
-                        <span class="badge advanced ml-2">Advanced</span>
-                    </div>
-                    <p class="mt-2 text-sm">Experiência em atendimento ao cliente e suporte técnico.</p>
-                    <ul class="list-disc list-inside mt-2 text-sm">
-                        <li>Resolução de problemas e suporte técnico.</li>
-                        <li>Atendimento humanizado e focado na experiência do cliente.</li>
-                        <li>Utilização de sistemas de CRM para gestão de clientes.</li>
-                    </ul>
-                </div>
-    
-                <!-- Competências Técnicas -->
-                <div class="card p-4">
-                    <div class="flex items-center">
-                        <h3 class="text-lg font-semibold">Node.js</h3>
-                        <span class="badge beginner ml-2">Beginner</span>
-                    </div>
-                    <p class="mt-2 text-sm">Desenvolvimento de APIs escaláveis com Node.js.</p>
-                </div>
-                <div class="card p-4">
-                    <div class="flex items-center">
-                        <h3 class="text-lg font-semibold">Next.js</h3>
-                        <span class="badge beginner ml-2">Beginner</span>
-                    </div>
-                    <p class="mt-2 text-sm">Desenvolvimento de interfaces modernas com Next.js.</p>
-                </div>
-                <div class="card p-4">
-                    <div class="flex items-center">
-                        <h3 class="text-lg font-semibold">PHP</h3>
-                        <span class="badge advanced ml-2">Advanced</span>
-                    </div>
-                    <p class="mt-2 text-sm">Desenvolvimento de sistemas personalizados em PHP.</p>
-                </div>
-                <div class="card p-4">
-                    <div class="flex items-center">
-                        <h3 class="text-lg font-semibold">JavaScript</h3>
-                        <span class="badge advanced ml-2">Advanced</span>
-                    </div>
-                    <p class="mt-2 text-sm">Criação de interfaces interativas com JavaScript.</p>
-                </div>
-                <div class="card p-4">
-                    <div class="flex items-center">
-                        <h3 class="text-lg font-semibold">HTML5</h3>
-                        <span class="badge advanced ml-2">Advanced</span>
-                    </div>
-                    <p class="mt-2 text-sm">Desenvolvimento de landing pages modernas com HTML5.</p>
-                </div>
-                <div class="card p-4">
-                    <div class="flex items-center">
-                        <h3 class="text-lg font-semibold">CSS3</h3>
-                        <span class="badge advanced ml-2">Advanced</span>
-                    </div>
-                    <p class="mt-2 text-sm">Estilização avançada de interfaces com CSS3.</p>
-                </div>
-                <div class="card p-4">
-                    <div class="flex items-center">
-                        <h3 class="text-lg font-semibold">WordPress</h3>
-                        <span class="badge intermediate ml-2">Intermediate</span>
-                    </div>
-                    <p class="mt-2 text-sm">Desenvolvimento e customização de temas e plugins.</p>
-                </div>
-            </div> <!-- Fechamento da div grid -->
-        </div>
-    </section>
 
-    <section class="container mx-auto px-4 py-8">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-2xl font-semibold mb-4">Experiência Profissional</h2>
-            <div class="space-y-4">
-                <div class="card p-4">
-                    <h3 class="text-lg font-bold">Wisão - Marketing Digital</h3>
-                    <p class="text-sm">Web Developer Full Stack | Dezembro de 2024 - Presente</p>
-                    <ul class="list-disc list-inside mt-2 text-sm">
-                        <li>Desenvolvimento de APIs e integrações em APIs em geral (PHP, Node.js, JS).</li>
-                        <li>Criação de interfaces modernas com JavaScript, CSS e Next.js.</li>
-                        <li>Desenvolvimento de aplicativos híbridos utilizando React Native.</li>
-                    </ul>
+                <!-- Sites Institucionais -->
+                <div
+                    class="card p-6 bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="text-purple-500 dark:text-purple-400 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Sites Institucionais</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Presença online profissional para sua empresa, com
+                        design moderno e funcionalidades avançadas.</p>
                 </div>
-                <div class="card p-4">
-                    <h3 class="text-lg font-bold">Supermercados Guarapari</h3>
-                    <p class="text-sm">Analista de Sistemas de TI | Janeiro de 2021 - Novembro de 2024</p>
-                    <ul class="list-disc list-inside mt-2 text-sm">
-                        <li>Desenvolvimento de soluções personalizadas em PHP, Python e C#.</li>
-                        <li>Administração de servidores Windows e Linux.</li>
-                        <li>Gestão de redes e infraestrutura de TI.</li>
-                    </ul>
+
+                <!-- Blogs -->
+                <div
+                    class="card p-6 bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="text-purple-500 dark:text-purple-400 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Blogs</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Plataformas para compartilhamento de conteúdo,
+                        engajamento e construção de autoridade.</p>
                 </div>
-                <div class="card p-4">
-                    <h3 class="text-lg font-bold">Join-TI</h3>
-                    <p class="text-sm">PHP Developer Junior | Abril de 2013 - Janeiro de 2014</p>
-                    <ul class="list-disc list-inside mt-2 text-sm">
-                        <li>Desenvolvimento e manutenção de sistemas PHP.</li>
-                        <li>Implementação de metodologias ágeis.</li>
-                    </ul>
+
+                <!-- Apps -->
+                <div
+                    class="card p-6 bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="text-purple-500 dark:text-purple-400 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Apps</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Desenvolvimento de aplicativos web e mobile para atender
+                        às necessidades do seu negócio.</p>
+                </div>
+
+                <!-- Estratégias Digitais -->
+                <div
+                    class="card p-6 bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="text-purple-500 dark:text-purple-400 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Estratégias Digitais</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Planejamento e execução de estratégias de marketing
+                        digital para aumentar a visibilidade e as vendas.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
+    </div>
+    <!-- Botão do WhatsApp -->
+    <a href="https://wa.me/5551999930495" target="_blank"
+        class="fixed bottom-6 right-6 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition-all z-50">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+            class="w-6 h-6">
+            <path
+                d="M19.077 4.928C17.191 3.041 14.683 2 12 2 6.486 2 2 6.486 2 12c0 1.958.514 3.794 1.411 5.388L2 22l4.612-1.411C8.206 21.486 10.042 22 12 22c5.514 0 10-4.486 10-10 0-2.683-1.041-5.191-2.923-7.072zm-7.077 12.072c-2.757 0-5-2.243-5-5s2.243-5 5-5 5 2.243 5 5-2.243 5-5 5z" />
+        </svg>
+    </a>
 
-    <section class="py-8">
-        <div class="container mx-auto px-4">
-            <h2 class="text-2xl font-semibold text-center mb-6">Formação Acadêmica</h2>
-            <div class="max-w-4xl mx-auto space-y-4">
-                <div class="card p-4">
-                    <h3 class="text-lg font-semibold">Senac RS</h3>
-                    <p class="text-sm text-gray-600 dark:text-gray-300">Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas | Março de 2016 - Dezembro de 2021</p>
-                </div>
-                <div class="card p-4">
-                    <h3 class="text-lg font-semibold">Escola Técnica Estadual Irmão Pedro</h3>
-                    <p class="text-sm text-gray-600 dark:text-gray-300">Técnico em Publicidade e Propaganda | 2016 - 2017</p>
-                </div>
-                <div class="card p-4">
-                    <h3 class="text-lg font-semibold">Objetus</h3>
-                    <p class="text-sm text-gray-600 dark:text-gray-300">Técnico em Informática | 2010 - 2011</p>
-                </div>
-                <div class="card p-4">
-                    <h3 class="text-lg font-semibold">AGAS</h3>
-                    <p class="text-sm text-gray-600 dark:text-gray-300">Gestão em Supermercados | Abril de 2023 - Dezembro de 2023</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="container mx-auto px-4 py-8">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-2xl font-semibold mb-4">Certificações</h2>
-            <div class="space-y-4">
-                <div class="card p-4">
-                    <h3 class="text-lg font-semibold">JavaScript: Orientação a Objetos</h3>
-                    <a href="https://cursos.alura.com.br/user/lucasmarcelo93/course/javascritpt-orientacao-objetos/certificate" target="_blank" class="link">Ver Certificado</a>
-                </div>
-                <div class="card p-4">
-                    <h3 class="text-lg font-semibold">Git e GitHub: Branching, Conflitos e Pull Requests</h3>
-                    <a href="https://cursos.alura.com.br/user/lucasmarcelo93/course/git-github-branching-conflitos-pull-requests/certificate" target="_blank" class="link">Ver Certificado</a>
-                </div>
-                <div class="card p-4">
-                    <h3 class="text-lg font-semibold">Python: Introdução à Linguagem</h3>
-                    <a href="https://cursos.alura.com.br/user/lucasmarcelo93/course/python-introducao-a-linguagem/certificate" target="_blank" class="link">Ver Certificado</a>
-                </div>
-                <div class="card p-4">
-                    <h3 class="text-lg font-semibold">Segurança de Redes: Conheça as Vulnerabilidades de Servidores e Clientes</h3>
-                    <a href="https://cursos.alura.com.br/user/lucasmarcelo93/course/seguranca-redes/certificate" target="_blank" class="link">Ver Certificado</a>
-                </div>
-                <div class="card p-4">
-                    <h3 class="text-lg font-semibold">Flexbox: Posicione Elementos na Tela</h3>
-                    <a href="https://cursos.alura.com.br/user/lucasmarcelo93/course/posicione-elementos-com-flexbox/certificate" target="_blank" class="link">Ver Certificado</a>
-                </div>
-                <div class="card p-4">
-                    <h3 class="text-lg font-semibold">Laravel: Produtividade no Desenvolvimento Web</h3>
-                    <a href="https://cursos.alura.com.br/user/lucasmarcelo93/course/laravel-produtividade-desenvolvimento-web/certificate" target="_blank" class="link">Ver Certificado</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    <!-- Rodapé -->
     <footer class="text-center py-4 mt-8 shadow-sm">
         <p>&copy; 2025 Lucas Soares. Todos os direitos reservados.</p>
     </footer>
+
+    <script>
+        const tabPerfil = document.getElementById('tab-perfil');
+        const tabServicos = document.getElementById('tab-servicos');
+        const conteudoPerfil = document.getElementById('conteudo-perfil');
+        const conteudoServicos = document.getElementById('conteudo-servicos');
+
+        const menuFreelancer = document.querySelector('nav a[href="#freelancer"]');
+
+        const switchToServicos = () => {
+            conteudoPerfil.classList.add('hidden');
+            conteudoServicos.classList.remove('hidden');
+            setTimeout(() => {
+                conteudoServicos.classList.remove('opacity-0');
+            }, 10); // Pequeno delay para garantir a animação
+            tabServicos.classList.add('active', 'text-purple-500', 'border-b-2', 'border-purple-500');
+            tabPerfil.classList.remove('active', 'text-purple-500', 'border-b-2', 'border-purple-500');
+            tabPerfil.classList.add('text-gray-500', 'dark:text-gray-400');
+        };
+
+        const switchToPerfil = () => {
+            conteudoServicos.classList.add('opacity-0');
+            setTimeout(() => {
+                conteudoServicos.classList.add('hidden');
+                conteudoPerfil.classList.remove('hidden');
+            }, 500); // Tempo da animação de fade
+            tabPerfil.classList.add('active', 'text-purple-500', 'border-b-2', 'border-purple-500');
+            tabServicos.classList.remove('active', 'text-purple-500', 'border-b-2', 'border-purple-500');
+            tabServicos.classList.add('text-gray-500', 'dark:text-gray-400');
+        };
+
+        tabPerfil.addEventListener('click', switchToPerfil);
+        tabServicos.addEventListener('click', switchToServicos);
+
+        // Adiciona comportamento ao link "Freelancer" no menu
+        if (menuFreelancer) {
+            menuFreelancer.addEventListener('click', (e) => {
+                e.preventDefault();
+                switchToServicos();
+                document.getElementById('freelancer').scrollIntoView({ behavior: 'smooth' });
+            });
+        }
+    </script>
 </body>
+
 </html>
