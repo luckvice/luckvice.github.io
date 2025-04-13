@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAS 360 | Agência de Marketing Digital & Branding</title>
+    <meta name="description" content="Agência de marketing digital especializada em branding, posicionamento de marca e marketing de conteúdo para empreendedores e infoprodutores. Resultados concretos para seu negócio.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cas_360.com.br/">
+    <meta property="og:title" content="CAS 360 | Agência de Marketing Digital & Branding">
+    <meta property="og:description" content="Transformamos marcas e impulsionamos negócios com estratégias digitais de alta performance.">
+    <meta property="og:image" content="https://cas_360.com.br/images/social-share.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://cas_360.com.br/">
+    <meta property="twitter:title" content="CAS 360 | Agência de Marketing Digital & Branding">
+    <meta property="twitter:description" content="Transformamos marcas e impulsionamos negócios com estratégias digitais de alta performance.">
+    <meta property="twitter:image" content="https://cas_360.com.br/images/social-share.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6CB17A',
+                        primaryDark: '#1D9C4B',
+                        dark: '#1A1A1A',
+                        darker: '#0D0D0D',
+                        light: '#F8F8F8',
+                        gray: {
+                            100: '#F5F5F5',
+                            200: '#EEEEEE',
+                            300: '#E0E0E0',
+                            400: '#BDBDBD',
+                            500: '#9E9E9E',
+                            600: '#757575',
+                            700: '#616161',
+                            800: '#424242',
+                            900: '#212121'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(108,177,122,0.1) 0%, rgba(29,156,75,0.05) 100%);
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        .testimonial-card {
+            background: linear-gradient(135deg, #1A1A1A 0%, #0D0D0D 100%);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        body {
+            background-color: #0D0D0D;
+            color: #F8F8F8;
+        }
+        .bg-gray-50 {
+            background-color: #1A1A1A;
+        }
+        .bg-white {
+            background-color: #1A1A1A;
+        }
+        .text-gray-600 {
+            color: #BDBDBD;
+        }
+        .text-gray-400 {
+            color: #9E9E9E;
+        }
+        .text-darker {
+            color: #F8F8F8;
+        }
+        .border-gray-300 {
+            border-color: #424242;
+        }
+        .bg-gray-50 {
+            background-color: #1A1A1A;
+        }
+        .bg-gray-700 {
+            background-color: #424242;
+        }
+        .border-gray-700 {
+            border-color: #424242;
+        }
+        .shadow-md {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        .shadow-lg {
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+        }
+        .shadow-xl {
+            box-shadow: 0 20px 25px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-light">
+    <!-- Header -->
+    <header class="bg-darker shadow-sm sticky top-0 z-50 border-b border-gray-800">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <a href="#" class="flex items-center">
+                  <!-- Substituição pelo logo -->
+                  <img src="logo.png" 
+                       alt="Logo CAS 360" 
+                       class="h-20 w-auto rounded-full object-cover"
+                       loading="eager">
+                  <span class="ml-3 text-xl font-bold text-light">CAS<span class="text-primary">360</span></span>
+              </a>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#servicos" class="font-medium hover:text-primary transition-colors">Serviços</a>
+                    <a href="#sobre" class="font-medium hover:text-primary transition-colors">Sobre Nós</a>
+                    <a href="#portfolio" class="font-medium hover:text-primary transition-colors">Portfólio</a>
+                    <a href="#contato" class="font-medium hover:text-primary transition-colors">Contato</a>
+                    <a href="https://instagram.com/cas_360" target="_blank" class="ml-4">
+                        <i class="fab fa-instagram text-xl hover:text-primary transition-colors"></i>
+                    </a>
+                </nav>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden focus:outline-none text-gray-400 hover:text-white" id="mobile-menu-button">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div class="md:hidden hidden pt-4" id="mobile-menu">
+                <div class="flex flex-col space-y-3">
+                    <a href="#servicos" class="block py-2 font-medium hover:text-primary transition-colors">Serviços</a>
+                    <a href="#sobre" class="block py-2 font-medium hover:text-primary transition-colors">Sobre Nós</a>
+                    <a href="#portfolio" class="block py-2 font-medium hover:text-primary transition-colors">Portfólio</a>
+                    <a href="#contato" class="block py-2 font-medium hover:text-primary transition-colors">Contato</a>
+                    <div class="pt-2">
+                        <a href="https://instagram.com/cas_360" target="_blank" class="inline-flex items-center text-primary font-medium">
+                            <i class="fab fa-instagram mr-2"></i> Siga-nos
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative py-20 md:py-32 overflow-hidden">
+      <!-- Imagem de fundo com overlay escuro -->
+      <div class="absolute inset-0 z-0">
+          <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" 
+               alt="Background hero" 
+               class="w-full h-full object-cover object-center"
+               loading="eager">
+          <div class="absolute inset-0 bg-black/80"></div>
+      </div>
+      
+      <div class="container mx-auto px-6 relative z-10">
+          <div class="flex flex-col md:flex-row items-center">
+              <div class="md:w-1/2 mb-12 md:mb-0">
+                  <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6 text-white">
+                      Sua parceria estratégica para <span class="text-primary">alavancar</span> seus negócios
+                  </h1>
+                  <p class="text-xl text-gray-300 mb-8">
+                      Transformamos marcas através de estratégias digitais inteligentes que geram resultados mensuráveis e conexões autênticas com seu público.
+                  </p>
+                  <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                      <a href="#contato" class="bg-primary hover:bg-primaryDark text-white font-semibold px-8 py-3 rounded-lg transition-colors shadow-lg text-center transform hover:scale-105 transition-transform">
+                          Fale com nossos especialistas
+                      </a>
+                      <a href="#servicos" class="border-2 border-primary text-primary font-semibold px-8 py-3 rounded-lg hover:bg-primary hover:text-white transition-colors text-center transform hover:scale-105 transition-transform">
+                          Nossos Serviços
+                      </a>
+                  </div>
+              </div>
+              <div class="md:w-1/2 flex justify-center">
+                  <div class="relative">
+                      <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                           alt="Equipe CAS 360 trabalhando" 
+                           class="rounded-lg shadow-2xl w-full max-w-md border-4 border-primary/20 transform hover:scale-102 transition-transform duration-300"
+                           loading="eager">
+                      <div class="absolute -inset-4 border-2 border-primary/30 rounded-xl z-[-1] animate-pulse-slow"></div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+      <!-- Elementos decorativos -->
+      <div class="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-darker to-transparent z-10"></div>
+  </section>
+  
+  <style>
+      .animate-pulse-slow {
+          animation: pulse 6s infinite cubic-bezier(0.4, 0, 0.6, 1);
+      }
+      .partners{width: 10rem;}
+      @keyframes pulse {
+          0%, 100% { opacity: 0.3; }
+          50% { opacity: 0.1; }
+      }
+  </style>
+
+    <!-- Clients Logos -->
+    <section class="py-12 bg-darker">
+        <div class="container mx-auto px-6">
+            <h3 class="text-center text-gray-400 mb-8">Alguns dos nossos parceiros</h3>
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-70">
+                <img src="amordemilhoes.svg" alt="Amor de milhões" class="partners" loading="lazy">
+                <img src="../vecchio/logo.png" alt="Vecchio Bolsas" class="partners" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-light">Soluções Completas para <span class="text-primary">Seu Negócio</span></h2>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+                    Oferecemos serviços integrados de marketing digital para construir, posicionar e escalar sua marca.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-dark p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 service-card border border-gray-800">
+                    <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-bullseye text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-light">Branding & Identidade Visual</h3>
+                    <p class="text-gray-400 mb-4">
+                        Desenvolvemos a personalidade da sua marca com logos, paleta de cores, tipografia e diretrizes de uso que comunicam seus valores e diferencial.
+                    </p>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                            <span>Criação de Logo Profissional</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                            <span>Manual da Marca</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                            <span>Identidade Visual Completa</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="bg-dark p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 service-card border border-gray-800">
+                    <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-ad text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-light">Gestão de Redes Sociais</h3>
+                    <p class="text-gray-400 mb-4">
+                        Estratégias personalizadas para redes sociais que aumentam seu alcance, engajamento e conversões com conteúdo relevante e planejado.
+                    </p>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                            <span>Planejamento de Conteúdo</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                            <span>Criação de Posts e Stories</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                            <span>Relatórios de Performance</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="bg-dark p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 service-card border border-gray-800">
+                    <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-laptop-code text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-light">Landing Pages & Sites</h3>
+                    <p class="text-gray-400 mb-4">
+                        Desenvolvemos sites conversores e landing pages otimizadas para gerar leads e vendas, com design moderno e experiência do usuário aprimorada.
+                    </p>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                            <span>Design Responsivo</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                            <span>Otimização para Conversão</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                            <span>Integração com Ferramentas</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="bg-dark p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 service-card border border-gray-800">
+                    <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-line text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-light">Tráfego Pago & Performance</h3>
+                    <p class="text-gray-400 mb-4">
+                        Campanhas estratégicas no Google Ads e Meta Ads (Facebook & Instagram) para atrair clientes qualificados e maximizar seu ROI.
+                    </p>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                            <span>Gestão de Campanhas</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                            <span>Otimização Contínua</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                            <span>Relatórios Detalhados</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="bg-dark p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 service-card border border-gray-800">
+                    <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-envelope-open-text text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-light">E-mail Marketing</h3>
+                    <p class="text-gray-400 mb-4">
+                        Campanhas de e-mail que nutrem seu relacionamento com clientes, aumentam o engajamento e impulsionam vendas de forma automatizada.
+                    </p>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                            <span>Criação de Sequências</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                            <span>Design de Templates</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                            <span>Automações Inteligentes</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="bg-dark p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 service-card border border-gray-800">
+                    <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-search-dollar text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-light">SEO & Conteúdo</h3>
+                    <p class="text-gray-400 mb-4">
+                        Estratégias de conteúdo e otimização para mecanismos de busca que aumentam sua visibilidade orgânica e posicionam sua marca como autoridade.
+                    </p>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                            <span>Pesquisa de Palavras-Chave</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                            <span>Criação de Conteúdo Estratégico</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                            <span>Otimização Técnica</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="py-20 bg-darker">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0 md:pr-12">
+                    <img src="profile.jpg" alt="Mylena Castilhos - CEO CAS 360" class="rounded-lg shadow-xl w-full max-w-md mx-auto" loading="lazy">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-light">Sobre a <span class="text-primary">CAS 360</span></h2>
+                    <p class="text-lg mb-6 text-gray-400">
+                        Somos uma agência que se diferencia no mercado por ser uma empresa séria, comprometida e focada em soluções e sucessos para os nossos clientes.
+                    </p>
+                    <p class="text-lg mb-6 text-gray-400">
+                        Acreditamos que o marketing deve ser feito mais do que apenas campanhas bonitas, mas sim uma ferramenta que impulsione seus negócios. Trazemos conosco o entendimento que o tempo é precioso para os nossos clientes por isso trabalhamos de forma eficiente e concisa, entregando resultados concretos.
+                    </p>
+                    <p class="text-lg mb-8 text-gray-400">
+                        Acreditamos que cada cliente é único por essa razão desenvolvemos um tratamento personalizado e estratégico que leva em consideração seus objetivos. Estamos sempre aprimorando nossas habilidades e conhecimentos, buscamos sempre estar atento as mudanças e tendencias do mercado nos destacamos no mercado pelas estratégias de nossos serviços e pelos resultados de alta performance.
+                    </p>
+                    
+                    <div class="bg-gray-900 p-6 rounded-lg border-l-4 border-primary">
+                        <div class="flex items-start">
+                            <div class="ml-4">
+                                <h4 class="text-lg font-bold text-light">Mylena Castilhos</h4>
+                                <p class="text-gray-400">CEO & Fundadora da CAS 360</p>
+                                <div class="mt-2">
+                                    <a href="https://instagram.com/cas_360" target="_blank" class="inline-flex items-center text-primary font-medium">
+                                        <i class="fab fa-instagram mr-2"></i> Acesse nosso Instagram
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-light">Cases de <span class="text-primary">Sucesso</span></h2>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+                    Alguns dos projetos que desenvolvemos e os resultados que alcançamos para nossos clientes.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Portfolio Item 1 -->
+                <div class="bg-dark rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 border border-gray-800">
+                    <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Projeto Branding" class="w-full h-48 object-cover" loading="lazy">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-light">Rebranding Completo</h3>
+                        <p class="text-gray-400 mb-4">Criação de identidade visual para marca de cosméticos naturais.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-medium text-primary">Branding</span>
+                            <a href="#" class="text-primary hover:text-primaryDark font-medium">Ver detalhes →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 2 -->
+                <div class="bg-dark rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 border border-gray-800">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Projeto Social Media" class="w-full h-48 object-cover" loading="lazy">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-light">Gestão de Redes Sociais</h3>
+                        <p class="text-gray-400 mb-4">Estratégia de conteúdo para escola de idiomas.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-medium text-primary">Social Media</span>
+                            <a href="#" class="text-primary hover:text-primaryDark font-medium">Ver detalhes →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 3 -->
+                <div class="bg-dark rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 border border-gray-800">
+                    <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80" alt="Projeto Website" class="w-full h-48 object-cover" loading="lazy">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-light">Website Institucional</h3>
+                        <p class="text-gray-400 mb-4">Desenvolvimento de site para clínica médica.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-medium text-primary">Web Design</span>
+                            <a href="#" class="text-primary hover:text-primaryDark font-medium">Ver detalhes →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block border-2 border-primary text-primary font-semibold px-8 py-3 rounded-lg hover:bg-primary hover:text-white transition-colors">
+                    Ver Todos os Projetos
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-primary text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">O que nossos clientes <span class="text-white/90">dizem</span></h2>
+                <p class="text-xl text-white/80 max-w-2xl mx-auto">
+                    Depoimentos de empreendedores que confiaram em nosso trabalho.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card p-8 rounded-xl shadow-md">
+                    <div class="flex items-center mb-6">
+                        <div class="flex-shrink-0">
+                            <img class="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/women/32.jpg" alt="Cliente 1" loading="lazy">
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-lg font-bold text-light">Ana Carolina</h4>
+                            <p class="text-gray-400">Dona da Floratta Cosméticos</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">
+                        "A CAS 360 transformou completamente a percepção da minha marca no mercado. Em 3 meses já tivemos um aumento de 150% nas vendas online. O trabalho de branding foi fundamental para isso."
+                    </p>
+                    <div class="mt-4 flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card p-8 rounded-xl shadow-md">
+                    <div class="flex items-center mb-6">
+                        <div class="flex-shrink-0">
+                            <img class="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/men/43.jpg" alt="Cliente 2" loading="lazy">
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-lg font-bold text-light">Ricardo Almeida</h4>
+                            <p class="text-gray-400">CEO da TechSolutions</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">
+                        "Contratamos a CAS 360 para nossa estratégia de redes sociais e os resultados superaram todas as expectativas. Aumentamos nosso engajamento em 300% e conseguimos fechar vários negócios através do Instagram."
+                    </p>
+                    <div class="mt-4 flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card p-8 rounded-xl shadow-md">
+                    <div class="flex items-center mb-6">
+                        <div class="flex-shrink-0">
+                            <img class="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Cliente 3" loading="lazy">
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-lg font-bold text-light">Juliana Santos</h4>
+                            <p class="text-gray-400">Fundadora da NutriVida</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">
+                        "O site que a CAS 360 desenvolveu para minha clínica de nutrição foi um divisor de águas. Além de lindo, é extremamente funcional e já nos trouxe muitos pacientes novos. A equipe é muito profissional e atenta às nossas necessidades."
+                    </p>
+                    <div class="mt-4 flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-darker text-white border-t border-gray-800">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Pronto para <span class="text-primary">transformar</span> seu negócio?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto text-gray-400">
+                Agende uma consultoria gratuita com nossos especialistas e descubra como podemos ajudar sua marca a alcançar novos patamares.
+            </p>
+            <a href="#contato" class="inline-block bg-primary hover:bg-primaryDark text-white font-semibold px-8 py-3 rounded-lg transition-colors shadow-lg">
+                Agendar Consultoria
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contato" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-12 md:mb-0 md:pr-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-light">Entre em <span class="text-primary">Contato</span></h2>
+                    <p class="text-lg mb-8 text-gray-400">
+                        Tem alguma dúvida ou quer saber mais sobre nossos serviços? Preencha o formulário ao lado ou entre em contato por um dos canais abaixo.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 bg-primary/10 p-3 rounded-full">
+                                <i class="fas fa-envelope text-primary"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-bold text-light">E-mail</h4>
+                                <a href="mailto:contato@cas_360.com.br" class="text-gray-400 hover:text-primary transition-colors">contato@cas_360.com.br</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 bg-primary/10 p-3 rounded-full">
+                                <i class="fas fa-phone-alt text-primary"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-bold text-light">Telefone</h4>
+                                <a href="tel:+5511999999999" class="text-gray-400 hover:text-primary transition-colors">(11) 99999-9999</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 bg-primary/10 p-3 rounded-full">
+                                <i class="fab fa-instagram text-primary"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-bold text-light">Instagram</h4>
+                                <a href="https://instagram.com/cas_360" target="_blank" class="text-gray-400 hover:text-primary transition-colors">@cas_360</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 bg-primary/10 p-3 rounded-full">
+                                <i class="fas fa-clock text-primary"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-bold text-light">Horário de Atendimento</h4>
+                                <p class="text-gray-400">Segunda a Sexta, das 9h às 18h</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <form class="bg-dark p-8 rounded-xl shadow-md border border-gray-800">
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-300 font-medium mb-2">Nome Completo</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 rounded-lg border border-gray-700 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-300 font-medium mb-2">E-mail</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-gray-700 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="phone" class="block text-gray-300 font-medium mb-2">Telefone</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-3 rounded-lg border border-gray-700 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="service" class="block text-gray-300 font-medium mb-2">Serviço de Interesse</label>
+                            <select id="service" class="w-full px-4 py-3 rounded-lg border border-gray-700 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                                <option value="">Selecione um serviço</option>
+                                <option value="branding">Branding & Identidade Visual</option>
+                                <option value="social">Gestão de Redes Sociais</option>
+                                <option value="website">Criação de Websites</option>
+                                <option value="ads">Gestão de Tráfego Pago</option>
+                                <option value="consultoria">Consultoria Estratégica</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-300 font-medium mb-2">Mensagem</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-700 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-primary hover:bg-primaryDark text-white font-semibold px-6 py-3 rounded-lg transition-colors shadow-lg">
+                            Enviar Mensagem
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-darker text-white py-12 border-t border-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <a href="#" class="flex items-center mb-4">
+                        <div class="w-8 h-8 rounded-full bg-primaryDark flex items-center justify-center text-white font-bold text-sm">C</div>
+                        <span class="ml-2 text-xl font-bold">CAS <span class="text-primary">360</span></span>
+                    </a>
+                    <p class="text-gray-400">
+                        Sua parceria para os seus negócios. Transformamos marcas e impulsionamos resultados através de estratégias digitais inteligentes.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-4 text-light">Serviços</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-primary transition-colors">Branding</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Redes Sociais</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Web Design</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Tráfego Pago</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Consultoria</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-4 text-light">Links Rápidos</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#servicos" class="hover:text-primary transition-colors">Serviços</a></li>
+                        <li><a href="#sobre" class="hover:text-primary transition-colors">Sobre Nós</a></li>
+                        <li><a href="#portfolio" class="hover:text-primary transition-colors">Portfólio</a></li>
+                        <li><a href="#contato" class="hover:text-primary transition-colors">Contato</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-4 text-light">Redes Sociais</h4>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="https://instagram.com/cas_360" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary transition-colors flex items-center justify-center text-gray-300 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary transition-colors flex items-center justify-center text-gray-300 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary transition-colors flex items-center justify-center text-gray-300 hover:text-white">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary transition-colors flex items-center justify-center text-gray-300 hover:text-white">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-400">
+                        Siga-nos para dicas de marketing e cases de sucesso.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 CAS 360 Agência de Marketing Digital. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+        
+        // Form submission
+        const form = document.querySelector('form');
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Obrigado por sua mensagem! Entraremos em contato em breve.');
+                form.reset();
+            });
+        }
+    </script>
+</body>
+</html>

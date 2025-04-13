@@ -1,0 +1,403 @@
+/*
+Author: luck web dev 
+version: 1.0
+Pre release Demo version
+*/
+:root {
+  --sepultura-red: #e30d13;
+  --sepultura-black: #000000;
+  --sepultura-dark: #111111;
+}
+
+body {
+  font-family: 'Bebas Neue', 'Helvetica Neue', Arial, sans-serif;
+  color: white;
+  background-color: var(--sepultura-black);
+  padding-top: 70px;
+  scroll-behavior: smooth;
+}
+
+@font-face {
+  font-family: 'Bebas Neue';
+  src: url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+}
+
+.navbar {
+  background-color: rgba(0, 0, 0, 0.95) !important;
+  border-bottom: 2px solid var(--sepultura-red);
+  transition: all 0.3s ease;
+  padding: 15px 0;
+}
+
+.navbar.scrolled {
+  padding: 5px 0;
+  background-color: rgba(0, 0, 0, 0.98) !important;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.navbar-brand img {
+  height: 50px;
+  transition: all 0.3s ease;
+}
+
+.navbar.scrolled .navbar-brand img {
+  height: 40px;
+}
+
+.nav-link {
+  color: white !important;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0 15px;
+  position: relative;
+  font-size: 1.1rem;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--sepultura-red);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.hero-section {
+  position: relative;
+  height: 100vh;
+  min-height: 650px;
+  overflow: hidden;
+}
+
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%);
+}
+
+.hero-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-title {
+  font-size: 5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin-bottom: 20px;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
+  background: linear-gradient(45deg, #fff, #ccc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+.btn-sepultura {
+  background-color: transparent;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: 2px solid var(--sepultura-red);
+  padding: 12px 30px;
+  border-radius: 0;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.btn-sepultura::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--sepultura-red);
+  transition: all 0.4s ease;
+  z-index: -1;
+}
+
+.btn-sepultura:hover {
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(227, 13, 19, 0.4);
+}
+
+.btn-sepultura:hover::before {
+  left: 0;
+}
+
+.section-title {
+  font-size: 3rem;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 3px;
+  background: var(--sepultura-red);
+  bottom: -10px;
+  left: 25%;
+}
+
+.tour-section {
+  background-color: var(--sepultura-dark);
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.tour-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=2070&auto=format&fit=crop') center/cover;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+.tour-date {
+  border-left: 4px solid var(--sepultura-red);
+  padding: 25px;
+  margin-bottom: 30px;
+  background-color: rgba(20, 20, 20, 0.8);
+  transition: all 0.4s ease;
+  position: relative;
+  z-index: 1;
+  backdrop-filter: blur(5px);
+}
+
+.tour-date:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  background-color: rgba(30, 30, 30, 0.9);
+}
+
+.tour-date h4 {
+  color: var(--sepultura-red);
+  font-weight: bold;
+}
+
+.tour-date h5 {
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+.cta-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?q=80&w=2070&auto=format&fit=crop') center/cover;
+  padding: 120px 0;
+  text-align: center;
+  position: relative;
+}
+
+.band-logo {
+  max-width: 200px;
+  margin: 40px auto;
+  filter: drop-shadow(0 0 10px rgba(227, 13, 19, 0.5));
+  transition: all 0.5s ease;
+}
+
+.band-logo:hover {
+  transform: rotate(5deg) scale(1.1);
+  filter: drop-shadow(0 0 15px rgba(227, 13, 19, 0.8));
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 30px 0;
+}
+
+.social-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.social-icon::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--sepultura-red);
+  top: 100%;
+  left: 0;
+  transition: all 0.3s ease;
+  z-index: -1;
+}
+
+.social-icon:hover {
+  transform: translateY(-5px);
+  color: white;
+}
+
+.social-icon:hover::before {
+  top: 0;
+}
+
+.social-icon i {
+  font-size: 20px;
+}
+
+footer {
+  background-color: #000;
+  padding: 50px 0 20px;
+  text-align: center;
+  position: relative;
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--sepultura-red), transparent);
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--sepultura-red);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.back-to-top.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(227, 13, 19, 0.5);
+}
+
+/* Efeito de digitação */
+.typewriter {
+  overflow: hidden;
+  border-right: 3px solid var(--sepultura-red);
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: 2px;
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: var(--sepultura-red) }
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+  .hero-title {
+      font-size: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+      font-size: 3rem;
+  }
+  
+  .hero-subtitle {
+      font-size: 1.2rem;
+  }
+  
+  .section-title {
+      font-size: 2.5rem;
+  }
+  
+  .navbar-collapse {
+      background-color: rgba(0, 0, 0, 0.95);
+      padding: 20px;
+      margin-top: 10px;
+      border-top: 1px solid #333;
+  }
+  
+  .nav-link {
+      margin: 10px 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-title {
+      font-size: 2.5rem;
+  }
+  
+  .section-title {
+      font-size: 2rem;
+  }
+  
+  .tour-date {
+      padding: 20px;
+  }
+}

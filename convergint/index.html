@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Cidade Convergint - Convergint Brasil</title>
+    <link rel="stylesheet" href="sealcity_v3.css">    
+    <link rel="stylesheet" href="modal.css">  
+    <script src="https://www.unpkg.com/@panzoom/panzoom/dist/panzoom.js"></script>
+    <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
+    
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TXBFPQ3');</script>
+    <!-- End Google Tag Manager -->
+</head>
+<body>
+
+        <div class="rotate-message">
+      
+            <p> Para uma melhor experiência vire o celular para a esquerda. <br><br> <span onclick="toggleFullscreen();">ENTENDI</span>
+                <br><br> Use o mouse ou o touch para interagir com o mapa cidade Convergint 
+            </p>
+        </div>
+        <div id="overlay" class="overlay">
+            <div class="overlayDoor"></div>
+            <div class="overlayContent">
+                <div class="loader">
+                    <div class="inner"></div>
+                </div>
+                <br> <span style="color:white">Use o mouse ou o touch para interagir com o mapa cidade Convergint</span>
+                <div class="skip" onclick="toggleFullscreen();">Entendi</div>
+            </div>
+        </div>
+    <audio id="click_song" src="assets/click.mp3"></audio>
+    <header>
+        <div class="logo">
+           <a href="https://convergint.com.br"> <img src="assets/Logo-Converting.webp" alt="Convergint" /> </a><br>
+           <div class="boasvindas">
+            Temos o prazer em convidar você para uma imersão completa em nossas soluções inovadoras, construídas para os mais diversos segmentos de mercado. 
+
+            Entenda agora mesmo tudo o que podemos oferecer para o seu negócio.
+           </div>
+           <div id="bread" class="bread" style="display: none;">
+                <a id="back" class="back" href="#" onclick="clickAct('geral');"> < Voltar </a>
+                <div id="breadContent" class="categoria"></div>
+            </div>
+        </div>
+        <nav role="navigation">
+            <div id="menuToggle">
+              <input type="checkbox" />
+              <span></span>
+              <span></span>
+              <span></span>
+              <ul id="menu">
+                <li><b>Cases de sucesso</b></li>
+                <a href="#" onclick="abreGaleria('aeroportos')"><li>Transportes</li></a>
+               <!-- <a href="#" onclick="abreGaleria('Bancos', linksBancos, legendasBancos)"><li>Bancos</li></a>-->
+                <a href="#" onclick="abreGaleria('educacao')"><li>Educação</li></a>
+                <a href="#" onclick="abreGaleria('escritorios')"><li>Escritórios</li></a>
+                <a href="#" onclick="abreGaleria('governo')"><li>Governo</li></a>
+                <a href="#" onclick="abreGaleria('hospitais')"><li>Hospitais</li></a>
+                <a href="#" onclick="abreGaleria('industria')"><li>Indústria / Oil & Gas</li></a>
+                <a href="#" onclick="abreGaleria('lazer')"><li>Lazer</li></a>
+                <a href="#" onclick="abreGaleria('portos')"><li>Portos</li></a>
+                <a href="#" onclick="abreGaleria('varejo')"><li>Varejo</li></a>
+                <ul class="mandalas">
+                    <a href="#" onclick="clickAct('mandalasd')"><li>Soluções digitais de TI</li></a>
+                    <a href="#" onclick="clickAct('mandalaps')"><li>Portfólio de soluções</li></a>
+                </ul>
+              </ul>
+            </div>
+            
+          </nav>
+    </header>
+<!-- [1] -->
+<div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
+    <div id="video-overlay" class="modal__overlay" tabindex="-1" data-micromodal-close>
+      <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+        <header class="modal__header">
+          <h2 class="modal__title" id="modal-1-title">
+            
+          </h2>
+          <button id="close" class="modal__close" aria-label="Close modal" data-micromodal-close onclick="stopVideo()"></button>
+        </header>
+        <main class="modal__content" id="modal-1-content">
+          <p id="video">
+
+          </p>
+        </main>
+        <footer class="modal__footer">
+
+        </footer>
+      </div>
+    </div>
+</div>
+
+<section class="sealcitymap gallery-list" style="display:none; ">
+    <div id="galeria" class="video-grid">
+    </div>
+</section>
+
+<div id="panzoom">
+
+        <section class="sealcitymap mandalasd" style="display:none; ">
+            <div class="container">
+                <div id="redes" class="box box-no-bg">
+                    <div  id="toggleButton" class="btn btn-custom-mandala toggle-button"><span>Redes</span></div>
+                    <div class="desc" style="display: block;">
+                        <span>
+                        <ul>
+                                <li>Lan, Wlan, Wan, SD-WAN (Switches, AP, Routers)</li>
+                                <li>Telecom (Lora, Sigfox, Rádio, Celular) - TBD</li>
+                                <li>Integração IoT e OT</li>
+                            </ul> 
+                        </span>
+                    </div>
+                </div>
+                <div id="datacenter" class="box box-no-bg">
+                    <div  id="toggleButton" class="btn btn-custom-mandala toggle-button"><span>Data Center Enterprise</span></div>
+                    <div class="desc" style="display: block;">
+                        <span>
+                        <ul>
+                                <li>Switches</li>
+                                <li>Servidores</li>
+                                <li>Armazenamento</li>
+                                <li>Backup</li>
+                            </ul> 
+                        </span>
+                    </div>
+                </div>
+                <div id="dispositivosConectados" class="box box-no-bg">
+                    <div  id="toggleButton" class="btn btn-custom-mandala toggle-button"><span>Dispositvos Conectados</span></div>
+                    <div class="desc" style="display: block;">
+                        <span>
+                        <ul>
+                            <li>Impressoras Térmicas</li>
+                            <li> Pontos de Venda PDVs</li>
+                            <li> Coletores de Dados</li>
+                            <li> Tablets e dispositivos móveis robustos</li>
+                            
+                            </ul> 
+                        </span>
+                    </div>
+                </div>
+                <div id="ciberseguranca" class="box box-no-bg">
+                    <div  id="toggleButton" class="btn btn-custom-mandala toggle-button"><span>Cibersegurança</span></div>
+                    <div class="desc" style="display: block;">
+                        <span>
+                        <ul>
+                            <li>Redes</li>
+                            Firewall, UTM, ZTNA, NAC e SASE
+                            Anti-DDOS e WAF
+                            <li>Usuários e Endpoints (XDR e EMAIL)</li>
+                            <li>Ambientes críticos – OT</li>
+                            <li>Analise de Vulnerabilidades</li>
+                            <li>Proteção de dados</li>
+                            
+                            </ul> 
+                        </span>
+                    </div>
+                </div>
+                <div id="servicosdeti" class="box box-no-bg">
+                    <div  id="toggleButton" class="btn btn-custom-mandala toggle-button"><span>Serviços de TI</span></div>
+                    <div class="desc" style="display: block;">
+                        <span>
+                            <ul>
+                                <li>Integração, manutenção preventiva e corretiva</li>
+                                <li>Suporte técnico on-site e remoto</li>
+                                <li>Serviços Gerenciados Rede & Data Center - NOC</li>
+                                <li>Serviços Gerenciados de Segurança – MDR e MSS</li>
+                            </ul> 
+                        </span>
+                    </div>
+                </div>
+                <img src="assets/mandalasd.png" alt="Mapa mandalasd" />
+            </div>
+        </section>
+        <section class="sealcitymap mandalaps" style="display:none; ">
+            <div id="audioevideo" class="box">
+                <div  id="toggleButton" class="btn toggle-button"><span>Audio e Vídeo</span></div>
+                <div class="desc" style="display: none;">
+                    <span>
+                        <ul>
+                           <li>Videowall</li>
+                           <li>Automação de ambientes</li>
+                           <li>Digital Signage</li>
+                           <li>Auditórios e estúdios</li>
+                           <li>Sala multimídia</li>
+                           <li>Sonorização</li>
+                           <li> Broadcast</li>
+                        </ul> 
+                    </span>
+                </div>
+            </div>
+            <div id="seguranca" class="box">
+                <div  id="toggleButton" class="btn toggle-button"><span>Segurança</span></div>
+                <div class="desc" style="display: none;">
+                    <span>
+                        <ul>
+                            <li>CFTV</li>
+                            <li>CCO</li>
+                            <li>Vídeo analítico</li>
+                            <li>Controle de acesso</li>
+                            <li>Gestão de incidentes</li>
+                            <li>Segurança perimetral</li>
+                        </ul> 
+                    </span>
+                </div>
+            </div>
+            <div id="comunicacaounificada" class="box">
+                <div  id="toggleButton" class="btn toggle-button"><span>Comunicação Unificada</span></div>
+                <div class="desc" style="display: none;">
+                    <span>
+                        <ul>
+                           <li>Videoconferência</li>
+                           <li>Telefonia IP</li>
+                           <li>Teleaudiência</li>
+                           <li>Contact Center</li>
+                           <li>Cidade digital</li>
+                        </ul> 
+                    </span>
+                </div>
+            </div>
+            <div id="sealconect" class="box">
+                <div  id="toggleButton" class="btn toggle-button"><span>Systems Factory</span></div>
+                <div class="desc" style="display: none;">
+                    <span>
+                        <ul>
+                            <li>Criação de software</li>
+                            <li>Aplicativos</li>
+                            <li>Integração de legado</li>
+                            <li>Consultoria</li>
+                            <li>Elaboração de projetos</li>
+                        </ul> 
+                    </span>
+                </div>
+            </div>
+            <div id="datacenter" class="box">
+                <div  id="toggleButton" class="btn toggle-button"><span>Datacenter</span></div>
+                <div class="desc" style="display: none;">
+                    <span>
+                        <ul>
+                           <li>Avaliação da infraestrutura</li>
+                           <li>Cabeamento estruturado</li>
+                           <li>Fibra óptica</li>
+                           <li>Sistema de resfriamento</li>
+                           <li>DCIM</li>
+                           <li>Operação e manutenção</li>
+                        </ul> 
+                    </span>
+                </div>
+            </div>
+            <div id="solucoesdigitais" class="box">
+                <div  id="toggleButton" class="btn toggle-button"><span>Soluções Digitais TI</span></div>
+                <div class="desc" style="display: none;">
+                    <span>
+                        Redes<br><br>
+                        <ul>
+                            <li>Lan, Wlan, Wan, SD-WAN (Switches, AP, Routers)</li>
+                            <li>Telecom (Lora, Sigfox, Rádio, Celular)</li>
+                            <li>Integração IoT e OT</li>
+                        </ul> <br>
+                        Data Center Enterprise<br><br>
+                        <ul>
+                        <li>Redes, Servidores, Armazenamento, Backup e Modular Data Center</li>
+                        </ul><br>
+                        Cibersegurança<br>
+                        <ul>
+                            <li>Proteção de Dados, Redes, usuários, endpoints e Ambientes Críticos</li>
+                        </ul>
+                        
+                    </span>
+                </div>
+            </div>
+            <div id="sealbuilding" class="box">
+                <div  id="toggleButton" class="btn toggle-button"><span>Automação Predial</span></div>
+                <div class="desc" style="display: none;">
+                    <span>
+                        <ul>
+                            <li>Cabeamentos estruturado</li>
+                            <li>Fibra óptica</li>
+                            <li>Detecção e alarme de incêndio</li>
+                            <li>Building Management System (BMS)</li>
+                            <li>Internet of Things (IoT)</li>
+                        </ul> 
+                    </span>
+                </div>
+            </div>
+            <div id="servicos" class="box">
+                <div  id="toggleButton" class="btn toggle-button"><span>Serviços</span></div>
+                <div class="desc" style="display: none;">
+                    <span>
+                        <ul>
+                            <li>Implantação, manutenção preventiva e corretiva</li>
+                            <li>Técnico residente</li>
+                            <li>Suporte técnico on-site e remoto</li>
+                            <li>Seal Global Command and Control (NOC/SOC)</li>
+                            <li>Seal Care</li>
+                        </ul> 
+                    </span>
+                </div>
+            </div>
+            <div id="sealxaas" class="box">
+                <div  id="toggleButton" class="btn toggle-button"><span>Tudo como serviço (XaaS)</span></div>
+                <div class="desc" style="display: none;">
+                    <span>
+                        <ul>
+                            <li>Videoconferência, CFTV e Videowall</li>
+                            <li>Projetores e telas interativas</li>
+                            <li>Notebooks, Desktops, Servidores e Storage</li>
+                            <li>Switches, routers e access point</li>
+                            <li>Impressoras térmicas e coletores</li>
+                        </ul> 
+                    </span>
+                </div>
+            </div>
+            <div id="midiaentretenimento" class="box">
+                <div  id="toggleButton" class="btn toggle-button"><span>Mídia & Entretenimento</span></div>
+                <div class="desc" style="display: none;">
+                    <span>
+                        <ul>
+                           <li>Video Compression</li>
+                           <li>OTT Streaming Platform</li>
+                            <li>Advertising Platform</li>
+                            <li>Content & Workflow Management</li>
+                            <li>Data & Metadata Management</li>
+                        </ul> 
+                    </span>
+                </div>
+            </div>
+            <img src="assets/mandalaps.png" alt="Mapa mandalaps" />
+        </section>
+        <section class="sealcitymap agronegocio" style="display:none; ">
+            <div class="container">
+                <div id="seguranca" class="box">
+                    <div  id="toggleButton" class="btn toggle-button"><span>Segurança</span></div>
+                    <div class="desc" style="display: none;">
+                        <span>
+                            Controle de incidentes e <br>
+                            prevenção de perdas:<br><br>
+                           <ul>
+                                <li>Controle de perímetro com <br>câmeras ou radar</li>
+                                <li>Alarme de fumaça com <br>analítico de vídeo</li>
+                                <li>Integração do <br>monitoramento de perímetro com drone </li>
+                            </ul> <br>
+                            <a href="#" onclick="abrirModal('agroSegurancaVideo')">Confira o video</a>
+                        </span>
+                    </div>
+                </div>
+                <div id="incendio" class="box">
+                    <div  id="toggleButton" class="btn toggle-button"><span>Incêdio</span></div>
+                    <div class="desc" style="display: none;">
+                        <span>
+                            Gerenciamento de Sistemas de Incêndio:<br><br>
+                           <ul>
+                                <li>Aspiração de fumaça</li>
+                                <li>Detecção de fumaça com tecnologia óptica</li>
+                                <li>Detecção de temperatura </li>
+                            </ul> <br>
+
+                        </span>
+                    </div>
+                </div>
+                <div id="gee" class="box">
+                    <div  id="toggleButton" class="btn toggle-button"><span>Gestão da energia elétrica</span></div>
+                    <div class="desc" style="display: none;">
+                        <span>
+                            Gerenciamento de energia:<br><br>
+                           <ul>
+                                <li>Alarmes</li>
+                                <li>Rateio de energia</li>
+                                <li>Manutenção preventiva </li>
+                            </ul> <br>
+
+                        </span>
+                    </div>
+                </div>
+                <div id="conectividade" class="box">
+                    <div  id="toggleButton" class="btn toggle-button"><span>Conectividade</span></div>
+                    <div class="desc" style="display: none;">
+                        <span>
+                            Implantação de infraestrutura <br>para conectividade:<br><br>
+                           <ul>
+                                <li>5G</li>
+                                <li>Wi-Fi de longo alcance</li>
+                                <li>Rede Lora (IoT)</li>
+                                <li>Manutenção preventiva </li>
+                                <li>Satélite</li>
+                            </ul> <br>
+
+                        </span>
+                    </div>
+                </div>
+                <img src="assets/agronegocio_map.png" alt="Mapa Agronegócio" />
+            </div>
+        </section>
+        <section class="sealcitymap aeroportos" style="display: none;">
+            <div class="container">
+                <div id="infraestrutura" class="box">
+                    <div  id="toggleButton" class="btn toggle-button"><span>Infraestrutura e Conectividade</span></div>
+                    <div class="desc" style="display: none;">
+                        <span>
+                            -Cabeamento estruturado<br>
+                            -Wi-Fi para passageiros<br>
+                            -Data Center
+
+                        </span>
+                    </div>
+                </div>
+                <div id="automacao" class="box">
+                    <div  id="toggleButton" class="btn toggle-button"><span>Automação</span></div>
+                    <div class="desc" style="display: none;">
+                        <span>
+                            Automação (BMS):<br><br>
+
+                            - Sensores de IoT<br>
+                            -Gestão de Energia Elétrica, <br>Hidráulica e Gás<br>
+                            -Gerenciamento do Ar Condicionado<br>
+                            -Iluminação<br>
+                            -Manutenção preventiva<br><br>
+                            <a href="#" onclick="abrirModal('aeroportoautomacao')">Confira o video</a>
+
+                        </span>
+                    </div>
+                </div>
+                <div id="audioevideo" class="box">
+                    <div  id="toggleButton" class="btn toggle-button"><span>Sistema de áudio e vídeo</span></div>
+                    <div class="desc" style="display: none;">
+                        <span>
+                            -Sonorização IP<br>
+                            -Videowall<br>
+                            -Tela informativa de voo<br>
+                        </span>
+                    </div>
+                </div>
+                <div id="seguranca" class="box">
+                    <div  id="toggleButton" class="btn toggle-button"><span>Segurança</span></div>
+                    <div class="desc" style="display: none;">
+                        <span>
+                            Somos especializados na<br> implantação dos principais<br> sistemas de segurança:
+                            <br><br>
+                            -Sistema de videomonitoramento<br>
+                            -Controle de acesso<br>
+                            -Detecção e Alarme de Incêndio (SDAI)<br>
+                            -CCO<br>
+                        </span>
+                    </div>
+                </div>
+                <img src="assets/aeroporto_map.png" alt="Mapa Aeroportos" />
+            </div>
+        </section>
+        <section class="sealcitymap escritorios" style="display: none;">
+            <div class="container">
+                <div id="salasdereuniao" class="box">
+                    <div  id="toggleButton" class="btn toggle-button"><span>Salas de reunião inteligentes</span></div>
+                    <div class="desc" style="display: none;">
+                        <span>
+                            Implantação e automação de <br>sistema de áudio e vídeo, iluminação <br>e projetores. Transmissão e <br>gravação de conteúdo pela rede <br>local ou internet.
+                            <br> <br>
+                            <a href="#" onclick="abrirModal('gestaoestrategica')">Confira o video</a>
+
+                        </span>
+                    </div>
+                </div>
+                <div id="solucoesdigitais" class="box">
+                    <div  id="toggleButton" class="btn toggle-button"><span>Soluções digitais</span></div>
+                    <div class="desc" style="display: none;">
+                        <span>
+                            Infraestrutura de Redes, <br>Cibersegurança e<br>  Monitoramento de links.
+
+                        </span>
+                    </div>
+                </div>
+                <div id="seguranca" class="box">
+                    <div  id="toggleButton" class="btn toggle-button"><span>Segurança</span></div>
+                    <div class="desc" style="display: none;">
+                        <span>
+                            Implantação e integração de <br> sistemas de controle de acesso,<br> videomonitoramento, SDAI e<br> CCO.
+                        </span>
+                    </div>
+                </div>
+                <div id="saladecrise" class="box">
+                    <div  id="toggleButton" class="btn toggle-button"><span>Sala de crise</span></div>
+                    <div class="desc" style="display: none;">
+                        <span>
+                            Implantação de salas de <br>situação certificadas pela ABNT, <br>para gestão de crises, análise de<br> dados e reuniões privadas.
+                            <br><br>
+                            <a href="#" onclick="abrirModal('saladecrise')">Confira o video</a>
+                        </span>
+                    </div>
+                </div>
+                <div id="estudiocorporativo" class="box">
+                    <div  id="toggleButton" class="btn toggle-button"><span>Estúdio corporativo</span></div>
+                    <div class="desc" style="display: none;">
+                        <span>
+                            Estúdios corporativos para<br>transmissão de eventos online e<br> produção de conteúdo digital
+                            <br> <br>
+                            <a href="#" onclick="abrirModal('estudiocorporativo')">Confira o video</a>
+                        </span>
+                    </div>
+                </div>
+                <div id="auditorios" class="box">
+                    <div  id="toggleButton" class="btn toggle-button"><span>Auditórios</span></div>
+                    <div class="desc" style="display: none;">
+                        <span>
+                            Implantação e automação de <br>sistema de áudio e vídeo, <br>iluminação e projetores. <br>Transmissão e gravação de<br> conteúdo pela rede local ou <br>internet.
+                        <br><br>
+                        <a href="#" onclick="abrirModal('auditorios')">Confira o video</a>
+                        </span>
+                    </div>
+                </div>
+                <div id="digitalsignage" class="box">
+                    <div  id="toggleButton" class="btn toggle-button"><span>Digital Signage</span></div>
+                    <div class="desc" style="display: none;">
+                        <span>
+                            Implantação de TV Corporativa <br>com sistema de gestão de<br> conteúdo em nuvem.
+                        </span>
+                    </div>
+                </div>
+                <img src="assets/escritorio_map.png" alt="Mapa Escritórios" />
+            </div>
+        </section>
+        <section class="sealcitymap industria" style="display: none;">
+            <div class="container">
+                <div id="incendio" class="box">
+                    <div  id="toggleButton" class="btn toggle-button"><span>Incêndio</span></div>
+                    <div class="desc" style="display: none;">
+                        <span>
+                            Gerenciamento de Sistemas de Incêndio:<br><br>
+
+                            -Aspiração de fumaça<br>
+                            -Detecção de fumaça com tecnologia óptica<br>
+                            -Detecção de temperatura
+                        </span>
+                    </div>
+                </div>
+                <div id="seguranca" class="box">
+                    <div  id="toggleButton" class="btn toggle-button"><span>Segurança</span></div>
+                    <div class="desc" style="display: none;">
+                        <span>
+                            Controle de incidentes e prevenção de perdas:<br><br>
+
+                            -Proteção perimetral com câmeras, fibra óptica ou radar<br>
+                            -Alarme de fumaça com analítico de vídeo<br>
+                            -Integração do monitoramento  de perímetro com drones<br>
+                            -CCO
+                        </span>
+                    </div>
+                </div>
+                <div id="gestaoenergia" class="box">
+                    <div  id="toggleButton" class="btn toggle-button"><span>Gestão de Energia Elétrica</span></div>
+                    <div class="desc" style="display: none;">
+                        <span>
+                            Gerenciamento de energia:<br><br>
+
+                            -Alarmes<br>
+                            -Rateio de energia<br>
+                            -Manutenção preventiva<br>
+                        </span>
+                    </div>
+                </div>
+                <div id="wifilte" class="box">
+                    <div  id="toggleButton" class="btn toggle-button"><span>Wifi e LTE Privado</span></div>
+                    <div class="desc" style="display: none;">
+                        <span>
+                            Implantação de infraestrutura<br>para conectividade:<br><br>
+
+                            <ul>
+                                <li>5G</li>
+                                <li>Wi-fi de longo alcance</li>
+                                <li>Rede Lora(IoT)</li>
+                                <li>Manutenção Preventiva</li>
+                                <li>Satélite</li>
+                                <ul style="padding-left:5px"><li>LTE Privado</li></ul>
+                            </ul>
+                        </span>
+                    </div>
+                </div>
+                <div id="salasdereuniaao" class="box">
+                    <div  id="toggleButton" class="btn toggle-button"><span>Salas de reunião</span></div>
+                    <div class="desc" style="display: none;">
+                        <span>
+                            Implantação e automação de sistema de áudio e vídeo. Iluminação e projetores. Transmissão e gravação de conteúdo pela rede local ou internet.<br><br>
+                            <a href="#" onclick="abrirModal('industrialSalasdereuniao')">Confira o video</a>
+                        </span>
+                    </div>
+                </div>
+                <div id="conectividade" class="box">
+                    <div  id="toggleButton" class="btn toggle-button"><span>Conectividade</span></div>
+                    <div class="desc" style="display: none;">
+                        <span>
+                            Implantação de infraestrutura<br> para rede Wi-Fi outdoor.<br><br>
+                            <a href="#" onclick="abrirModal('conectividade')">Confira o video</a>
+                        </span>
+                    </div>
+                </div>
+                <div id="industriaquatro" class="box">
+                    <div  id="toggleButton" class="btn toggle-button"><span>Indústria 4.0</span></div>
+                    <div class="desc" style="display: none;">
+                        <span>
+                            -Cibersegurança para sensores IoT<br>
+                            -Disponibilidade de sensores<br>
+                            -Integração de sistemas IoT<br>
+                            -Salas de crise para sistemas da <br> Indústria 4.0
+                        </span>
+                    </div>
+                </div>
+                <img src="assets/industria_map.png" alt="Mapa Indústria" />
+            </div>
+        </section>
+        <section class="sealcitymap judiciario" style="display: none;">
+            <div class="container">
+                <div id="sistemadevotacao" class="box">
+                    <div  id="toggleButton" class="btn toggle-button"><span>Sistema de votação</span></div>
+                    <div class="desc" style="display: none;">
+                        <span>
+                            Implantação de sistema de <br>votação híbrido, utilizando <br>terminais inteligentes,<br> videoconferência, sistema de <br>áudio e vídeo HD e câmeras PTZ <br>com voice tracking
+                            <br><br>
+                            <a href="#" onclick="abrirModal('sistemavotacao')">Confira o video</a>
+
+                        </span>
+                    </div>
+                </div>
+                <div id="gravacaoaudiencia" class="box">
+                    <div  id="toggleButton" class="btn toggle-button"><span>Gravação Digital de Audiências</span></div>
+                    <div class="desc" style="display: none;">
+                        <span>
+                            Sistema para gravação,<br> transmissão e transcrição de <br>audiências em tempo real
+                        </span>
+
+                    </div>
+                </div>
+                <div id="seguranca" class="box">
+                    <div  id="toggleButton" class="btn toggle-button"><span>Segurança</span></div>
+                    <div class="desc" style="display: none;">
+                        <span>
+                            Implantação de sistemas de<br> controle de acesso,<br> videomonitoramento e CCO.<br><br>
+                            <a href="#" onclick="abrirModal('segurancajudiciario')">Confira o video</a>
+                        </span>
+
+                    </div>
+                </div>
+                <div id="salasinteligentes" class="box">
+                    <div  id="toggleButton" class="btn toggle-button"><span>Salas de Reunião Inteligentes</span></div>
+                    <div class="desc" style="display: none;">
+                        <span>
+                            Salas com sistemas de <br> videoconferência, TVs e lousas <br>interativas para reuniões<br> híbridas. Automação de áudio e<br> vídeo, iluminação e sistema de <br>agendamento.
+                            <br><br>
+                            <a href="#" onclick="abrirModal('salasdereunicaojud')">Confira o video</a>
+                        </span>
+                    </div>
+                </div>
+                <img src="assets/judiciario_map.png" alt="Mapa Judiciário" />
+            </div>
+        </section>
+        <section class="sealcitymap saude" style="display: none;">
+            <div class="container">
+                <div id="filmagemdecirurgias" class="box">
+                    <div  id="toggleButton" class="btn toggle-button"><span>Gravação de cirurgias</span></div>
+                    <div class="desc" style="display: none;">
+                        <span>
+                            Sistema de Gravação e <br> compartilhamento de um <br>procedimento cirúrgico para<br> ajudar no processo de tomada<br> de decisão
+                            <br><br>
+                            <a href="#" onclick="abrirModal('gravacaicirurgia')">Confira o video</a>
+                        </span>
+                    </div>
+                </div>
+                <div id="automacao" class="box">
+                    <div  id="toggleButton" class="btn toggle-button"><span>Automação</span></div>
+                    <div class="desc" style="display: none;">
+                        <span>
+                            Automação (BMS):<br><br>
+
+                            -Hidráulica<br>
+                            -Energia Elétrica<br>
+                            -Gás<br>
+                            -Ar Condicionado<br>
+                            -Controle de temperatura de freezers<br>
+                            -Iluminação<br>
+                            -Chillers
+                            <br><br>
+                            <a href="#" onclick="abrirModal('saudeautomacao')">Confira o video</a>
+                        </span>
+                    </div>
+                </div>  
+                <div id="digitalsignage" class="box">
+                    <div  id="toggleButton" class="btn toggle-button"><span>Digital Signage</span></div>
+                    <div class="desc" style="display: none;">
+                        <span>
+                            Implantação Digital Signage<br> com sistema de <br>gestão de conteúdo na nuvem, para<br> comunicação com os pacientes.
+                        </span>
+                    </div>
+                </div>  
+                <div id="seguranca" class="box">
+                    <div  id="toggleButton" class="btn toggle-button"><span>Segurança</span></div>
+                    <div class="desc" style="display: none;">
+                        <span>
+                            Implantação de sistemas de <br>controle de acesso,<br> videomonitoramento, SDAI e<br> CCO.
+                            <br><br>
+                            <a href="#" onclick="abrirModal('segurancasaude')">Confira o video</a>
+
+                        </span>
+                    </div>
+                </div>  
+                <img src="assets/saude_map.png" alt="Mapa Saúde" />
+            </div>
+        </section>
+        <section class="sealcitymap educacao" style="display: none;">
+            <div class="container">
+                <div id="salashibridas" class="box">
+                    <div  id="toggleButton" class="btn toggle-button"><span>Salas híbridas</span></div>
+                    <div class="desc" style="display: none;">
+                        <span>
+                            Implantação de aulas híbridas<br> com câmeras e lousas <br>inteligentes, sistema de <br>videoconferência e soluções de<br> áudio e vídeo.
+                            <br><br>
+                            <a href="#" onclick="abrirModal('salasHibridas')">Confira o video</a>
+                        </span>
+                    </div>
+                </div>
+                <div id="digitalsignage" class="box">
+                    <div  id="toggleButton" class="btn toggle-button"><span>Digital Signage</span></div>
+                    <div class="desc" style="display: none;">
+                        <span>
+                            Implantação de TV Corporativa <br>com sistema de gestão de<br> conteúdo em nuvem.
+                            <br><br>
+                            <a href="#" onclick="abrirModal('digitalSignageEducacao')">Confira o video</a>
+                        </span>
+                    </div>
+                </div>
+                <div id="seguranca" class="box">
+                    <div  id="toggleButton" class="btn toggle-button"><span>Segurança</span></div>
+                    <div class="desc" style="display: none;">
+                        <span>
+                            Implantação e integração de <br>sistemas de controle de acesso <br>e videomonitoramento
+                            <br><br>
+                            <a href="#" onclick="abrirModal('controledeacesso')">Confira o video</a>
+                        </span>
+                    </div>
+                </div>
+                <img src="assets/educacao_map.png" alt="Mapa Educação" />
+            </div>
+        </section>
+        <section class="sealcitymap varejo" style="display: none;">
+            <div class="container">
+                <div id="naas" class="box">
+                    <div  id="toggleButton" class="btn toggle-button"><span>NaaS</span></div>
+                    <div class="desc" style="display: none;">
+                        <span>
+
+                            Disponibilidade de tecnologia e <br>rede como serviço: <br><br>
+
+                            -Gestão do link principal de internet e backup<br>
+                            -Wifi<br>
+                            -Cibersegurança<br>
+                            -Switches<br>
+                            -Gestão + Manutenção preventiva  <br>                        
+                        </span>
+                    </div>
+                </div>
+                <div id="analisedefluxo" class="box">
+                    <div  id="toggleButton" class="btn toggle-button"><span>Análise de fluxo</span></div>
+                    <div class="desc" style="display: none;">
+                        <span>         
+                            Análise estratégica do fluxo de <br>pessoas em uma loja utilizando<br> câmeras de segurança<br> (heatmap)             
+                                <br><br>
+                                <a href="#" onclick="abrirModal('heatmap')">Confira o video</a>
+                        </span>
+                    </div>
+                </div>
+                <div id="iot" class="box">
+                    <div  id="toggleButton" class="btn toggle-button"><span>IoT</span></div>
+                    <div class="desc" style="display: none;">
+                        <span>         
+                            Gestão de energia elétrica, ar <br>condicionado e manutenção <br>preventiva através de sensores<br> IoT.
+                                <br><br>
+                                <a href="#" onclick="abrirModal('iot')">Confira o video</a>
+
+                        </span>
+                    </div>
+                </div>
+                <div id="seguranca" class="box">
+                    <div  id="toggleButton" class="btn toggle-button"><span>Segurança</span></div>
+                    <div class="desc" style="display: none;">
+                        <span>         
+                            Implantação e integração de <br>sistemas de controle de acesso,<br> videomonitoramento e CCO.
+                        </span>
+                    </div>
+                </div>
+                <div id="digitalsignage" class="box">
+                    <div  id="toggleButton" class="btn toggle-button"><span>Digital Signage</span></div>
+                    <div class="desc" style="display: none;">
+                        <span>    
+                            Implantação de sinalização <br>digital através de videowall ou <br>painéis de LED, com gestão de<br> conteúdo em nuvem     
+                        <br><br>
+                        <a href="#" onclick="abrirModal('digitalsignage')">Confira o video</a>
+
+                        </span>
+                    </div>
+                </div>
+                <img src="assets/varejo_map.png" alt="Mapa Varejo" />
+            </div>
+
+        </section>
+        <section class="sealcitymap tuneis" style="display: none;">
+            <img src="assets/tuneis_map.png" alt="Mapa tuneis" />
+        </section>
+        <section class="sealcitymap rodovia" style="display: none;">
+            <div class="container">
+                <div id="conectividade" class="box">
+                    <div  id="toggleButton" class="btn toggle-button"><span>Conectividade</span></div>
+                    <div class="desc" style="display: none;">
+                        <span>    
+                            Implementação de wi-fi de longo<br> alcance e fibra óptica ao longo<br> da rodovia.
+                        </span>
+                    </div>
+                </div>
+                <div id="seguranca" class="box">
+                    <div  id="toggleButton" class="btn toggle-button"><span>Segurança</span></div>
+                    <div class="desc" style="display: none;">
+                        <span>    
+                            Somos especializados na <br>implantação dos principais<br> sistemas de segurança:<br><br>
+
+                            -Sistema de videomonitoramento<br>
+                            -Controle de acesso para praças<br> de pedágio<br>
+                            -Detecção e Análise de incidentes (DAI)<br>
+                            -CCO
+                            <br><br>
+                            <a href="#" onclick="abrirModal('segurancaRodovia')">Confira o video</a>
+                        </span>
+                    </div>
+                </div>
+                <div id="iot" class="box">
+                    <div  id="toggleButton" class="btn toggle-button"><span>IoT</span></div>
+                    <div class="desc" style="display: none;">
+                        <span>    
+                            Implantação de sensores de IoT <br>para gestão em tempo real de<br> ativos.
+                        </span>
+                    </div>
+                </div>
+                <div id="its" class="box">
+                    <div  id="toggleButton" class="btn toggle-button"><span>ITS</span></div>
+                    <div class="desc" style="display: none;">
+                        <span>    
+                            Somos especializados na <br>manutenção preventiva e<br> corretiva de ITS.
+                        </span>
+                    </div>
+                </div>
+                <img src="assets/rodovias_map.png" alt="Mapa Rodovia" />
+            </div>
+        </section>
+        <section class="sealcitymap banco" style="display: none;">
+            <div class="container">
+                <div id="cyberseguranca" class="box">
+                    <div  id="toggleButton" class="btn toggle-button"><span>Cibersegurança</span></div>
+                    <div class="desc" style="display: none;">
+                        <span>    
+                            <ul>
+                                <li>Redes firewall, UTM, ZTNA, NAC e SASE anti-DDOS e WAF</li>
+                                <li>Usuários e Endpoints (XDR e Email)</li>
+                                <li>Ambientes Críticos - OT</li>
+                                <li>Análise de Vulnerabilidades</li>
+                            </ul>
+                        </span>
+                    </div>
+                </div>
+                <div id="servicos" class="box">
+                    <div  id="toggleButton" class="btn toggle-button"><span>Serviços</span></div>
+                    <div class="desc" style="display: none;">
+                        <span>    
+                            <ul>
+                                <li>Integração, manutenção preventiva e corretiva</li>
+                                <li>Suporte técnico on-site e remoto</li>
+                                <li>Serviços Gerenciados Rede &<br> Data Center - NOC</li>
+                                <li>Serviços Gerenciados de <br>Segurança - MDR e MSS</li>
+                            </ul>
+                        </span>
+                    </div>
+                </div>
+                <div id="redes" class="box">
+                    <div  id="toggleButton" class="btn toggle-button"><span>Redes</span></div>
+                    <div class="desc" style="display: none;">
+                        <span>
+                            <ul>  
+                                <li>Lan, Wan, Wlan, SD-Wan<br> Acess Points, Routers e Switches</li>
+                                <li>Integração IoT e OT Observabilidade</li>
+                            </ul>
+                        </span>
+                    </div>
+                </div>
+                <div id="segurancaeletronica" class="box">
+                    <div  id="toggleButton" class="btn toggle-button"><span>Segurança Eletrônica</span></div>
+                    <div class="desc" style="display: none;">
+                        <span>    
+                            Implantação e integração de <br>sistemas de controle de acesso,<br> videomonitoramento, SDAI e CCO.                        
+                            <br>
+                            <br>
+                            <a href="#" onclick="abrirModal('bancoSeguranca')">Confira o video</a>
+
+                        </span>
+                          
+                            
+                        </div>
+                </div>
+                <div id="dispositivosconectados" class="box">
+                    <div  id="toggleButton" class="btn toggle-button"><span>Dispositivos Conectados</span></div>
+                    <div class="desc" style="display: none;">
+                        <span>    
+                            <ul>
+                                <li>Impressoras Térmicas</li>
+                                <li>Coletores de Dados</li>
+                                <li>Tablets e Dispositivos Móveis robustos</li>
+                            </ul>    
+                        </span>
+                    </div>
+                </div>
+                <div id="salasinteligentes" class="box">
+                    <div  id="toggleButton" class="btn toggle-button"><span>Salas de reunião inteligentes</span></div>
+                    <div class="desc" style="display: none;">
+                        <span>    
+                            Implantação de salas de reunião,<br>
+                             com sistema completo de áudio e vídeo,<br>
+                              controle de iluminação e ar-condicionado,<br>
+                               videoconferência e sistema de<br> agendamento de salas.
+                               <br>
+                               <br>
+                               <a href="#" onclick="abrirModal('bancoInteligente')">Confira o video</a>
+                        </span>
+                    </div>
+                </div>
+                <div id="digitalsignage" class="box">
+                    <div  id="toggleButton" class="btn toggle-button"><span>Digital Signage</span></div>
+                    <div class="desc" style="display: none;">
+                        <span>    
+                            Implantação de TV Corporativa<br> com sistema de gestão de <br>conteúdo em nuvem.
+                        </span>
+                    </div>
+                </div>
+                <div id="cco" class="box">
+                    <div  id="toggleButton" class="btn toggle-button"><span>cco</span></div>
+                    <div class="desc" style="display: none;">
+                        <span>    
+                            Implantação de salas de <br>situação certificadas pela ABNT, <br>para gestão de crises, análise <br>de dados e reuniões privadas.
+                        </span>
+                    </div>
+                </div> 
+                <div id="datacenter" class="box">
+                    <div  id="toggleButton" class="btn toggle-button"><span>Data center enterprise</span></div>
+                    <div class="desc" style="display: none;">
+                        <span>    
+                            <ul>
+                                <li>Switches Core</li>
+                                <li>Servidores</li>
+                                <li>Armazenamento</li>
+                                <li>Backup</li>
+                            </ul>
+                        </span>
+                    </div>
+                </div>
+                <div id="auditorios" class="box">
+                    <div  id="toggleButton" class="btn toggle-button"><span>Auditórios</span></div>
+                    <div class="desc" style="display: none;">
+                        <span>    
+                            Implantação e gerenciamento de sistemas<br> de
+                            áudio e vídeo, automação e iluminação.<br>
+                            Transmissão e gravação de conteúdo pela rede
+                            local ou internet.
+                        <br><br>
+                        <a href="#" onclick="abrirModal('bancoAuditorioVideo')">Confira o video</a>
+                        </span>
+                    </div>
+                </div>
+                <div id="estudiocorporativo" class="box">
+                    <div  id="toggleButton" class="btn toggle-button"><span>Estúdio Corporativo</span></div>
+                    <div class="desc" style="display: none;">
+                        <span>    
+                            Estúdios corporativos para <br>transmissão de eventos online e <br>produção de conteúdo digital    
+                            <br><br>
+                            <a href="#" onclick="abrirModal('bancoStudioCorpVideo')">Confira o video</a>
+                        </span>
+                    </div>
+                </div>
+                <div id="facilites" class="box">
+                    <div  id="toggleButton" class="btn toggle-button"><span>Gestão de Facilities e Bem-Estar</span></div>
+                    <div class="desc" style="display: none;">
+                        <span>    
+                            Automação do sistema de<br> ar condicionado<br>
+                            Gestão energética e hidráulica<br>
+                            Automação de iluminação<br> (ciclo circadiano)    
+                        </span>
+                    </div>
+                </div>                 
+                <img src="assets/bancos_map.png" alt="Mapa Banco" />
+            </div>
+        </section>
+        <section id="geral" class="sealcitymap geral" style="display: block;">
+            <button class="agronegocio" onclick="clickAct('agronegocio')">Agronegócio</button>
+            <button class="aeroportos" onclick="clickAct('aeroportos')">Aeroportos</button>
+            <button class="escritorios" onclick="clickAct('escritorios')">Escritórios</button>
+            <button class="industria" onclick="clickAct('industria')">Indústria Oil & Gas</button>
+            <button class="judiciario" onclick="clickAct('judiciario')">Judiciário</button>
+            <button class="saude" onclick="clickAct('saude')">Saúde</button>
+            <button class="educacao" onclick="clickAct('educacao')">Educação</button>
+            <button class="varejo" onclick="clickAct('varejo')">Varejo</button>
+            <button class="tuneis" onclick="clickAct('tuneis')">Túneis</button>
+            <button class="rodovia" onclick="clickAct('rodovia')">Rodovia</button>
+            <button class="banco" onclick="clickAct('banco')">Bancos</button>
+                <img src="assets/sealcity.png" alt="Mapa inicial" />
+            
+       </section>
+
+</div>
+<script>
+  $(document).ready(function() {
+   /*     $('.overlay, body').addClass('loaded');
+	// Users can skip the loading process if they want.
+	$('.skip').click(function() {
+		$('.overlay, body').addClass('loaded');
+	})
+	
+	// Will wait for everything on the page to load.
+	$(window).bind('load', function() {
+		$('.overlay, body').addClass('loaded');
+		setTimeout(function() {
+			$('.overlay').css({'display':'none'})
+		}, 2000)
+	});*/
+	
+	// Will remove overlay after 1min for users cannnot load properly.
+    $('.skip').click(function() {
+		$('.overlay, body').addClass('loaded');
+        $('.overlay').css({'display':'none'});
+	})
+	setTimeout(function() {
+		$('.overlay, body').addClass('loaded');
+	}, 60000);
+})
+</script>
+<script src="./systemCommons.js"></script>
+<script src="./videosController.js"></script>
+</body>
+</html>

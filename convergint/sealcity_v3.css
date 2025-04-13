@@ -1,0 +1,1009 @@
+/*
+Seal Telecom, Interative Map V1
+Author: Troupe Design
+Programmer: Lucas MS
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400&family=Rubik:wght@400;500;600&display=swap");
+
+/*
+
+font-family: 'Inter', sans-serif;
+font-family: 'Rubik', sans-serif;
+*/
+/* unvisited link */
+a:link {
+  color: #808080;
+}
+
+/* visited link */
+a:visited {
+  color: #808080;
+}
+
+/* mouse over link */
+a:hover {
+  color: var(--main-color);
+  text-decoration: underline;
+}
+
+/* selected link */
+a:active {
+  color: blue;
+}
+
+* {
+  /*Reset's every elements apperance*/
+  background: none repeat scroll 0 0 transparent;
+  border: medium none;
+  border-spacing: 0;
+  list-style: none outside none;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  text-indent: 0;
+}
+/* Safari */
+:-webkit-full-screen {
+  background-color: yellow;
+}
+
+/* IE11 */
+:-ms-fullscreen {
+  background-color: yellow;
+}
+
+/* Standard syntax */
+:fullscreen {
+  background-color: #fff;
+}
+
+body {
+  overflow: hidden;
+  -webkit-overflow-scrolling: hidden;
+}
+:root {
+  --main-color: #0b3256;
+  --secondary-color: #e1e1e1;
+  --border-radius-default: 10px;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 2%;
+  position: relative;
+  z-index: auto;
+}
+
+/*Hot Fix*/
+header > .logo {
+ /* z-index: 999;*/
+ z-index: 1;
+}
+
+.logo img{width: 320px;}
+#menuToggle {
+  display: block;
+  position: relative;
+  top: 50px;
+  left: -38px;
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle a {
+  text-decoration: none;
+  color: #232323;
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover {
+  color: tomato;
+}
+
+#menuToggle input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+
+  cursor: pointer;
+
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+
+  -webkit-touch-callout: none;
+}
+
+/*
+  * Just a quick hamburger
+  */
+#menuToggle span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+
+  background: #cdcdcd;
+  border-radius: 3px;
+
+  z-index: 1;
+
+  transform-origin: 4px 0px;
+
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+}
+
+#menuToggle span:first-child {
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+
+/* 
+  * Transform all the slices of hamburger
+  * into a crossmark.
+  */
+#menuToggle input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+/*
+  * But let's hide the middle one.
+  */
+#menuToggle input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+  * Ohyeah and the last one should go the other direction
+  */
+#menuToggle input:checked ~ span:nth-last-child(2) {
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+  * Make this absolute positioned
+  * at the top left of the screen
+  */
+#menu {
+  top: 75px; /*Hotfix nao sei se funciona*/
+  position: absolute;
+  width: 270px;
+  margin: -127px 0 0 -365px;
+  padding: 30px;
+  /* padding-top: 125px; */
+  background: #ededed;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  transform-origin: 0% 0%;
+  transform: translate(156%, 0);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  border-radius: 12px;
+}
+
+#menu li {
+  margin-left: 10px;
+  font-family: "Inter", sans-serif;
+  font-weight: lighter;
+  padding: 16px 0;
+  font-size: 16px;
+}
+#menu li b {
+  margin-left: -18px;
+}
+/*
+  * And let's slide it in from the left
+  */
+#menuToggle input:checked ~ ul {
+  transform: none;
+}
+.mandalas{
+  padding-left: 12px;
+  font-weight: 900;
+}
+
+.boasvindas{
+  font-size: 14px;
+  line-height: 16.5px;
+  color: var(--main-color);
+  font-family: rubik;
+  font-weight: 400;
+  padding-left: 15px;
+  /*HOT FIX botao voltar*/
+  z-index: 999;
+  position: absolute;
+  width: 300px;
+}
+.sealcitymap {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+  margin-top: -80px;
+  z-index: auto;
+}
+.geral {
+  opacity: 1;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.sealcitymap button {
+  position: absolute;
+  background-color: var(--main-color);
+  padding: 10px 20px 10px 20px;
+  color: white;
+  border-radius: 8px;
+  font-family: rubik;
+  font-weight: 600;
+  cursor: pointer;
+}
+.mapa {
+  position: relative;
+}
+
+.sealcitymap img {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+/*Maps*/
+
+/*Buttons Seal City*/
+/*
+.sealcitymap button.fullscreen {
+  font-size: 30px;
+  padding: 10px;
+  top: 8%;
+  color: black;
+  background: none;
+  border: solid 1px;
+  right: 4%;
+}*/
+
+
+button.fullscreen {
+  font-size: 32px;
+  padding: 5px;
+  top: 8%;
+  color: black;
+  background: none;
+  border: solid 1px;
+  right: 4%;
+  position: relative;
+  margin: 6px;
+  margin-top: 16px;
+  z-index: 999;
+}
+.sealcitymap button.agronegocio {
+  left: 44%;
+  top: 7%;
+}
+.sealcitymap button.aeroportos {
+  left: 34%;
+  top: 18%;
+}
+.sealcitymap button.escritorios {
+  left: 18%;
+  top: 33%;
+}
+.sealcitymap button.industria {
+  left: 53%;
+  top: 21%;
+}
+.sealcitymap button.judiciario {
+  left: 34%;
+  top: 38%;
+}
+.sealcitymap button.saude {
+  left: 27%;
+  top: 48%;
+}
+.sealcitymap button.educacao {
+  top: 41%;
+  left: 50%;
+}
+.sealcitymap button.varejo {
+  top: 58%;
+  left: 41%;
+}
+.sealcitymap button.tuneis {
+  top: 42%;
+  left: 69%;
+}
+.sealcitymap button.rodovia {
+  top: 54%;
+  left: 60%;
+}
+
+.sealcitymap button.banco {
+  top: 27%;
+  left: 38%;
+}
+.containerBtn {
+  position: absolute;
+}
+/*Buttons Agronegocio*/
+.box {
+  font-family: rubik;
+  background-color: var(--secondary-color);
+  width: auto;
+  height: auto;
+  position: absolute;
+  border-radius: 8px 8px;
+  z-index: 1;
+}
+
+.box .desc {
+  text-align: left;
+}
+.box .desc span {
+  display: block;
+  width: 100%;
+  padding: 20px;
+}
+.box .desc span ul li {
+  list-style: inside;
+}
+.btn {
+  /*  display: inline-block;*/
+  text-align: center;
+  background-color: var(--main-color);
+  padding: 10px;
+  color: white;
+  border-radius: 8px 8px 8px 8px;
+  font-family: rubik;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.aberto {
+  min-width: 340px;
+  max-width: 300px;
+  height: auto;
+  z-index: 2;
+}
+.btnAberto {
+  border-radius: 8px 8px 0px 0px;
+  text-align: left;
+}
+/*Botoes mandala*/
+.btn-custom-mandala{color:var(--main-color); background:none; font-size: 26px; text-align: left;}
+.box-no-bg{background: none;}
+.mandalasd img{width: 26%; margin-top: 6%;}
+.mandalaps img{width: 32%; margin-top: 4%;}
+/*Mandalasp*/
+.mandalasd #redes{
+  left: 20%;
+  top: 5.5%;
+}
+.mandalasd #datacenter{
+  left: 17%;
+  top: 61%;
+}
+
+.mandalasd #dispositivosConectados{
+  left: 61%;
+  top: 8%;
+  max-width: 450px;
+}
+
+.mandalasd #ciberseguranca{
+  left: 64%;
+  top: 60%;
+}
+.mandalasd #ciberseguranca.aberto{
+  min-width: 364px;
+}
+
+.mandalasd #servicosdeti{
+  left: 45%;
+  top: 99%;
+  max-width: 450px;
+}
+
+
+
+/*MandaSP*/
+.mandalaps #audioevideo{left: 40%;}
+.mandalaps #seguranca{left: 30%; top: 20%;}
+.mandalaps #comunicacaounificada{top: 52%; left: 20%;}
+.mandalaps #sealconect{left: 25%; top: 78%;}
+.mandalaps #datacenter{left: 40%; top: 99%;}
+.mandalaps #solucoesdigitais{left: 54%; top: 99%;}
+.mandalaps #sealbuilding{left: 65%; top: 76%;}
+.mandalaps #servicos{left: 68%;top: 51%;}
+.mandalaps #sealxaas{left: 64%; top: 18%;}
+.mandalaps #midiaentretenimento{ left: 54%;}
+
+/*Botoes Agronegocio*/
+.agronegocio #seguranca {
+  left: 23%;
+  top: 16%;
+}
+
+.agronegocio #incendio {
+  left: 46%;
+  top: 35%;
+}
+.agronegocio #gee {
+  left: 62%;
+  top: 21%;
+}
+.agronegocio #conectividade {
+  left: 54%;
+  top: 62%;
+}
+
+/*Aeroportos*/
+.aeroportos #infraestrutura {
+  top: 16%;
+  left: 35%;
+}
+.aeroportos #automacao {
+  top: 49%;
+  left: 27%;
+}
+.aeroportos #audioevideo {
+  top: 55%;
+  left: 63%;
+}
+.aeroportos #seguranca {
+  top: 75%;
+  left: 49%;
+}
+/*Hotfix*/
+.escritorios img {
+  width: 60%;
+  margin-top: -10px;
+}
+
+.escritorios #salasdereuniao {
+  top: 10%;
+  left: 49%;
+}
+.escritorios #solucoesdigitais {
+  top: 21%;
+  left: 27%;
+}
+.escritorios #seguranca {
+  top: 39%;
+  left: 19%;
+}
+.escritorios #saladecrise {
+  top: 33%;
+  left: 43%;
+}
+.escritorios #estudiocorporativo {
+  top: 40%;
+  left: 71%;
+}
+.escritorios #auditorios {
+  top: 53%;
+  left: 56%;
+}
+.escritorios #digitalsignage {
+  top: 67%;
+  left: 35%;
+}
+
+/*Industria*/
+
+.industria #incendio {
+  top: 23%;
+  left: 36%;
+}
+
+.industria #incendio.aberto {
+  min-width: 358px;
+}
+.industria #seguranca {
+  top: 39%;
+  left: 14%;
+}
+
+.industria #seguranca.aberto{
+  min-width: 454px;
+}
+.industria #gestaoenergia {
+  top: 23%;
+  left: 64%;
+}
+.industria #conectividade {
+  top: 56%;
+  left: 40%;
+}
+
+.industria #salasdereuniaao {
+  top: 38%;
+  left: 49%;
+}
+
+.industria #industriaquatro {
+  top: 57%;
+  left: 62%;
+}
+
+.industria #wifilte {
+  top: 17%;
+  left: 84%;
+}
+
+/*Judiciario*/
+.judiciario #sistemadevotacao {
+  top: 20%;
+  left: 56%;
+}
+.judiciario #gravacaoaudiencia {
+  top: 26%;
+  left: 17%;
+}
+.judiciario #seguranca {
+  top: 44%;
+  left: 67%;
+}
+.judiciario #salasinteligentes {
+  top: 62%;
+  left: 11%;
+}
+/*Saude*/
+.saude #filmagemdecirurgias {
+  top: 26%;
+  left: 38%;
+}
+.saude #automacao {
+  top: 40%;
+  left: 24%;
+}
+.saude #digitalsignage {
+  top: 30%;
+  left: 64%;
+}
+.saude #seguranca {
+  top: 49%;
+  left: 47%;
+}
+/*Educacao*/
+.educacao #salashibridas {
+  top: 5%;
+  left: 57%;
+}
+.educacao #digitalsignage {
+  top: 33%;
+  left: 78%;
+}
+.educacao #seguranca {
+  top: 72%;
+  left: 39%;
+}
+/*Varejo*/
+.varejo #naas {
+  top: 9%;
+  left: 64%;
+}
+.varejo #naas.aberto {min-width: 400px}
+.varejo #analisedefluxo {
+  top: 23%;
+  left: 33%;
+}
+.varejo #iot {
+  top: 30%;
+  left: 83%;
+}
+.varejo #seguranca {
+  top: 62%;
+  left: 74%;
+}
+.varejo #digitalsignage {
+  top: 67%;
+  left: 42%;
+}
+/*Rodovia*/
+/*hotfix*/
+.rodovia img {
+  width: 60%;
+}
+.rodovia #conectividade {
+  top: 13%;
+  left: 56%;
+}
+.rodovia #seguranca {
+  top: 13%;
+  left: 36%;
+}
+.rodovia #iot {
+  top: 42%;
+  left: 32%;
+}
+.rodovia #its {
+  top: 57%;
+  left: 62%;
+}
+.banco #cyberseguranca{
+  top:10%;
+  left:15%;
+}
+.banco #servicos{
+  left: 61%;
+  top: 6%;
+}
+.banco #redes{
+  left: 47%;
+  top: 6%;
+}
+.banco #segurancaeletronica{
+    top: 27%;
+    left: 15%;
+}
+.banco #dispositivosconectados{
+  top: 28%;
+  left: 34%;
+}
+.banco #salasinteligentes{
+  top: 22%;
+  left: 62%;
+}
+.banco #digitalsignage{
+  left: 38%;
+  top: 51%;
+}
+.banco #cco{
+  left: 67%;
+  top: 42%;
+}
+.banco #datacenter{
+  top: 65%;
+  left: 24%;
+}
+.banco #auditorios{
+  top: 66%;
+  left: 58%;
+}
+.banco #estudiocorporativo{
+  left: 80%;
+  top: 58%;
+}
+.banco #facilites{
+  left: 80%;
+  top: 32%;
+}
+/*Components*/
+.bread {
+  font-size: 20px;
+  line-height: 40px;
+  color: var(--main-color);
+  font-family: rubik;
+  font-weight: 600;
+  padding-left: 15px;
+  /*HOT FIX botao voltar*/
+  z-index: 999;
+  position: absolute;
+}
+
+.bread a {
+  color: var(--main-color);
+  font-size: 18px;
+  font-weight: 200;
+}
+
+/*Video galery*/
+.gallery-list {
+  display: flex;
+  margin-top: 90px;
+  justify-content: center;
+  overflow: auto;
+  height: 1120px;
+}
+
+.video-grid {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  flex-direction: row;
+  justify-content: center;
+  min-height: 0px;
+  bottom: 0;
+  position: fixed;
+  overflow: auto;
+  top: 212px;
+ /* left: 0;*/
+}
+
+.video {
+  background-color: #000;
+  width: 440px;
+  height: 246px;
+  margin-bottom: 20px;
+}
+
+.video span{
+  color: var(--main-color);
+  font-size: 16px;
+  font-weight: 200;
+  font-family: 'Rubik', sans-serif;
+}
+.legenda{    margin: -16px;
+  text-align: center;
+  margin-left: 0px;;}
+
+
+  .rotate-message{display: block; text-align: center;}
+
+  .rotate-message span{
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    border: solid 1px #fff;
+  }
+@media screen and (min-width: 320px) and (max-width: 767px)  {
+    html {
+     /* transform: rotate(90deg);
+      transform-origin: right top;*/
+      /*width: 100vh;*/
+      width: 100%;
+      height: 100vw;
+      overflow-x: hidden;
+      position: absolute;
+      top: 8%;
+      left: 0;
+      background: #000;
+    }
+    body{background: #000;}
+  #panzoom{
+    display: none;
+  }
+  .sealcitymap{
+    display: none;
+  }
+   header{display: none;}
+  .overlay{display: none;}
+  .rotate-message{display: block; text-align: center; font-size: 10px; color: white;}
+  .video-grid {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    flex-direction: row;
+    justify-content: center;
+    min-height: 0px;
+    bottom: 0;
+    position: relative;
+    overflow: auto;
+    top: 114px;
+    left: 0;
+  }
+
+  .modal__container {
+    /*background-color: #fff;*/
+    /*padding: 30px;*/
+    max-width: 340px;
+    max-height: 50vh;
+    border-radius: 4px;
+    overflow-y: auto;
+    box-sizing: border-box;
+  }
+}
+
+.iconefull{color: #fff; background-color: #fff;}
+
+@media screen and (min-width: 320px) and (max-width: 920px) {
+  .boasvindas{font-size: 10px;width: 179px;}
+  .overlay{display: none;}
+  .logo a img {
+   /* max-width: 200px;*/
+   max-width: 150px;
+  }
+  .sealcitymap img {
+    width: 70%;
+  }
+  #menu {
+    height: 180px;
+    overflow-y: scroll;
+  }
+  #menuToggle {
+    margin-top: 0;
+    padding-top: 0;
+    top: 15px;
+    left: 5px;
+  }
+  .sealcitymap button {
+    font-size: 6px;
+    padding: 4px 9px 4px 9px;
+    border-radius: 4px;
+  }
+/**
+  .sealcitymap button.fullscreen {right: 24%;}*/
+
+
+  .modal__container {
+    /*background-color: #fff;*/
+    /*padding: 30px;*/
+    max-width: 340px;
+    max-height: 50vh;
+    border-radius: 4px;
+    overflow-y: auto;
+    box-sizing: border-box;
+  }
+
+  .sealcitymap{
+    top:50px
+  }
+  .sealcitymap button.agronegocio {
+    left: 44%;
+    top: 12%;
+  }
+  .sealcitymap button.aeroportos {
+    left: 40%;
+    top: 18%;
+  }
+  .sealcitymap button.escritorios {
+    left: 30%;
+    top: 33%;
+  }
+  .sealcitymap button.industria {
+    left: 53%;
+    top: 8%;
+  }
+  .sealcitymap button.judiciario {
+    left: 38%;
+    top: 34%;
+  }
+  .sealcitymap button.saude {
+    left: 33%;
+    top: 48%;
+  }
+  .sealcitymap button.educacao {
+    top: 41%;
+    left: 50%;
+  }
+  .sealcitymap button.varejo {
+    top: 58%;
+    left: 41%;
+  }
+  .sealcitymap button.tuneis {
+    top: 42%;
+    left: 62%;
+  }
+  .sealcitymap button.rodovia {
+    top: 50%;
+    left: 55%;
+  }
+
+  .video-grid {top:65px}
+  .btn {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+.rotate-message{display:block; font-size: 25px;}
+
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 100000000;
+	.overlayDoor {
+		&:before, &:after {
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background: #111;
+			transition: .5s cubic-bezier(.77,0,.18,1);
+			transition-delay: .8s;
+		}
+		&:before {
+			left: 0;
+		}
+		&:after {
+			right: 0;
+		}
+	}
+	&.loaded {
+		.overlayDoor {
+			&:before {
+				left: -50%;
+			}
+			&:after {
+				right: -50%;
+			}
+		}
+		.overlayContent {
+			opacity: 0;
+			margin-top: -15px;
+		}
+	}
+	.overlayContent {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		transition: .5s cubic-bezier(.77,0,.18,1);
+		.skip {
+			display: block;
+			width: 130px;
+			text-align: center;
+			margin: 50px auto 0;
+			cursor: pointer;
+			color: #fff;
+			font-family: 'Nunito';
+			font-weight: 700;
+			padding: 12px 0;
+			border: 2px solid #fff;
+			border-radius: 3px;
+			transition: 0.2s ease;
+			&:hover {
+				background: #ddd;
+				color: #444;
+				border-color: #ddd;
+			}
+		}
+	}
+}
+.loader {
+	width: 128px;
+	height: 128px;
+	border: 3px solid #fff;
+	border-bottom: 3px solid transparent;
+	border-radius: 50%;
+	position: relative;
+	animation: spin 1s linear infinite;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	.inner {
+		width: 64px;
+		height: 64px;
+		border: 3px solid transparent;
+		border-top: 3px solid #fff;
+		border-radius: 50%;
+		animation: spinInner 1s linear infinite;
+	}
+}
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+@keyframes spinInner {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(-720deg);
+	}
+}
