@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>bridge.intuitive.cv — A ponte simples entre empresas e talentos</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --primary: #ea580c;
+      --primary-dark: #c2410c;
+      --text: #111827;
+      --light: #f9fafb;
+    }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: white;
+      color: var(--text);
+    }
+    .btn-primary {
+      @apply bg-[var(--primary)] text-white font-semibold rounded-xl px-8 py-5 text-lg md:text-xl w-full sm:w-auto shadow-md transition-all duration-300 hover:bg-[var(--primary-dark)] hover:shadow-lg hover:-translate-y-0.5;
+    }
+    .accent { color: var(--primary); font-weight: 700; }
+    .fade-up {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease-out;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body class="bg-white">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50">
+    <div class="max-w-7xl mx-auto px-5 py-4 flex justify-between items-center">
+      <div class="text-2xl md:text-3xl font-bold tracking-tight">
+        <a href="https://intuitive.cv">intuitive<span class="accent">.cv</span></a>
+        <span class="text-gray-400 mx-2">/</span>
+        <span class="accent">bridge</span>
+      </div>
+      <a href="https://bridge.intuitive.cv/login" class="text-base md:text-lg font-medium text-gray-700 hover:text-[var(--primary)] transition-colors">
+        Entrar
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="min-h-screen flex items-center justify-center pt-28 pb-16 px-5">
+    <div class="max-w-5xl mx-auto text-center">
+      <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 fade-up">
+        A ponte.<br>
+        <span class="accent">Simples. Rápida. Local.</span>
+      </h1>
+      <p class="text-lg sm:text-xl md:text-2xl text-gray-600 mb-10 max-w-4xl mx-auto fade-up" style="transition-delay: 0.2s;">
+        Poste vagas em minutos.<br>
+        Receba candidatos frescos e compatíveis automaticamente.<br>
+        Sem complexidade. Sem mensalidades caras.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-5 fade-up" style="transition-delay: 0.4s;">
+        <a href="https://bridge.intuitive.cv/signup" class="btn-primary">
+          Começar agora — 7 dias grátis
+        </a>
+        <a href="#como-funciona" class="mt-4 sm:mt-0 text-lg font-medium text-gray-600 hover:text-[var(--primary)] transition-colors flex items-center justify-center gap-2">
+          Ver como funciona <i class="fa-solid fa-arrow-down"></i>
+        </a>
+      </div>
+      <div class="mt-12 text-gray-500 text-sm sm:text-base flex flex-wrap justify-center gap-6 fade-up" style="transition-delay: 0.6s;">
+        <span><i class="fa-solid fa-check text-[var(--primary)] mr-2"></i>URL personalizada grátis</span>
+        <span><i class="fa-solid fa-check text-[var(--primary)] mr-2"></i>Matching IA automático</span>
+        <span><i class="fa-solid fa-check text-[var(--primary)] mr-2"></i>Feito para PMEs e varejo</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 passos -->
+  <section id="como-funciona" class="py-20 bg-[var(--light)]">
+    <div class="max-w-5xl mx-auto px-5">
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 fade-up">
+        3 passos. Sem enrolação.
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-10">
+        <div class="text-center fade-up" style="transition-delay: 0.1s;">
+          <div class="text-6xl text-[var(--primary)] mb-6">1</div>
+          <h3 class="text-xl sm:text-2xl font-semibold mb-3">Crie sua página</h3>
+          <p class="text-base sm:text-lg text-gray-600">bridge.intuitive.cv/sua-empresa em segundos.</p>
+        </div>
+        <div class="text-center fade-up" style="transition-delay: 0.2s;">
+          <div class="text-6xl text-[var(--primary)] mb-6">2</div>
+          <h3 class="text-xl sm:text-2xl font-semibold mb-3">Poste a vaga</h3>
+          <p class="text-base sm:text-lg text-gray-600">Título, horário, regime e atividades. Só isso.</p>
+        </div>
+        <div class="text-center fade-up" style="transition-delay: 0.3s;">
+          <div class="text-6xl text-[var(--primary)] mb-6">3</div>
+          <h3 class="text-xl sm:text-2xl font-semibold mb-3">Receba matches</h3>
+          <p class="text-base sm:text-lg text-gray-600">Candidatos compatíveis chegam no seu dashboard.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problemas -->
+  <section class="py-20 px-5">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 fade-up">
+        Chega de...
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+        <div class="p-6 border border-gray-200 rounded-xl hover:border-[var(--primary)] transition-all fade-up" style="transition-delay: 0.1s;">
+          <div class="text-6xl text-red-500 mb-6"><i class="fa-solid fa-store-slash"></i></div>
+          <h3 class="text-xl font-semibold mb-3">Plataformas caras</h3>
+          <p class="text-base text-gray-600">R$ 500–2.000/mês por poucas aplicações.</p>
+        </div>
+        <div class="p-6 border border-gray-200 rounded-xl hover:border-[var(--primary)] transition-all fade-up" style="transition-delay: 0.2s;">
+          <div class="text-6xl text-purple-500 mb-6"><i class="fa-solid fa-list-check"></i></div>
+          <h3 class="text-xl font-semibold mb-3">Formulários infinitos</h3>
+          <p class="text-base text-gray-600">20 campos obrigatórios para postar uma vaga.</p>
+        </div>
+        <div class="p-6 border border-gray-200 rounded-xl hover:border-[var(--primary)] transition-all fade-up" style="transition-delay: 0.3s;">
+          <div class="text-6xl text-amber-500 mb-6"><i class="fa-solid fa-clock-rotate-left"></i></div>
+          <h3 class="text-xl font-semibold mb-3">Currículos velhos</h3>
+          <p class="text-base text-gray-600">Candidatos que não respondem ou já foram contratados.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefícios -->
+  <section class="py-20 bg-[var(--light)] px-5">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12">
+      <div class="fade-up" style="transition-delay: 0.1s;">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-8">Feito para empresas reais</h2>
+        <ul class="space-y-6 text-base sm:text-lg">
+          <li class="flex items-start gap-4">
+            <i class="fa-solid fa-check-circle text-3xl text-[var(--primary)]"></i>
+            <div><strong>Simples demais</strong><br><span class="text-gray-600">Posta em menos de 2 minutos</span></div>
+          </li>
+          <li class="flex items-start gap-4">
+            <i class="fa-solid fa-robot text-3xl text-[var(--primary)]"></i>
+            <div><strong>Matching automático</strong><br><span class="text-gray-600">IA envia os melhores candidatos frescos</span></div>
+          </li>
+          <li class="flex items-start gap-4">
+            <i class="fa-solid fa-check-circle text-3xl text-[var(--primary)]"></i>
+            <div><strong>Preço justo</strong><br><span class="text-gray-600">Começa em R$ 150–297/mês</span></div>
+          </li>
+        </ul>
+      </div>
+      <div class="fade-up" style="transition-delay: 0.3s;">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-8">Resultado que aparece</h2>
+        <ul class="space-y-6 text-base sm:text-lg">
+          <li class="flex items-start gap-4">
+            <i class="fa-solid fa-check-circle text-3xl text-[var(--primary)]"></i>
+            <div><strong>Candidatos opt-in</strong><br><span class="text-gray-600">Pessoas que realmente querem trabalhar agora</span></div>
+          </li>
+          <li class="flex items-start gap-4">
+            <i class="fa-solid fa-check-circle text-3xl text-[var(--primary)]"></i>
+            <div><strong>Compartilhe no WhatsApp</strong><br><span class="text-gray-600">Sua página viraliza em grupos locais</span></div>
+          </li>
+          <li class="flex items-start gap-4">
+            <i class="fa-solid fa-check-circle text-3xl text-[var(--primary)]"></i>
+            <div><strong>Sem compromisso</strong><br><span class="text-gray-600">Cancele quando quiser</span></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA final -->
+  <section class="py-20 px-5">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 fade-up">
+        Sua próxima contratação<br>está a poucos cliques
+      </h2>
+      <p class="text-lg sm:text-xl text-gray-600 mb-10 fade-up" style="transition-delay: 0.2s;">
+        Teste grátis por 7 dias.<br>
+        Sem cartão. Sem pegadinha.
+      </p>
+      <a href="https://bridge.intuitive.cv/signup" class="btn-primary fade-up" style="transition-delay: 0.4s;">
+        Criar minha página bridge agora
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white py-12 border-t border-gray-100 px-5">
+    <div class="max-w-7xl mx-auto text-center text-gray-500 text-sm">
+      bridge<span class="accent">.intuitive.cv</span> — A ponte simples para PMEs e talentos locais<br>
+      © 2026 intuitive.cv — Todos os direitos reservados
+    </div>
+  </footer>
+
+  <!-- Script fade-up -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const elements = document.querySelectorAll('.fade-up');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      elements.forEach(el => observer.observe(el));
+    });
+  </script>
+
+</body>
+</html>
