@@ -1,0 +1,1839 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎉 Parabéns Mylena! PUCRS 2026 🎓</title>
+    <meta name="description" content="Página especial de parabéns para Mylena que passou no vestibular da PUCRS!">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        pucrs: {
+                            blue: '#003366',
+                            gold: '#FFD700',
+                            light: '#4A90D9',
+                            dark: '#001A33'
+                        },
+                        candy: {
+                            pink: '#FF6B9D',
+                            purple: '#9333EA',
+                            coral: '#FF8A80',
+                            mint: '#34D399',
+                            yellow: '#FBBF24',
+                            blue: '#38BDF8',
+                            orange: '#FB923C'
+                        },
+                        retro: {
+                            pink: '#FF00FF',
+                            cyan: '#00FFFF',
+                            lime: '#00FF00',
+                            yellow: '#FFFF00',
+                            red: '#FF0000'
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Outfit', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                        fun: ['Fredoka One', 'cursive'],
+                        cute: ['Quicksand', 'sans-serif'],
+                        retro: ['Comic Sans MS', 'cursive']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Motion.dev -->
+    <script src="https://cdn.jsdelivr.net/npm/motion@11.15.0/dist/motion.min.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            overflow: hidden;
+            height: 100%;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        /* ===================== LOADING SCREEN ===================== */
+        #loading-screen {
+            position: fixed;
+            inset: 0;
+            z-index: 10000;
+            background: linear-gradient(-45deg, #FF6B9D, #9333EA, #38BDF8, #34D399);
+            background-size: 400% 400%;
+            animation: gradient 5s ease infinite;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+
+        #loading-screen.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loading-heart {
+            font-size: 5rem;
+            animation: heartbeat 1.2s ease-in-out infinite;
+        }
+
+        @keyframes heartbeat {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            25% {
+                transform: scale(1.2);
+            }
+
+            50% {
+                transform: scale(1);
+            }
+
+            75% {
+                transform: scale(1.3);
+            }
+        }
+
+        .loading-text {
+            font-family: 'Fredoka One', cursive;
+            font-size: 2rem;
+            color: white;
+            margin-top: 20px;
+            text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .loading-bar-container {
+            width: 200px;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            margin-top: 30px;
+            overflow: hidden;
+        }
+
+        .loading-bar {
+            height: 100%;
+            background: white;
+            border-radius: 10px;
+            animation: loading-progress 2.5s ease forwards;
+        }
+
+        @keyframes loading-progress {
+            0% {
+                width: 0%;
+            }
+
+            100% {
+                width: 100%;
+            }
+        }
+
+        /* ===================== ROTATE SCREEN OVERLAY ===================== */
+        #rotate-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .rotate-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            animation: rotate-phone 2s ease-in-out infinite;
+        }
+
+        @keyframes rotate-phone {
+
+            0%,
+            100% {
+                transform: rotate(0deg);
+            }
+
+            50% {
+                transform: rotate(-90deg);
+            }
+        }
+
+        .rotate-text {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.3rem;
+            color: white;
+            max-width: 300px;
+            line-height: 1.6;
+        }
+
+        .rotate-text strong {
+            color: #FFD700;
+        }
+
+        .rotate-or {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.6);
+            margin: 20px 0;
+        }
+
+        .rotate-pc-icon {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        @media (orientation: portrait) and (max-width: 768px) {
+            #rotate-overlay {
+                display: flex;
+            }
+        }
+
+        @media (orientation: landscape),
+        (min-width: 769px) {
+            #rotate-overlay {
+                display: none !important;
+            }
+        }
+
+        /* ===================== CREDITS MODAL ===================== */
+        #credits-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 9998;
+            background: rgba(0, 0, 0, 0.9);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        #credits-modal.show {
+            display: flex;
+            opacity: 1;
+        }
+
+        .credits-content {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            border: 3px solid #FFD700;
+            box-shadow: 0 0 40px rgba(255, 215, 0, 0.3);
+        }
+
+        .credits-title {
+            font-family: 'Fredoka One', cursive;
+            font-size: 2.5rem;
+            color: #FFD700;
+            margin-bottom: 30px;
+            text-shadow: 3px 3px 0 rgba(255, 107, 157, 0.5);
+        }
+
+        .credits-item {
+            color: white;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .credits-item strong {
+            color: #FF6B9D;
+        }
+
+        .credits-love {
+            font-size: 3rem;
+            margin: 30px 0;
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+
+        .credits-close {
+            background: linear-gradient(135deg, #FF6B9D, #9333EA);
+            border: none;
+            color: white;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: bold;
+            font-size: 1.2rem;
+            padding: 12px 40px;
+            border-radius: 30px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .credits-close:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(255, 107, 157, 0.5);
+        }
+
+        .slider-container {
+            display: flex;
+            height: 100vh;
+            transition: transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+
+        .slide {
+            min-width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-arrow {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            border: none;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-arrow:hover {
+            transform: translateY(-50%) scale(1.15);
+        }
+
+        .nav-arrow.left {
+            left: 10px;
+            background: linear-gradient(135deg, #FF6B9D, #9333EA);
+            color: white;
+        }
+
+        .nav-arrow.right {
+            right: 10px;
+            background: linear-gradient(135deg, #38BDF8, #34D399);
+            color: white;
+        }
+
+        .nav-arrow.pulse {
+            animation: pulse-arrow 2s infinite;
+        }
+
+        @keyframes pulse-arrow {
+
+            0%,
+            100% {
+                box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            }
+
+            50% {
+                box-shadow: 0 8px 50px rgba(255, 107, 157, 0.6);
+            }
+        }
+
+        /* Mobile nav arrow optimization */
+        @media (min-width: 768px) {
+            .nav-arrow {
+                width: 70px;
+                height: 70px;
+                font-size: 2rem;
+            }
+
+            .nav-arrow.left {
+                left: 20px;
+            }
+
+            .nav-arrow.right {
+                right: 20px;
+            }
+        }
+
+        /* ===================== PROGRESS BAR WITH ROCKET ===================== */
+        .progress-container {
+            position: fixed;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .progress-bar-wrapper {
+            width: 200px;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.25);
+            border-radius: 10px;
+            position: relative;
+            overflow: visible;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #FF6B9D, #9333EA, #38BDF8, #34D399);
+            background-size: 300% 100%;
+            animation: progress-gradient 3s ease infinite;
+            border-radius: 8px;
+            transition: width 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+
+        @keyframes progress-gradient {
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .rocket-icon {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%) rotate(90deg);
+            font-size: 1.8rem;
+            transition: left 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+            filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+            z-index: 10;
+        }
+
+        .rocket-trail {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 6px;
+            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.6), rgba(255, 107, 157, 0.4));
+            border-radius: 3px;
+            transition: width 0.5s cubic-bezier(0.645, 0.045, 0.355, 1), left 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+
+        .progress-label {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 0.8rem;
+            color: white;
+            font-weight: 600;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        @media (min-width: 768px) {
+            .progress-bar-wrapper {
+                width: 300px;
+                height: 12px;
+            }
+
+            .rocket-icon {
+                font-size: 2.2rem;
+            }
+
+            .progress-label {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Gradients for slides */
+        .gradient-1 {
+            background: linear-gradient(-45deg, #FF6B9D, #9333EA, #38BDF8, #34D399);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+
+        .gradient-2 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .gradient-3 {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .gradient-4 {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .gradient-5 {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+
+        .gradient-6 {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        }
+
+        /* Apartment gradient */
+        .gradient-apartment {
+            background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 50%, #f5576c 100%);
+        }
+
+        /* Te Amo gradient */
+        .gradient-love {
+            background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 30%, #ff65a3 60%, #ff758c 100%);
+            background-size: 300% 300%;
+            animation: love-gradient 5s ease infinite;
+        }
+
+        @keyframes love-gradient {
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        /* Retro 2000s Style */
+        .retro-bg {
+            background: linear-gradient(180deg, #000033 0%, #660066 50%, #FF00FF 100%);
+            position: relative;
+        }
+
+        .retro-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 20% 80%, rgba(255, 0, 255, 0.3) 0%, transparent 40%),
+                radial-gradient(circle at 80% 20%, rgba(0, 255, 255, 0.3) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(255, 255, 0, 0.2) 0%, transparent 60%);
+        }
+
+        @keyframes gradient {
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .glass {
+            background: rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .glass-light {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            border: 3px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #FBBF24 0%, #FB923C 50%, #FF6B9D 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .floating-emoji {
+            position: fixed;
+            font-size: 2rem;
+            pointer-events: none;
+            z-index: 100;
+        }
+
+        .confetti,
+        .paint-splash {
+            position: fixed;
+            pointer-events: none;
+            z-index: 100;
+        }
+
+        .heart-burst {
+            position: fixed;
+            font-size: 1.5rem;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        /* Retro Banner Styles */
+        .retro-banner {
+            background: linear-gradient(90deg,
+                    #FF00FF, #00FFFF, #FFFF00, #FF00FF, #00FF00, #FF0000, #00FFFF);
+            background-size: 200% 100%;
+            animation: rainbow 3s linear infinite;
+            padding: 20px 60px;
+            border: 8px dashed #FFFF00;
+            box-shadow:
+                0 0 20px #FF00FF,
+                0 0 40px #00FFFF,
+                0 0 60px #FFFF00,
+                inset 0 0 20px rgba(255, 255, 255, 0.3);
+            transform: rotate(-3deg);
+            position: relative;
+        }
+
+        .retro-banner::before,
+        .retro-banner::after {
+            content: '★';
+            position: absolute;
+            font-size: 3rem;
+            color: #FFFF00;
+            animation: spin 2s linear infinite;
+            text-shadow: 0 0 10px #FF00FF;
+        }
+
+        .retro-banner::before {
+            left: -40px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .retro-banner::after {
+            right: -40px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        @keyframes rainbow {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            100% {
+                background-position: 200% 50%;
+            }
+        }
+
+        @keyframes spin {
+            from {
+                transform: translateY(-50%) rotate(0deg);
+            }
+
+            to {
+                transform: translateY(-50%) rotate(360deg);
+            }
+        }
+
+        .retro-text {
+            font-family: 'Comic Sans MS', cursive;
+            color: #000;
+            text-shadow:
+                3px 3px 0 #FFFF00,
+                6px 6px 0 #FF00FF,
+                9px 9px 0 #00FFFF;
+            letter-spacing: 4px;
+        }
+
+        .blink {
+            animation: blink 0.5s step-end infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .marquee {
+            animation: marquee 10s linear infinite;
+            white-space: nowrap;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .paint-splatter {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(2px);
+        }
+
+        .typewriter {
+            overflow: hidden;
+            border-right: 3px solid white;
+            white-space: nowrap;
+            animation: typing 3s steps(40) forwards, blink-caret 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes blink-caret {
+            50% {
+                border-color: transparent;
+            }
+        }
+
+        .shake {
+            animation: shake 0.5s ease-in-out infinite;
+        }
+
+        @keyframes shake {
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(-5px);
+            }
+
+            75% {
+                transform: translateX(5px);
+            }
+        }
+
+        .float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .wiggle {
+            animation: wiggle 1s ease-in-out infinite;
+        }
+
+        @keyframes wiggle {
+
+            0%,
+            100% {
+                transform: rotate(-3deg);
+            }
+
+            50% {
+                transform: rotate(3deg);
+            }
+        }
+
+        .pulse-glow {
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 20px rgba(255, 107, 157, 0.5);
+            }
+
+            50% {
+                box-shadow: 0 0 60px rgba(255, 107, 157, 0.9);
+            }
+        }
+
+        .sparkle::after {
+            content: '✨';
+            position: absolute;
+            animation: sparkle-float 2s ease-in-out infinite;
+        }
+
+        @keyframes sparkle-float {
+
+            0%,
+            100% {
+                opacity: 0;
+                transform: scale(0);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+        }
+
+        .tear-drop {
+            position: fixed;
+            font-size: 1.5rem;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        /* Big Love Text */
+        .mega-love-text {
+            font-family: 'Fredoka One', cursive;
+            font-size: 4rem;
+            background: linear-gradient(135deg, #fff 0%, #ffd1dc 50%, #fff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: none;
+            animation: love-pulse 2s ease-in-out infinite;
+            filter: drop-shadow(4px 4px 0 rgba(255, 107, 157, 0.5));
+        }
+
+        @keyframes love-pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        @media (min-width: 768px) {
+            .mega-love-text {
+                font-size: 6rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .mega-love-text {
+                font-size: 8rem;
+            }
+        }
+
+        /* Credits Button */
+        .credits-btn {
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            border: 4px solid #FFFF00;
+            color: #000;
+            font-family: 'Comic Sans MS', cursive;
+            font-weight: bold;
+            font-size: 1rem;
+            padding: 10px 25px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        }
+
+        .credits-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 40px rgba(255, 215, 0, 0.8);
+        }
+
+        @media (min-width: 768px) {
+            .credits-btn {
+                font-size: 1.2rem;
+                padding: 12px 35px;
+            }
+        }
+
+        /* ===================== MOBILE OPTIMIZATIONS ===================== */
+
+        /* Slide padding for mobile */
+        @media (max-width: 767px) {
+            .slide {
+                padding: 60px 10px 80px 10px;
+            }
+
+            /* Retro banner adjustments */
+            .retro-banner {
+                padding: 12px 30px;
+                border-width: 4px;
+            }
+
+            .retro-banner::before,
+            .retro-banner::after {
+                font-size: 1.8rem;
+            }
+
+            .retro-banner::before {
+                left: -25px;
+            }
+
+            .retro-banner::after {
+                right: -25px;
+            }
+
+            .retro-text {
+                letter-spacing: 2px;
+            }
+
+            /* Glass cards on mobile */
+            .glass {
+                padding: 1rem !important;
+            }
+
+            .glass-light {
+                padding: 1rem !important;
+            }
+
+            /* Button stack on mobile */
+            .flex.flex-wrap.justify-center.gap-4 {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .flex.flex-wrap.justify-center.gap-4 button {
+                width: 100%;
+                max-width: 250px;
+                font-size: 0.95rem !important;
+                padding: 10px 20px !important;
+            }
+
+            /* Emoji sizes on mobile */
+            .text-8xl {
+                font-size: 4rem !important;
+            }
+
+            .text-9xl {
+                font-size: 5rem !important;
+            }
+
+            .text-6xl {
+                font-size: 2.5rem !important;
+            }
+
+            .text-5xl {
+                font-size: 2rem !important;
+            }
+        }
+
+        /* Very small screens */
+        @media (max-width: 380px) {
+            .retro-banner {
+                padding: 10px 20px;
+            }
+
+            .retro-text {
+                font-size: 1.2rem !important;
+                letter-spacing: 1px;
+            }
+
+            .mega-love-text {
+                font-size: 2.5rem !important;
+            }
+
+            .progress-bar-wrapper {
+                width: 160px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ===================== LOADING SCREEN ===================== -->
+    <div id="loading-screen">
+        <div class="loading-heart">💖</div>
+        <div class="loading-text">Preparando surpresa...</div>
+        <div class="loading-bar-container">
+            <div class="loading-bar"></div>
+        </div>
+    </div>
+
+    <!-- ===================== ROTATE OVERLAY ===================== -->
+    <div id="rotate-overlay">
+        <div class="rotate-icon">📱</div>
+        <p class="rotate-text">
+            Para uma <strong>melhor experiência</strong>, por favor gire seu celular para o modo
+            <strong>paisagem</strong> (horizontal)
+        </p>
+        <p class="rotate-or">— ou —</p>
+        <div class="rotate-pc-icon">💻</div>
+        <p class="rotate-text">Acesse pelo <strong>computador</strong></p>
+    </div>
+
+    <!-- ===================== CREDITS MODAL ===================== -->
+    <div id="credits-modal">
+        <div class="credits-content">
+            <h2 class="credits-title">✨ Créditos ✨</h2>
+            <p class="credits-item"><strong>Desenvolvido com muito amor por:</strong></p>
+            <p class="credits-item">🤓 Maridão Nerd Luck 🍀</p>
+            <p class="credits-item"><strong>Para a pessoa mais especial:</strong></p>
+            <p class="credits-item">💖 Mylena, meu amor 💖</p>
+            <p class="credits-item"><strong>Celebrando:</strong></p>
+            <p class="credits-item">🎓 Aprovação na PUCRS 2026 🎓</p>
+            <div class="credits-love">💕</div>
+            <p class="credits-item" style="font-size: 0.9rem; opacity: 0.8;">© 2026 - Feito com ❤️ e muito orgulho</p>
+            <button class="credits-close" onclick="closeCredits()">Fechar ❤️</button>
+        </div>
+    </div>
+
+    <!-- Background Music -->
+    <audio id="bixo-music" preload="auto">
+        <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Navigation Arrows -->
+    <button class="nav-arrow left pulse" onclick="prevSlide()" id="prev-btn" style="display: none;">
+        ←
+    </button>
+    <button class="nav-arrow right pulse" onclick="nextSlide()" id="next-btn">
+        →
+    </button>
+
+    <!-- Progress Bar Navigation with Rocket -->
+    <div class="progress-container" id="progress-nav">
+        <div class="progress-bar-wrapper">
+            <div class="progress-bar-fill" id="progress-fill"></div>
+            <div class="rocket-trail" id="rocket-trail"></div>
+            <div class="rocket-icon" id="rocket-icon">🚀</div>
+        </div>
+        <div class="progress-label" id="progress-label">1 / 9</div>
+    </div>
+
+    <!-- Floating Elements Container -->
+    <div id="floating-container"></div>
+
+    <!-- Slider Container -->
+    <div class="slider-container" id="slider">
+
+        <!-- SLIDE 1: Hero -->
+        <div class="slide gradient-1" id="slide-1">
+            <div class="text-center px-4 max-w-4xl">
+                <div id="trophy-1" class="text-8xl md:text-9xl mb-8 float">🏆</div>
+
+                <div class="mb-6">
+                    <span
+                        class="bg-white text-candy-purple font-fun text-2xl md:text-3xl px-6 py-2 rounded-full shadow-xl inline-block wiggle">
+                        ✨ VESTIBULAR 2026 ✨
+                    </span>
+                </div>
+
+                <h1 class="font-fun text-5xl md:text-7xl lg:text-8xl text-white drop-shadow-lg mb-4"
+                    style="text-shadow: 4px 4px 0 rgba(0,0,0,0.2);">
+                    PARABÉNS
+                </h1>
+
+                <h2 class="font-fun text-6xl md:text-8xl lg:text-9xl text-gradient mb-8"
+                    style="text-shadow: 4px 4px 0 rgba(0,0,0,0.15);">
+                    MYLENA! 💖
+                </h2>
+
+                <p class="text-white text-2xl md:text-3xl font-cute font-bold mb-8"
+                    style="text-shadow: 2px 2px 0 rgba(0,0,0,0.2);">
+                    Você conseguiu! Você é INCRÍVEL! 🌟
+                </p>
+
+                <div class="flex justify-center gap-4 flex-wrap text-5xl">
+                    <span class="float">🎓</span>
+                    <span class="wiggle" style="animation-delay: 0.2s;">🌟</span>
+                    <span class="float" style="animation-delay: 0.4s;">💖</span>
+                    <span class="wiggle" style="animation-delay: 0.6s;">🎉</span>
+                </div>
+
+                <p class="text-white/90 text-lg mt-12 animate-pulse font-bold">
+                    Clique na seta para continuar →
+                </p>
+            </div>
+        </div>
+
+        <!-- SLIDE 2: Emotional Message 1 -->
+        <div class="slide gradient-2" id="slide-2">
+            <div class="text-center px-4 max-w-4xl">
+                <div class="text-8xl mb-8 float">💕</div>
+
+                <div class="glass rounded-3xl p-8 md:p-12">
+                    <h2 class="font-fun text-4xl md:text-6xl text-white mb-8"
+                        style="text-shadow: 3px 3px 0 rgba(0,0,0,0.2);">
+                        Você sabe o que eu vi?
+                    </h2>
+
+                    <p class="text-white text-2xl md:text-3xl font-cute leading-relaxed mb-6"
+                        style="text-shadow: 1px 1px 0 rgba(0,0,0,0.2);">
+                        Eu vi você estudando quando todos dormiam... ☕🌙
+                    </p>
+
+                    <p class="text-white text-2xl md:text-3xl font-cute leading-relaxed mb-6"
+                        style="text-shadow: 1px 1px 0 rgba(0,0,0,0.2);">
+                        Eu vi você abrindo mão de tantas coisas... 📚💪
+                    </p>
+
+                    <p class="text-white text-2xl md:text-3xl font-cute leading-relaxed"
+                        style="text-shadow: 1px 1px 0 rgba(0,0,0,0.2);">
+                        Eu vi você <strong class="text-candy-yellow">NUNCA DESISTIR</strong>! ✨
+                    </p>
+                </div>
+
+                <div class="mt-8 text-6xl wiggle">🥹</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 3: Emotional Message 2 -->
+        <div class="slide gradient-3" id="slide-3">
+            <div class="text-center px-4 max-w-4xl">
+                <div class="text-8xl mb-8 float">🌸</div>
+
+                <div class="glass rounded-3xl p-8 md:p-12">
+                    <h2 class="font-fun text-4xl md:text-6xl text-white mb-8"
+                        style="text-shadow: 3px 3px 0 rgba(0,0,0,0.2);">
+                        E hoje...
+                    </h2>
+
+                    <p class="text-white text-3xl md:text-4xl font-cute leading-relaxed mb-8 font-bold"
+                        style="text-shadow: 2px 2px 0 rgba(0,0,0,0.2);">
+                        Todo aquele esforço se transformou em
+                        <span class="text-candy-yellow text-4xl md:text-5xl block mt-4">VITÓRIA!</span>
+                    </p>
+
+                    <p class="text-white text-2xl font-cute" style="text-shadow: 1px 1px 0 rgba(0,0,0,0.2);">
+                        Você provou que é CAPAZ de conquistar QUALQUER COISA! 💖
+                    </p>
+                </div>
+
+                <div class="mt-8 flex justify-center gap-4 text-5xl">
+                    <span class="float">🏆</span>
+                    <span class="wiggle">⭐</span>
+                    <span class="float" style="animation-delay: 0.3s;">🎓</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 4: PUCRS Highlight -->
+        <div class="slide gradient-4" id="slide-4">
+            <div class="text-center px-4 max-w-4xl">
+                <div class="text-8xl mb-8 float">🎓</div>
+
+                <h2 class="font-fun text-4xl md:text-5xl text-white mb-8"
+                    style="text-shadow: 3px 3px 0 rgba(0,0,0,0.2);">
+                    A meta foi alcançada! Não em uma faculdade, mas sim em varias!!!
+                </h2>
+
+                <div class="bg-gradient-to-r from-pucrs-blue to-pucrs-light rounded-3xl p-8 md:p-12 shadow-2xl mb-8">
+                    <p class="text-white text-2xl font-cute mb-4">Só que agora Você foi APROVADA na</p>
+                    <h3 class="font-fun text-5xl md:text-7xl text-white mb-4"
+                        style="text-shadow: 4px 4px 0 rgba(0,0,0,0.3);">
+                        PUCRS
+                    </h3>
+                    <p class="text-candy-yellow text-3xl font-bold">2026 🌟</p>
+                </div>
+
+                <p class="text-white text-2xl font-cute font-bold" style="text-shadow: 1px 1px 0 rgba(0,0,0,0.2);">
+                    Uma das melhores universidades do Brasil te espera! MDSSSS!!! 🚀
+                </p>
+            </div>
+        </div>
+
+        <!-- SLIDE 5: Love Declaration -->
+        <div class="slide gradient-5" id="slide-5">
+            <div class="text-center px-4 max-w-4xl">
+                <div class="text-8xl mb-8 float">💝</div>
+
+                <div class="glass rounded-3xl p-8 md:p-12">
+                    <h2 class="font-fun text-4xl md:text-5xl text-white mb-8"
+                        style="text-shadow: 3px 3px 0 rgba(0,0,0,0.2);">
+                        Mylena, meu amor...
+                    </h2>
+
+                    <div class="glass-light rounded-2xl p-6 mb-8">
+                        <p class="text-gray-800 text-xl md:text-2xl font-cute leading-relaxed">
+                            Eu tenho <strong class="text-candy-pink">MUITO ORGULHO</strong> de você! 💕
+                            <br><br>
+                            Você é a pessoa mais <strong class="text-candy-purple">DETERMINADA</strong>, <strong
+                                class="text-candy-blue">INTELIGENTE</strong> e <strong
+                                class="text-candy-mint">GUERREIRA</strong> que eu conheço!
+                            <br><br>
+                            Ter você ao meu lado é o meu maior presente. 🎁
+                        </p>
+                    </div>
+
+                    <div class="bg-gray-800 rounded-2xl p-6 inline-block">
+                        <div class="flex items-center gap-4">
+                            <span class="text-4xl">🤓</span>
+                            <div class="text-left">
+                                <p class="text-gray-400 text-sm uppercase">Com amor do</p>
+                                <h3 class="text-white font-fun text-2xl">Maridão Nerd Luck 🍀</h3>
+                            </div>
+                            <span class="text-4xl">💚</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 6: Future -->
+        <div class="slide gradient-6" id="slide-6">
+            <div class="text-center px-4 max-w-4xl">
+                <div class="text-8xl mb-8 float">🚀</div>
+
+                <h2 class="font-fun text-4xl md:text-6xl text-white mb-8"
+                    style="text-shadow: 3px 3px 0 rgba(0,0,0,0.2);">
+                    O futuro é seu!
+                </h2>
+
+                <div class="glass rounded-3xl p-8 mb-8">
+                    <p class="text-white text-2xl md:text-3xl font-cute leading-relaxed mb-6"
+                        style="text-shadow: 1px 1px 0 rgba(0,0,0,0.2);">
+                        Novas oportunidades... 👯‍♀️
+                    </p>
+                    <p class="text-white text-2xl md:text-3xl font-cute leading-relaxed mb-6"
+                        style="text-shadow: 1px 1px 0 rgba(0,0,0,0.2);">
+                        Novos aprendizados... 📚
+                    </p>
+                    <p class="text-white text-2xl md:text-3xl font-cute leading-relaxed mb-6"
+                        style="text-shadow: 1px 1px 0 rgba(0,0,0,0.2);">
+                        Novas experiências... 🌈
+                    </p>
+                    <p class="text-white text-3xl md:text-4xl font-cute font-bold"
+                        style="text-shadow: 2px 2px 0 rgba(0,0,0,0.2);">
+                        Uma nova Mylena ainda mais <span class="text-candy-yellow">INCRÍVEL</span>! ✨
+                    </p>
+                </div>
+
+                <p class="text-white text-xl font-cute font-bold animate-pulse">
+                    Continue para a surpresa final! →
+                </p>
+            </div>
+        </div>
+
+        <!-- SLIDE 7: RETRO 2000s BANNER - FINAL -->
+        <div class="slide retro-bg" id="slide-7">
+            <!-- Paint Splatters Container -->
+            <div id="paint-container"></div>
+
+            <div class="text-center px-4 max-w-5xl relative z-10">
+                <!-- Retro Stars -->
+                <div class="absolute top-10 left-10 text-6xl blink" style="color: #FFFF00;">★</div>
+                <div class="absolute top-20 right-20 text-5xl blink" style="color: #00FFFF; animation-delay: 0.3s;">★
+                </div>
+                <div class="absolute bottom-32 left-20 text-4xl blink" style="color: #FF00FF; animation-delay: 0.6s;">★
+                </div>
+                <div class="absolute bottom-20 right-10 text-6xl blink" style="color: #00FF00; animation-delay: 0.2s;">★
+                </div>
+
+                <!-- Marquee -->
+                <div class="overflow-hidden mb-8">
+                    <p class="marquee text-2xl"
+                        style="color: #00FFFF; text-shadow: 2px 2px 0 #FF00FF; font-family: 'Comic Sans MS', cursive;">
+                        ★ PARABÉNS ★ MYLENA ★ APROVADA ★ PUCRS ★ 2026 ★ BIXOOOO ★ PARABÉNS ★ MYLENA ★ APROVADA ★
+                    </p>
+                </div>
+
+                <!-- Main Retro Banner -->
+                <div class="retro-banner mb-8">
+                    <h1 class="retro-text text-4xl md:text-6xl lg:text-7xl font-bold">
+                        PARABÉNS MYLENA
+                    </h1>
+                </div>
+
+                <!-- BIXO Banner -->
+                <div class="bg-gradient-to-r from-retro-pink via-retro-cyan to-retro-lime p-1 rounded-2xl mb-8 shake">
+                    <div class="bg-black rounded-xl p-6">
+                        <h2 class="text-5xl md:text-7xl lg:text-8xl font-bold"
+                            style="font-family: 'Comic Sans MS', cursive; color: #FFFF00; text-shadow: 4px 4px 0 #FF00FF, 8px 8px 0 #00FFFF;">
+                            BIXOOOOO 2026!!! 🎉
+                        </h2>
+                    </div>
+                </div>
+
+                <!-- GIF-style decorations -->
+                <div class="flex justify-center gap-4 mb-8 flex-wrap">
+                    <span class="text-6xl wiggle">🎊</span>
+                    <span class="text-6xl float">🎓</span>
+                    <span class="text-6xl wiggle" style="animation-delay: 0.2s;">🏆</span>
+                    <span class="text-6xl float" style="animation-delay: 0.3s;">⭐</span>
+                    <span class="text-6xl wiggle" style="animation-delay: 0.4s;">🎉</span>
+                </div>
+
+                <!-- Under construction style -->
+                <div class="flex justify-center gap-2 mb-8">
+                    <span class="text-4xl blink">🚧</span>
+                    <p class="text-xl"
+                        style="color: #FFFF00; font-family: 'Comic Sans MS'; text-shadow: 2px 2px 0 #FF00FF;">
+                        FUTURO EM CONSTRUÇÃO!!!
+                    </p>
+                    <span class="text-4xl blink" style="animation-delay: 0.5s;">🚧</span>
+                </div>
+
+                <!-- Firework buttons -->
+                <div class="flex flex-wrap justify-center gap-4">
+                    <button onclick="throwPaint()"
+                        class="bg-gradient-to-r from-retro-pink to-retro-cyan text-black font-bold text-xl px-8 py-4 rounded-full hover:scale-110 transition-all shadow-xl"
+                        style="font-family: 'Comic Sans MS'; border: 4px solid #FFFF00;">
+                        🎨 JOGAR TINTA! 🎨
+                    </button>
+
+                    <button onclick="megaCelebration()"
+                        class="bg-gradient-to-r from-retro-yellow to-retro-lime text-black font-bold text-xl px-8 py-4 rounded-full hover:scale-110 transition-all shadow-xl"
+                        style="font-family: 'Comic Sans MS'; border: 4px solid #FF00FF;">
+                        🎉 MEGA FESTA! 🎉
+                    </button>
+
+                    <button onclick="openCredits()" class="credits-btn">
+                        🌟 CRÉDITOS 🌟
+                    </button>
+                </div>
+
+                <!-- Footer -->
+                <div class="mt-12">
+                    <p style="color: #00FFFF; font-family: 'Comic Sans MS'; text-shadow: 1px 1px 0 #FF00FF;">
+                        Feito com 💖 pelo Maridão Nerd Luck 🤓🍀
+                    </p>
+                    <p class="text-sm mt-2" style="color: #FFFF00; font-family: 'Comic Sans MS';">
+                        © 2026 - Best viewed with ❤️ and 🎉
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 8: APARTMENT MESSAGE -->
+        <div class="slide gradient-apartment" id="slide-8">
+            <div class="text-center px-4 max-w-4xl">
+                <div class="text-8xl mb-8 float">🏠</div>
+
+                <div class="glass rounded-3xl p-8 md:p-12">
+                    <h2 class="font-fun text-4xl md:text-5xl text-white mb-8"
+                        style="text-shadow: 3px 3px 0 rgba(0,0,0,0.2);">
+                        E tem mais uma coisa...
+                    </h2>
+
+                    <div class="glass-light rounded-2xl p-6 mb-8">
+                        <p class="text-gray-800 text-2xl md:text-3xl font-cute leading-relaxed mb-4">
+                            Além de todas essas conquistas incríveis...
+                        </p>
+                        <p class="text-candy-purple text-3xl md:text-4xl font-bold font-cute mb-4">
+                            Um apartamento NOVO nos espera! 🏡✨
+                        </p>
+                        <p class="text-gray-700 text-xl md:text-2xl font-cute leading-relaxed">
+                            Um cantinho só nosso, cheio de amor, sonhos e muitas novas memórias para construirmos
+                            juntos! 💕
+                        </p>
+                    </div>
+
+                    <div class="flex justify-center gap-4 flex-wrap text-5xl">
+                        <span class="float">🔑</span>
+                        <span class="wiggle" style="animation-delay: 0.2s;">🛋️</span>
+                        <span class="float" style="animation-delay: 0.4s;">🌸</span>
+                        <span class="wiggle" style="animation-delay: 0.6s;">💑</span>
+                    </div>
+                </div>
+
+                <p class="text-white text-xl font-cute font-bold animate-pulse mt-8">
+                    Continue para a mensagem final! →
+                </p>
+            </div>
+        </div>
+
+        <!-- SLIDE 9: TE AMO MUITO - FINAL -->
+        <div class="slide gradient-love" id="slide-9">
+            <div class="text-center px-4 max-w-5xl">
+                <!-- Floating hearts background -->
+                <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                    <div class="text-6xl absolute top-10 left-10 float">💕</div>
+                    <div class="text-5xl absolute top-20 right-20 float" style="animation-delay: 0.5s;">💗</div>
+                    <div class="text-4xl absolute bottom-32 left-20 float" style="animation-delay: 1s;">💖</div>
+                    <div class="text-6xl absolute bottom-20 right-10 float" style="animation-delay: 0.3s;">💝</div>
+                    <div class="text-5xl absolute top-1/3 left-5 float" style="animation-delay: 0.7s;">❤️</div>
+                    <div class="text-4xl absolute top-1/2 right-5 float" style="animation-delay: 0.9s;">💓</div>
+                </div>
+
+                <div class="relative z-10">
+                    <div class="text-9xl mb-8 wiggle">💖</div>
+
+                    <h1 class="mega-love-text mb-8">
+                        TE AMO MUITO!
+                    </h1>
+
+                    <div class="glass rounded-3xl p-8 md:p-10 mb-8">
+                        <p class="text-white text-2xl md:text-3xl font-cute leading-relaxed mb-6"
+                            style="text-shadow: 2px 2px 0 rgba(0,0,0,0.2);">
+                            Mylena, você é minha parceira de vida, minha melhor amiga, meu maior orgulho.
+                        </p>
+                        <p class="text-white text-2xl md:text-3xl font-cute leading-relaxed mb-6"
+                            style="text-shadow: 2px 2px 0 rgba(0,0,0,0.2);">
+                            Cada conquista sua me enche de alegria e admiração.
+                        </p>
+                        <p class="text-candy-yellow text-3xl md:text-4xl font-bold font-cute"
+                            style="text-shadow: 2px 2px 0 rgba(0,0,0,0.3);">
+                            Juntos, vamos conquistar o mundo! 🌍✨
+                        </p>
+                    </div>
+
+                    <div class="flex justify-center gap-6 flex-wrap text-6xl mb-8">
+                        <span class="float">💍</span>
+                        <span class="wiggle">👫</span>
+                        <span class="float" style="animation-delay: 0.3s;">🏠</span>
+                        <span class="wiggle" style="animation-delay: 0.5s;">🎓</span>
+                        <span class="float" style="animation-delay: 0.7s;">💖</span>
+                    </div>
+
+                    <div class="bg-white/20 backdrop-blur-md rounded-2xl p-6 inline-block">
+                        <p class="text-white text-xl font-cute font-bold"
+                            style="text-shadow: 1px 1px 0 rgba(0,0,0,0.2);">
+                            Com todo amor do universo,
+                        </p>
+                        <p class="text-candy-yellow text-2xl font-fun mt-2">
+                            Seu Maridão Nerd Luck 🤓🍀💚
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const { animate, stagger, spring } = Motion;
+
+        let currentSlide = 0;
+        const totalSlides = 9;
+        let musicPlayed = false;
+        const slider = document.getElementById('slider');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const progressFill = document.getElementById('progress-fill');
+        const rocketIcon = document.getElementById('rocket-icon');
+        const rocketTrail = document.getElementById('rocket-trail');
+        const progressLabel = document.getElementById('progress-label');
+
+        // Update progress bar with rocket
+        function updateProgress() {
+            const progress = (currentSlide / (totalSlides - 1)) * 100;
+            progressFill.style.width = progress + '%';
+
+            // Position rocket at the end of the progress bar
+            const rocketPosition = Math.min(progress, 95);
+            rocketIcon.style.left = `calc(${rocketPosition}% - 15px)`;
+
+            // Update trail
+            rocketTrail.style.width = Math.max(0, rocketPosition - 10) + '%';
+            rocketTrail.style.left = '0';
+
+            // Update label
+            progressLabel.textContent = `${currentSlide + 1} / ${totalSlides}`;
+
+            // Add rocket animation on slide change
+            rocketIcon.style.transform = 'translateY(-50%) rotate(90deg) scale(1.2)';
+            setTimeout(() => {
+                rocketIcon.style.transform = 'translateY(-50%) rotate(90deg) scale(1)';
+            }, 300);
+        }
+
+        function updateSlider() {
+            slider.style.transform = `translateX(-${currentSlide * 100}vw)`;
+
+            // Update progress bar with rocket
+            updateProgress();
+
+            // Update arrows visibility
+            prevBtn.style.display = currentSlide === 0 ? 'none' : 'flex';
+            nextBtn.style.display = currentSlide === totalSlides - 1 ? 'none' : 'flex';
+
+            // Animate current slide content
+            animateSlide(currentSlide);
+
+            // Play music when reaching the BIXO slide (slide 7, index 6)
+            if (currentSlide === 6 && !musicPlayed) {
+                playBixoMusic();
+                musicPlayed = true;
+            }
+
+            // Special effects for retro slide
+            if (currentSlide === 6) {
+                setTimeout(() => {
+                    throwPaint();
+                    startFloatingEmojis();
+                }, 500);
+            }
+
+            // Special effects for last slide (Te Amo)
+            if (currentSlide === totalSlides - 1) {
+                setTimeout(() => {
+                    startLoveHearts();
+                }, 500);
+            }
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides - 1) {
+                currentSlide++;
+                updateSlider();
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateSlider();
+            }
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateSlider();
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
+        });
+
+        // Touch/Swipe support
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        document.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const diff = touchStartX - touchEndX;
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) nextSlide();
+                else prevSlide();
+            }
+        }
+
+        // Animate slide content
+        function animateSlide(index) {
+            const slide = document.getElementById(`slide-${index + 1}`);
+            if (!slide) return;
+
+            const elements = slide.querySelectorAll('h1, h2, h3, p, div:not(.nav-arrow):not(#paint-container), span');
+
+            animate(elements,
+                { opacity: [0, 1], y: [30, 0] },
+                { duration: 0.6, delay: stagger(0.1), easing: spring() }
+            );
+        }
+
+        // Paint splash effect
+        function throwPaint() {
+            const colors = ['#FF00FF', '#00FFFF', '#FFFF00', '#00FF00', '#FF0000', '#FF6B9D', '#9333EA'];
+            const container = document.body;
+
+            for (let i = 0; i < 80; i++) {
+                setTimeout(() => {
+                    const paint = document.createElement('div');
+                    paint.className = 'paint-splash';
+
+                    const size = Math.random() * 80 + 30;
+                    const color = colors[Math.floor(Math.random() * colors.length)];
+
+                    paint.style.cssText = `
+                        width: ${size}px;
+                        height: ${size}px;
+                        background: radial-gradient(circle, ${color} 0%, ${color}88 50%, transparent 70%);
+                        left: 50%;
+                        top: 50%;
+                        border-radius: 50%;
+                        filter: blur(${Math.random() * 3}px);
+                    `;
+
+                    container.appendChild(paint);
+
+                    const angle = Math.random() * Math.PI * 2;
+                    const velocity = 300 + Math.random() * 700;
+                    const vx = Math.cos(angle) * velocity;
+                    const vy = Math.sin(angle) * velocity;
+
+                    animate(paint,
+                        {
+                            x: [0, vx],
+                            y: [0, vy],
+                            scale: [0, 1.5, 1],
+                            opacity: [1, 1, 0]
+                        },
+                        { duration: 2 + Math.random(), easing: 'easeOut' }
+                    ).then(() => paint.remove());
+                }, i * 15);
+            }
+        }
+
+        // Mega celebration
+        function megaCelebration() {
+            throwPaint();
+
+            // Confetti
+            const colors = ['#FF00FF', '#00FFFF', '#FFFF00', '#00FF00', '#FF0000'];
+
+            for (let i = 0; i < 150; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.cssText = `
+                        width: ${Math.random() * 15 + 8}px;
+                        height: ${Math.random() * 15 + 8}px;
+                        background: ${colors[Math.floor(Math.random() * colors.length)]};
+                        left: 50%;
+                        top: 50%;
+                        border-radius: ${Math.random() > 0.5 ? '50%' : '0'};
+                    `;
+                    document.body.appendChild(confetti);
+
+                    const angle = Math.random() * Math.PI * 2;
+                    const velocity = 400 + Math.random() * 800;
+
+                    animate(confetti,
+                        {
+                            x: [0, Math.cos(angle) * velocity],
+                            y: [0, Math.sin(angle) * velocity + 600],
+                            rotate: [0, Math.random() * 1080],
+                            opacity: [1, 0]
+                        },
+                        { duration: 3, easing: 'easeOut' }
+                    ).then(() => confetti.remove());
+                }, i * 10);
+            }
+
+            // Hearts
+            const hearts = ['💖', '💕', '💗', '💝', '🎉', '🎊', '⭐', '✨'];
+            for (let i = 0; i < 40; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.className = 'heart-burst';
+                    heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+                    heart.style.cssText = `left: ${Math.random() * 100}vw; top: ${Math.random() * 100}vh;`;
+                    document.body.appendChild(heart);
+
+                    animate(heart,
+                        { scale: [0, 2, 1.5], opacity: [0, 1, 0], y: [0, -100] },
+                        { duration: 2.5 }
+                    ).then(() => heart.remove());
+                }, i * 60);
+            }
+
+            // Screen flash
+            const flash = document.createElement('div');
+            flash.style.cssText = 'position:fixed;inset:0;background:white;z-index:9999;pointer-events:none;';
+            document.body.appendChild(flash);
+            animate(flash, { opacity: [1, 0] }, { duration: 0.3 }).then(() => flash.remove());
+        }
+
+        // Floating emojis
+        function startFloatingEmojis() {
+            const emojis = ['🎉', '⭐', '💖', '🌟', '✨', '🎊', '🏆', '🎓', '💕', '🦋'];
+            const container = document.getElementById('floating-container');
+
+            const interval = setInterval(() => {
+                if (currentSlide !== 6) {
+                    clearInterval(interval);
+                    return;
+                }
+
+                const emoji = document.createElement('div');
+                emoji.className = 'floating-emoji';
+                emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                emoji.style.left = Math.random() * 100 + 'vw';
+                emoji.style.top = '100vh';
+                container.appendChild(emoji);
+
+                animate(emoji,
+                    {
+                        y: [0, -window.innerHeight - 100],
+                        x: [0, (Math.random() - 0.5) * 200],
+                        rotate: [0, Math.random() * 360],
+                        opacity: [1, 0]
+                    },
+                    { duration: 4 + Math.random() * 3 }
+                ).then(() => emoji.remove());
+            }, 400);
+        }
+
+        // Emotional tears effect
+        function dropTears() {
+            const tears = ['🥹', '😭', '💧'];
+
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => {
+                    const tear = document.createElement('div');
+                    tear.className = 'tear-drop';
+                    tear.textContent = tears[Math.floor(Math.random() * tears.length)];
+                    tear.style.left = Math.random() * 100 + 'vw';
+                    tear.style.top = '-50px';
+                    document.body.appendChild(tear);
+
+                    animate(tear,
+                        { y: [0, window.innerHeight + 100], opacity: [1, 0.5] },
+                        { duration: 3 + Math.random() * 2 }
+                    ).then(() => tear.remove());
+                }, i * 200);
+            }
+        }
+
+        // Play music for BIXO banner
+        function playBixoMusic() {
+            const music = document.getElementById('bixo-music');
+            if (music) {
+                music.volume = 0.5;
+                music.play().catch(e => console.log('Audio autoplay prevented'));
+            }
+        }
+
+        // Love hearts effect for final slide
+        function startLoveHearts() {
+            const hearts = ['💖', '💕', '💗', '💝', '❤️', '💓', '💘', '💞'];
+
+            const interval = setInterval(() => {
+                if (currentSlide !== totalSlides - 1) {
+                    clearInterval(interval);
+                    return;
+                }
+
+                const heart = document.createElement('div');
+                heart.className = 'floating-emoji';
+                heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.top = '100vh';
+                document.getElementById('floating-container').appendChild(heart);
+
+                animate(heart,
+                    {
+                        y: [0, -window.innerHeight - 100],
+                        x: [0, (Math.random() - 0.5) * 150],
+                        rotate: [0, Math.random() * 180],
+                        scale: [1, 1.5, 1],
+                        opacity: [1, 1, 0]
+                    },
+                    { duration: 5 + Math.random() * 3 }
+                ).then(() => heart.remove());
+            }, 300);
+        }
+
+        // Credits modal functions
+        function openCredits() {
+            const modal = document.getElementById('credits-modal');
+            modal.style.display = 'flex';
+            setTimeout(() => modal.classList.add('show'), 10);
+        }
+
+        function closeCredits() {
+            const modal = document.getElementById('credits-modal');
+            modal.classList.remove('show');
+            setTimeout(() => modal.style.display = 'none', 400);
+        }
+
+        // Close modal on outside click
+        document.getElementById('credits-modal').addEventListener('click', function (e) {
+            if (e.target === this) closeCredits();
+        });
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            // Hide loading screen after animation
+            const loadingScreen = document.getElementById('loading-screen');
+            setTimeout(() => {
+                loadingScreen.classList.add('hidden');
+                animateSlide(0);
+
+                // Auto confetti on first slide after loading
+                setTimeout(() => {
+                    if (currentSlide === 0) {
+                        const colors = ['#FF6B9D', '#9333EA', '#38BDF8', '#34D399', '#FBBF24'];
+                        for (let i = 0; i < 60; i++) {
+                            setTimeout(() => {
+                                const confetti = document.createElement('div');
+                                confetti.className = 'confetti';
+                                confetti.style.cssText = `
+                                    width: ${Math.random() * 12 + 6}px;
+                                    height: ${Math.random() * 12 + 6}px;
+                                    background: ${colors[Math.floor(Math.random() * colors.length)]};
+                                    left: 50%;
+                                    top: 40%;
+                                    border-radius: ${Math.random() > 0.5 ? '50%' : '0'};
+                                `;
+                                document.body.appendChild(confetti);
+
+                                const angle = Math.random() * Math.PI * 2;
+                                const velocity = 300 + Math.random() * 500;
+
+                                animate(confetti,
+                                    {
+                                        x: [0, Math.cos(angle) * velocity],
+                                        y: [0, Math.sin(angle) * velocity + 500],
+                                        rotate: [0, Math.random() * 720],
+                                        opacity: [1, 0]
+                                    },
+                                    { duration: 2.5, easing: 'easeOut' }
+                                ).then(() => confetti.remove());
+                            }, i * 15);
+                        }
+                    }
+                }, 500);
+            }, 3000);
+        });
+
+        // Add sparkle on mouse move
+        document.addEventListener('mousemove', (e) => {
+            if (Math.random() > 0.92) {
+                const sparkle = document.createElement('div');
+                sparkle.textContent = '✨';
+                sparkle.style.cssText = `
+                    position: fixed;
+                    left: ${e.clientX}px;
+                    top: ${e.clientY}px;
+                    font-size: 1.5rem;
+                    pointer-events: none;
+                    z-index: 1000;
+                `;
+                document.body.appendChild(sparkle);
+
+                animate(sparkle,
+                    { scale: [0, 1.5, 0], opacity: [0, 1, 0], y: [0, -30] },
+                    { duration: 0.8 }
+                ).then(() => sparkle.remove());
+            }
+        });
+
+        // Secret: Type "mylena" for mega celebration
+        let secretWord = '';
+        document.addEventListener('keypress', (e) => {
+            secretWord += e.key.toLowerCase();
+            secretWord = secretWord.slice(-6);
+
+            if (secretWord === 'mylena') {
+                megaCelebration();
+                dropTears();
+                secretWord = '';
+            }
+        });
+    </script>
+</body>
+
+</html>
