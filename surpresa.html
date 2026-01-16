@@ -1000,7 +1000,7 @@
     </div>
 
     <!-- Background Music -->
-    <audio id="bixo-music" preload="auto">
+    <audio id="bixo-music" preload="auto" loop>
         <source src="music.mp3" type="audio/mpeg">
     </audio>
 
@@ -1462,8 +1462,8 @@
             // Animate current slide content
             animateSlide(currentSlide);
 
-            // Play music when reaching the BIXO slide (slide 7, index 6)
-            if (currentSlide === 6 && !musicPlayed) {
+            // Play music on first slide change (when going from slide 0 to slide 1)
+            if (currentSlide === 1 && !musicPlayed) {
                 playBixoMusic();
                 musicPlayed = true;
             }
